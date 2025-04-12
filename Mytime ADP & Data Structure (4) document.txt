@@ -1,0 +1,224 @@
+
+
+# Detailed Meeting Documentation: Power BI & Data Access Management
+
+## 1. Power BI Report Management
+
+### 1.1 Report Publishing Process
+#### 1.1.1 Authorization Flow
+- Limited publishing rights
+- Two primary scenarios:
+  1. Report issue fixes
+  2. Steven's new report deployments
+
+#### 1.1.2 Publishing Steps
+```
+Standard Process:
+1. Receive report change request
+2. Make changes in development
+3. Test in development environment
+4. Deploy to production
+5. Verify changes live
+```
+
+### 1.2 Report Refresh Process
+- Manual refresh capability available
+- Development box testing first
+- Production deployment after verification
+- Cloud model synchronization
+
+## 2. User Access Management
+
+### 2.1 Access Verification Process
+#### 2.1.1 Testing User Access
+```
+Steps to Verify Access:
+1. Access Power BI report
+2. Click "More" options
+3. Select "Test as role"
+4. Enter user credentials
+5. Verify visible content
+```
+
+#### 2.1.2 Access Levels
+- Admin view (full access)
+- User-specific views
+- Shared drive access
+- Location-specific restrictions
+
+### 2.2 Troubleshooting Access Issues
+1. Verify user in security tables
+2. Check shared drive permissions
+3. Test user view access
+4. Validate location restrictions
+
+## 3. Security Implementation
+
+### 3.1 Database Security
+#### 3.1.1 User Management
+```sql
+Process Overview:
+1. Check user in silver tables
+2. Verify email associations
+3. Add to appropriate security groups
+4. Rebuild security tables
+```
+
+#### 3.1.2 Security Table Maintenance
+- Daily refresh cycle
+- Manual refresh capability
+- Table truncation process
+- Security rebuilding
+
+### 3.2 Access Control Hierarchy
+1. **Admin Level**
+   - Full system access
+   - All locations visible
+   - Publishing rights
+
+2. **User Level**
+   - Location-specific access
+   - Restricted views
+   - Limited functionality
+
+## 4. Troubleshooting Procedures
+
+### 4.1 Common Issues
+#### 4.1.1 Access Problems
+```
+Resolution Steps:
+1. Verify user credentials
+2. Check security table presence
+3. Test as user role
+4. Refresh browser cache
+5. Request screenshot if issues persist
+```
+
+#### 4.1.2 Data Visibility Issues
+- Location access verification
+- Security table updates
+- Cache clearing requirements
+- Browser refresh needs
+
+### 4.2 Emergency Access
+- Immediate table updates possible
+- Manual refresh capability
+- Same-day access resolution
+- Next-day automatic updates
+
+## 5. Communication Protocol
+
+### 5.1 Issue Response
+#### 5.1.1 Standard Response Template
+```
+Response Components:
+1. Acknowledge issue
+2. Explain resolution steps
+3. Provide timeline
+4. Request verification
+5. Follow-up instructions
+```
+
+#### 5.1.2 User Instructions
+- Browser refresh requirements
+- Cache clearing steps
+- Screenshot requests
+- Escalation path
+
+### 5.2 Documentation Requirements
+1. Process workflows
+2. Access procedures
+3. Troubleshooting steps
+4. Security protocols
+
+## 6. System Infrastructure
+
+### 6.1 Server Components
+1. **Development Environment**
+   - Testing platform
+   - Report modifications
+   - Access testing
+
+2. **Production Environment**
+   - Live reports
+   - User access
+   - Security implementation
+
+### 6.2 Data Refresh Cycle
+```
+    A[Security Table Update] -->|Daily Refresh| B[User Access Update]
+    B -->|Manual Override| C[Emergency Access]
+    C -->|Verification| D[Access Confirmation]
+```
+
+## 7. Best Practices
+
+### 7.1 Report Management
+1. **Development Testing**
+   - Verify changes in dev
+   - Test user access
+   - Validate data accuracy
+
+2. **Deployment Process**
+   - Scheduled updates
+   - Version control
+   - Change documentation
+
+### 7.2 Security Management
+```
+Security Protocols:
+1. Regular table maintenance
+2. Access verification
+3. User role testing
+4. Documentation updates
+```
+
+## 8. Future Improvements
+
+### 8.1 Process Enhancements
+1. Streamlined publishing process
+2. Automated access verification
+3. Enhanced monitoring system
+4. Improved documentation
+
+### 8.2 Training Requirements
+1. User access procedures
+2. Troubleshooting steps
+3. Security protocols
+4. Emergency procedures
+
+## 9. Action Items
+
+### 9.1 Immediate Actions
+1. Update security tables for Sonia
+2. Verify Candace's access
+3. Document refresh process
+4. Update response templates
+
+### 9.2 Follow-up Tasks
+1. Schedule process training
+2. Review security protocols
+3. Update documentation
+4. Implement monitoring improvements
+
+## 10. Support Structure
+
+### 10.1 Support Levels
+1. **First Level**
+   - Basic access issues
+   - Cache clearing
+   - Browser refreshes
+
+2. **Second Level**
+   - Security table updates
+   - Manual refreshes
+   - Access verification
+
+### 10.2 Escalation Path
+```
+Escalation Flow:
+1. Initial troubleshooting
+2. Security table verification
+3. Manual intervention
+4. System administrator involvement
+```

@@ -1,0 +1,2449 @@
+Bryan Camaglia
+0 minutes 3 seconds0:03
+Bryan Camaglia 0 minutes 3 seconds
+Alright, thanks.
+Bryan Camaglia 0 minutes 8 seconds
+Alright, well.
+Bryan Camaglia 0 minutes 11 seconds
+Non non eventful day yesterday, that's good.
+JC
+
+Josh Courson
+0 minutes 17 seconds0:17
+Josh Courson 0 minutes 17 seconds
+Yeah.
+ZH
+
+Zeeshan Hashmi
+0 minutes 18 seconds0:18
+Zeeshan Hashmi 0 minutes 18 seconds
+Five more in the in the morning. I was monitoring all the pipelines and alert is also working.
+BC
+
+Bryan Camaglia
+0 minutes 27 seconds0:27
+Bryan Camaglia 0 minutes 27 seconds
+Good.
+ZH
+
+Zeeshan Hashmi
+0 minutes 28 seconds0:28
+Zeeshan Hashmi 0 minutes 28 seconds
+When, when? When this pipeline is get succeeded?
+JC
+
+Josh Courson
+0 minutes 30 seconds0:30
+Josh Courson 0 minutes 30 seconds
+Yeah.
+ZH
+
+Zeeshan Hashmi
+0 minutes 32 seconds0:32
+Zeeshan Hashmi 0 minutes 32 seconds
+So I'm getting the response from the pipeline as well from the alert.
+BC
+
+Bryan Camaglia
+0 minutes 37 seconds0:37
+Bryan Camaglia 0 minutes 37 seconds
+OK, awesome. Fantastic.
+ZH
+
+Zeeshan Hashmi
+0 minutes 40 seconds0:40
+Zeeshan Hashmi 0 minutes 40 seconds
+God.
+Zeeshan Hashmi 0 minutes 43 seconds
+Now we need to figure it out that how we can put the you know, the things on the ADP that it should be able to calculate that 68 file.
+BC
+
+Bryan Camaglia
+0 minutes 43 seconds0:43
+Bryan Camaglia 0 minutes 43 seconds
+Umm.
+ZH
+
+Zeeshan Hashmi
+0 minutes 53 seconds0:53
+Zeeshan Hashmi 0 minutes 53 seconds
+I'll I'll, I'll try to some do some research over the weekend and probably by next week we should be able to implement this thing as well.
+BC
+
+Bryan Camaglia
+1 minute 2 seconds1:02
+Bryan Camaglia 1 minute 2 seconds
+And which when you say ADADP say that, yeah.
+ZH
+
+Zeeshan Hashmi
+1 minute 7 seconds1:07
+Zeeshan Hashmi 1 minute 7 seconds
+80 Sorry Azure Data Factory we had.
+Zeeshan Hashmi 1 minute 11 seconds
+We have to calculate the, you know, the 68 files for the payroll.
+BC
+
+Bryan Camaglia
+1 minute 15 seconds1:15
+Bryan Camaglia 1 minute 15 seconds
+Right.
+ZH
+
+Zeeshan Hashmi
+1 minute 16 seconds1:16
+Zeeshan Hashmi 1 minute 16 seconds
+So I'll figure it out over the weekend that how we can implement this condition over the pipeline.
+BC
+
+Bryan Camaglia
+1 minute 26 seconds1:26
+Bryan Camaglia 1 minute 26 seconds
+OK.
+Bryan Camaglia 1 minute 27 seconds
+Yeah. So.
+ZH
+Zeeshan Hashmi
+1 minute 28 seconds1:28
+Zeeshan Hashmi 1 minute 28 seconds
+Or or maybe if you could, you could tell us if you have anything in your mind.
+BC
+Bryan Camaglia
+1 minute 33 seconds1:33
+Bryan Camaglia 1 minute 33 seconds
+Yeah.
+Bryan Camaglia 1 minute 37 seconds
+Here I will share my screen.
+ZH
+Zeeshan Hashmi
+1 minute 42 seconds1:42
+Zeeshan Hashmi 1 minute 42 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+1 minute 48 seconds1:48
+Bryan Camaglia 1 minute 48 seconds
+OK.
+Bryan Camaglia 2 minutes 9 seconds
+And so we'll just do.
+Bryan Camaglia 2 minutes 13 seconds
+A. No, not tonight.
+Bryan Camaglia 2 minutes 28 seconds
+So let's see here.
+Bryan Camaglia 2 minutes 42 seconds
+So if we look at this git meta, so we're gonna.
+Bryan Camaglia 2 minutes 48 seconds
+These little pop ups.
+Bryan Camaglia 2 minutes 50 seconds
+So let's look at the tip last night, right?
+Bryan Camaglia 2 minutes 53 seconds
+So I think this is probably maybe the track to go down.
+Bryan Camaglia 2 minutes 57 seconds
+You want to research it.
+That'd be great.
+Bryan Camaglia 3 minutes
+Or you know.
+Bryan Camaglia 3 minutes 3 seconds
+Let's see.
+Bryan Camaglia 3 minutes 3 seconds
+So this was the corporate one at 6:30.
+Bryan Camaglia 3 minutes 9 seconds
+Right. If we look at.
+Bryan Camaglia 3 minutes 18 seconds
+Get metadata here. So let's take a look at that step.
+Bryan Camaglia 3 minutes 23 seconds
+Get metadata here, right? So the output.
+Bryan Camaglia 3 minutes 32 seconds
+Right, so it names each file.
+Bryan Camaglia 3 minutes 35 seconds
+So then we go to.
+Bryan Camaglia 3 minutes 38 seconds
+Here the filter.
+Bryan Camaglia 3 minutes 44 seconds
+Right. So we get 81, but we have to delete.
+Bryan Camaglia 3 minutes 49 seconds
+The non whatever.
+Bryan Camaglia 3 minutes 51 seconds
+But still 81 is a is a fair enough one.
+Bryan Camaglia 3 minutes 53 seconds
+So what you can do is you'll find right, you basically if you could get this value which you can and what you can do it it, it's up to you Zeeshan if you want to mess around with it and see what he could do is right. So what?
+You want is this count here?
+Right. And so.
+Bryan Camaglia 4 minutes 14 seconds
+Where and it's.
+Bryan Camaglia 4 minutes 18 seconds
+But XML I think it is in there and so.
+Bryan Camaglia 4 minutes 22 seconds
+I have in a couple other of these.
+Bryan Camaglia 4 minutes 25 seconds
+Like here and you could do an if condition right coming out of there.
+Bryan Camaglia 4 minutes 29 seconds
+Oops, sorry this is the log. Let me go into the actual pipeline.
+Bryan Camaglia 4 minutes 34 seconds
+So right, if you come into here under activity.
+Bryan Camaglia 4 minutes 39 seconds
+And you can see how it does right like so.
+Bryan Camaglia 4 minutes 41 seconds
+This 2 lower pipeline what this is is that.
+Bryan Camaglia 4 minutes 47 seconds
+This is a parameter.
+Bryan Camaglia 4 minutes 48 seconds
+This is actually looking at parameter, but what you can also look at is the last activity, so activity output.
+Bryan Camaglia 4 minutes 55 seconds
+So do we have right here the meta right. If you grab this?
+Bryan Camaglia 5 minutes 1 second
+And then what you can see is then you got to do dot dot dot which is basically going down the XML tree, right?
+Bryan Camaglia 5 minutes 8 seconds
+And you can get that value of 81.
+
+So you could do something like, hey, if it's greater than 80, right?
+Bryan Camaglia 5 minutes 15 seconds
+Then continue.
+ZH
+Zeeshan Hashmi
+5 minutes 16 seconds5:16
+Zeeshan Hashmi 5 minutes 16 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+5 minutes 16 seconds5:16
+Bryan Camaglia 5 minutes 16 seconds
+If not, then do something else so you can kind of mirror this stuff as well.
+Bryan Camaglia 5 minutes 22 seconds
+So what I can do here for you?
+Bryan Camaglia 5 minutes 25 seconds
+So I'm going to do this.
+Bryan Camaglia 5 minutes 26 seconds
+I'm going to clone this.
+ZH
+Zeeshan Hashmi
+5 minutes 28 seconds5:28
+Zeeshan Hashmi 5 minutes 28 seconds
+Yes, definitely.
+BC
+Bryan Camaglia
+5 minutes 30 seconds5:30
+Bryan Camaglia 5 minutes 30 seconds
+Yeah. Yeah, no, I know, right?
+Bryan Camaglia 5 minutes 32 seconds
+And so we're just gonna, you know, name it.
+Bryan Camaglia 5 minutes 36 seconds
+I'm just gonna name. We could always change this name too, but I'm just gonna name it test.
+ZH
+Zeeshan Hashmi
+5 minutes 40 seconds5:40
+Zeeshan Hashmi 5 minutes 40 seconds
+Test and this code clone. So I would clearly remember this thing immediately.
+BC
+Bryan Camaglia
+5 minutes 46 seconds5:46
+Bryan Camaglia 5 minutes 46 seconds
+And and then what we're gonna do?
+ZH
+Zeeshan Hashmi
+5 minutes 48 seconds5:48
+Zeeshan Hashmi 5 minutes 48 seconds
+And disconnect the storage right now, because it shouldn't go to the storage because otherwise it won't have a confusion.
+Zeeshan Hashmi 5 minutes 56 seconds
+Right.
+BC
+Bryan Camaglia
+5 minutes 57 seconds5:57
+Bryan Camaglia 5 minutes 57 seconds
+Yeah, yeah, I'm gonna.
+Bryan Camaglia 6 minutes 4 seconds
+Or is it? Is it this one?
+Bryan Camaglia 6 minutes 7 seconds
+If.
+Bryan Camaglia 6 minutes 10 seconds
+Yeah, I'm gonna delete this whole back end. OK. 'cause, this is where it's gonna get 81, but it's either gonna remove corporate or it's gonna remove whatever. What have you.
+ZH
+Zeeshan Hashmi
+6 minutes 13 seconds6:13
+Zeeshan Hashmi 6 minutes 13 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+6 minutes 23 seconds6:23
+Bryan Camaglia 6 minutes 23 seconds
+Actually could.
+Bryan Camaglia 6 minutes 23 seconds
+Probably even.
+Bryan Camaglia 6 minutes 26 seconds
+We'll just get rid of. We'll we'll leave that one.
+Bryan Camaglia 6 minutes 28 seconds
+But I'm gonna get rid of this.
+ZH
+Zeeshan Hashmi
+6 minutes 29 seconds6:29
+Zeeshan Hashmi 6 minutes 29 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+6 minutes 30 seconds6:30
+Bryan Camaglia 6 minutes 30 seconds
+So you don't accidentally send anything.
+ZH
+Zeeshan Hashmi
+6 minutes 33 seconds6:33
+Zeeshan Hashmi 6 minutes 33 seconds
+Yes.
+BC
+Bryan Camaglia
+6 minutes 34 seconds6:34
+Bryan Camaglia 6 minutes 34 seconds
+Right. So if we delete that.
+Bryan Camaglia 6 minutes 40 seconds
+Delete so.
+Bryan Camaglia 6 minutes 44 seconds
+This will set it.
+Bryan Camaglia 6 minutes 45 seconds
+The only thing is is that.
+Bryan Camaglia 6 minutes 49 seconds
+This table that it uses.
+Bryan Camaglia 6 minutes 51 seconds
+Is used by the actual.
+Bryan Camaglia 6 minutes 54 seconds
+Pipeline, right?
+Bryan Camaglia 6 minutes 55 seconds
+So just make sure it's not running.
+Bryan Camaglia 6 minutes 58 seconds
+So I don't think you're going to be doing anything at 6:30 in the morning, but the other one runs at 7:00 in the morning. So I would say stay away from it until at least 7:30, right. If you're gonna start messing around with this.
+Bryan Camaglia 7 minutes 12 seconds
+Or what have you.
+Bryan Camaglia 7 minutes 12 seconds
+So so here you've got.
+Bryan Camaglia 7 minutes 16 seconds
+The test one if you wanna kinda mess around with it and look in the other pipeline, see what it do. But basically right, you want the output of this which will will come back to it here.
+
+
+Bryan Camaglia 7 minutes 36 seconds
+The meta right?
+Bryan Camaglia 7 minutes 39 seconds
+Either you could do figure out how do you account for the the real one would be easier.
+ZH
+Zeeshan Hashmi
+7 minutes 43 seconds7:43
+Zeeshan Hashmi 7 minutes 43 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+7 minutes 45 seconds7:45
+Bryan Camaglia 7 minutes 45 seconds
+Well this filter right?
+Bryan Camaglia 7 minutes 47 seconds
+This item count on this filter daily tips, so if we come again.
+ZH
+Zeeshan Hashmi
+7 minutes 50 seconds7:50
+Zeeshan Hashmi 7 minutes 50 seconds
+M.
+BC
+Bryan Camaglia
+7 minutes 58 seconds7:58
+Bryan Camaglia 7 minutes 58 seconds
+Filter. I'm just gonna.
+Bryan Camaglia 8 minutes 2 seconds
+Oh, let me do an if.
+Bryan Camaglia 8 minutes 3 seconds
+So if we go to general.
+Bryan Camaglia 8 minutes 9 seconds
+Where's the?
+Bryan Camaglia 8 minutes 12 seconds
+Conditional maybe?
+Bryan Camaglia 8 minutes 13 seconds
+There it is.
+Bryan Camaglia 8 minutes 14 seconds
+So if I drag the.
+Bryan Camaglia 8 minutes 17 seconds
+I'm just gonna put it out here for a second.
+Bryan Camaglia 8 minutes 20 seconds
+I thought I did.
+Bryan Camaglia 8 minutes 25 seconds
+Much easier on a bigger screen. I just don't have my screen today.
+Bryan Camaglia 8 minutes 31 seconds
+Right. So now if I go into here activities.
+Bryan Camaglia 8 minutes 37 seconds
+So.
+Bryan Camaglia 8 minutes 42 seconds
+Oh, that's.
+Bryan Camaglia 8 minutes 45 seconds
+The if condition name description.
+Bryan Camaglia 8 minutes 51 seconds
+Oh, here we go.
+Bryan Camaglia 8 minutes 52 seconds
+So then you can do this.
+Bryan Camaglia 8 minutes 55 seconds
+Oh, shoot, nothing's coming out. So let's connect it.
+Bryan Camaglia 9 minutes 2 seconds
+Make this a little bigger.
+Bryan Camaglia 9 minutes 7 seconds
+And now let's go into the.
+Bryan Camaglia 9 minutes 11 seconds
+Click on here.
+Bryan Camaglia 9 minutes 13 seconds
+So the output was filter daily tips filter, daily tips, and so the output's gonna give you everything.
+Bryan Camaglia 9 minutes 21 seconds
+So you're gonna now need to narrow it down to where you want it out of that XML response, right?
+
+
+Bryan Camaglia
+9 minutes 26 seconds9:26
+Bryan Camaglia 9 minutes 26 seconds
+So I'm not gonna go any further, but this is the path I would go down if you wanna do a different one then go for it.
+ZH
+Zeeshan Hashmi
+9 minutes 32 seconds9:32
+Zeeshan Hashmi 9 minutes 32 seconds
+Out.
+BC
+Bryan Camaglia
+9 minutes 33 seconds9:33
+Bryan Camaglia 9 minutes 33 seconds
+But here's in in motion. One of that makes sense.
+Bryan Camaglia 9 minutes 37 seconds
+It's.
+ZH
+Zeeshan Hashmi
+9 minutes 38 seconds9:38
+Zeeshan Hashmi 9 minutes 38 seconds
+Thank you.
+BC
+Bryan Camaglia
+9 minutes 40 seconds9:40
+Bryan Camaglia 9 minutes 40 seconds
+0.
+Bryan Camaglia 9 minutes 40 seconds
+I'll save that and then.
+ZH
+Zeeshan Hashmi
+9 minutes 42 seconds9:42
+Zeeshan Hashmi 9 minutes 42 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+9 minutes 44 seconds9:44
+Bryan Camaglia 9 minutes 44 seconds
+You can.
+Bryan Camaglia 9 minutes 45 seconds
+Kind of mess with that accordingly so.
+ZH
+Zeeshan Hashmi
+9 minutes 49 seconds9:49
+Zeeshan Hashmi 9 minutes 49 seconds
+Right.
+BC
+Bryan Camaglia
+9 minutes 50 seconds9:50
+Bryan Camaglia 9 minutes 50 seconds
+Yeah.
+Bryan Camaglia 9 minutes 53 seconds
+All right. I think today we we wanted to get back to a little bit of power.
+Bryan Camaglia 9 minutes 59 seconds
+Bi, at least to start with.
+Bryan Camaglia 10 minutes 1 second
+I think 1 how I deploy stuff with Steven and then two. I saw this e-mail come back.
+Bryan Camaglia 10 minutes 8 seconds
+We can look into this.
+Bryan Camaglia 10 minutes 11 seconds
+That we got.
+Bryan Camaglia 10 minutes 13 seconds
+From support right on these people.
+Bryan Camaglia 10 minutes 15 seconds
+So how does that sound?
+
+
+Bryan Camaglia
+10 minutes 17 seconds10:17
+Bryan Camaglia 10 minutes 17 seconds
+You wanna start with that?
+Bryan Camaglia 10 minutes 20 seconds
+Those things, OK, so.
+ZH
+Zeeshan Hashmi
+10 minutes 21 seconds10:21
+Zeeshan Hashmi 10 minutes 21 seconds
+Yes, please.
+BC
+Bryan Camaglia
+10 minutes 25 seconds10:25
+Bryan Camaglia 10 minutes 25 seconds
+I logged into.
+Bryan Camaglia 10 minutes 28 seconds
+Management one machine and this machine right now is where the power BI reports reside.
+Bryan Camaglia 10 minutes 36 seconds
+So this is kind of the power BI development machine.
+ZH
+Zeeshan Hashmi
+10 minutes 37 seconds10:37
+Zeeshan Hashmi 10 minutes 37 seconds
+M.
+BC
+Bryan Camaglia
+10 minutes 39 seconds10:39
+Bryan Camaglia 10 minutes 39 seconds
+This is kind of the jump box that we were all doing stuff on and then and then there was a decision.
+ZH
+Zeeshan Hashmi
+10 minutes 40 seconds10:40
+Zeeshan Hashmi 10 minutes 40 seconds
+Hmm.
+BC
+Bryan Camaglia
+10 minutes 44 seconds10:44
+Bryan Camaglia 10 minutes 44 seconds
+Jim wanted us to, you know, develop locally versus on a jump box.
+Bryan Camaglia 10 minutes 48 seconds
+You know pros, cons.
+ZH
+Zeeshan Hashmi
+10 minutes 50 seconds10:50
+Zeeshan Hashmi 10 minutes 50 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+10 minutes 50 seconds10:50
+Bryan Camaglia 10 minutes 50 seconds
+Whatever. What have you.
+Bryan Camaglia 10 minutes 51 seconds
+But these reports stayed here.
+Bryan Camaglia 10 minutes 53 seconds
+There's no reason why they can't move to another box or anything, but you know that's for you down the road.
+Bryan Camaglia 11 minutes 1 second
+This is a souped up box, or it's got decent resources, so it might be a little expensive, but if they're looking to cut costs but power BI development is just a heavy heavy application. So.
+Bryan Camaglia 11 minutes 15 seconds
+That's why we've kept it there. So. So if you go into this machine.
+Bryan Camaglia 11 minutes 21 seconds
+On the E drive.
+
+
+Bryan Camaglia
+11 minutes 24 seconds11:24
+Bryan Camaglia 11 minutes 24 seconds
+Right. So I'll go through here.
+Bryan Camaglia 11 minutes 25 seconds
+E Drive Power BI reports.
+Bryan Camaglia 11 minutes 29 seconds
+And then you're gonna have a few directories, right?
+Bryan Camaglia 11 minutes 33 seconds
+So final power BI reports here.
+Bryan Camaglia 11 minutes 35 seconds
+This was kind of our version one data warehouse.
+Bryan Camaglia 11 minutes 39 seconds
+This is where the reports are and these reports all point to all the SQL databases.
+Bryan Camaglia 11 minutes 47 seconds
+So once those go away, these reports won't work.
+Bryan Camaglia 11 minutes 50 seconds
+They're not being refreshed or anything like that.
+Bryan Camaglia 11 minutes 53 seconds
+Then we moved the data warehouse to DC1.
+Bryan Camaglia 11 minutes 57 seconds
+So I had the development reports in here and then anything that was going to production was in here.
+Bryan Camaglia 12 minutes 3 seconds
+So this got skinny down a little bit, so if we go into here, what do we got?
+Bryan Camaglia 12 minutes 8 seconds
+40 reports.
+Bryan Camaglia 12 minutes 10 seconds
+So we moved.
+Bryan Camaglia 12 minutes 10 seconds
+Here we did a call of the list and so as you can see we we went down to 16 reports.
+Bryan Camaglia 12 minutes 19 seconds
+That.
+Bryan Camaglia 12 minutes 19 seconds
+That were active and then now that we've moved to AZ 01.
+Bryan Camaglia 12 minutes 24 seconds
+These are the live ones again the 16.
+Bryan Camaglia 12 minutes 26 seconds
+So so this is this is what I should mirror everything.
+Bryan Camaglia 12 minutes 33 seconds
+That's on the web.
+Bryan Camaglia 12 minutes 34 seconds
+So that the people that use power Bi see. OK, so then what? What I do from here?
+Bryan Camaglia 12 minutes 45 seconds
+I have in here this forever long. This a lot of these should probably be in Arizona.
+Bryan Camaglia 12 minutes 52 seconds
+One power Bi dev if you will.
+Bryan Camaglia 12 minutes 56 seconds
+Or archive.
+Bryan Camaglia 12 minutes 57 seconds
+So what I do is that when I get a new version of a report, first thing I do is I change like SST and then I put today's date on it and then I brings the new SST report into this folder and I'll show you that in a.
+Bryan Camaglia 13 minutes 11 seconds
+2nd.
+Bryan Camaglia 13 minutes 12 seconds
+'Cause. So if you go down so Steven has done all these releases.
+Bryan Camaglia 13 minutes 16 seconds
+And he used to version them. And then finally, I just said, just stop verging them right.
+Bryan Camaglia 13 minutes 21 seconds
+So we just put a date on it here. So for obvious reasons, if we need to rollback.
+Bryan Camaglia 13 minutes 25 seconds
+We can kinda rollback a bit on on this stuff.
+Bryan Camaglia 13 minutes 29 seconds
+Probably you know from a storage perspective, we could probably delete some of these old ones, but that that's kind of the mentality there.
+Bryan Camaglia 13 minutes 37 seconds
+So what Steven does.
+Bryan Camaglia 13 minutes 39 seconds
+So Steven.
+Bryan Camaglia 13 minutes 41 seconds
+Let me go into these final reports here real quickly. Steven only really develops on three of these.
+Bryan Camaglia 13 minutes 50 seconds
+He does the SST, the walk out in the snapshot.
+Bryan Camaglia 13 minutes 53 seconds
+He does these three.
+
+
+Bryan Camaglia
+13 minutes 56 seconds13:56
+Bryan Camaglia 13 minutes 56 seconds
+And then the rest.
+Bryan Camaglia 13 minutes 58 seconds
+I have maintained.
+Bryan Camaglia 14 minutes 1 second
+And and and deployed in. Everything of that nature.
+Bryan Camaglia 14 minutes 3 seconds
+Now he may add some.
+Bryan Camaglia 14 minutes 4 seconds
+I don't know if he does then then that would be another one to add to the list. But generally speaking I don't really go into these and maintain if you're bored one day and you wanna see go in, look and you'll understand why I just haven't had the.
+Bryan Camaglia 14 minutes 16 seconds
+Time to really understand it.
+Bryan Camaglia 14 minutes 19 seconds
+But there is one important thing.
+Bryan Camaglia 14 minutes 21 seconds
+So, you know, let me kind of highlight something here. You can see his reports are.
+Bryan Camaglia 14 minutes 26 seconds
+Huge.
+Bryan Camaglia 14 minutes 27 seconds
+Right. Well, except for this.
+ZH
+Zeeshan Hashmi
+14 minutes 28 seconds14:28
+Zeeshan Hashmi 14 minutes 28 seconds
+Yep.
+BC
+Bryan Camaglia
+14 minutes 28 seconds14:28
+Bryan Camaglia 14 minutes 28 seconds
+Walkout this walkout used to be as large as this, so Steven basically built the warehouse gold layer all in power BI.
+Bryan Camaglia 14 minutes 40 seconds
+And so we've had conversations around like Steven that that really should be in the in the database.
+Bryan Camaglia 14 minutes 45 seconds
+That's where it's more efficient, right?
+Bryan Camaglia 14 minutes 47 seconds
+Because these are the sizes that the reports should be.
+Bryan Camaglia 14 minutes 52 seconds
+Power Bi maxes out right around here.
+Bryan Camaglia 14 minutes 55 seconds
+It maxes out at about a gig.
+Bryan Camaglia 14 minutes 57 seconds
+And this is compressed gig, not just loose gig, right?
+Bryan Camaglia 15 minutes 1 second
+I guess for lack of a better word, meaning, you know, compresses out all the empties and nulls and stuff that it can, so he's against the wall on this and and so that's a detriment #1 #2.
+
+
+Bryan Camaglia
+15 minutes 17 seconds15:17
+Bryan Camaglia 15 minutes 17 seconds
+If he you know if he gets much bigger, then he's got to start cutting it.
+Bryan Camaglia 15 minutes 21 seconds
+The second thing is that the refresh takes longer, so he he had the mentality where he wanted to keep all the KPIs.
+Bryan Camaglia 15 minutes 28 seconds
+In here and then he wanted to branch off.
+Bryan Camaglia 15 minutes 30 seconds
+So he had a a vision.
+Bryan Camaglia 15 minutes 33 seconds
+I we didn't really get it to work and I'm not really sure if that's how power BI was meant to be used, so we've just had some discussions, but the bottom line is I'm like we we really should move some of that stuff 'cause. He's got a lot.
+Bryan Camaglia 15 minutes 47 seconds
+Of data in here that's not being used for SST.
+Bryan Camaglia 15 minutes 51 seconds
+Right. Because it's just a lot of redundant.
+Bryan Camaglia 15 minutes 53 seconds
+So we could go off on that, you know, philosophy, whatever, what have you but.
+Bryan Camaglia 15 minutes 59 seconds
+Bottom line is, is that occasionally, if he pushes over the limit and you try to deploy it and get an error, you might start get the error that it's too big.
+ZH
+Zeeshan Hashmi
+16 minutes 3 seconds16:03
+Zeeshan Hashmi 16 minutes 3 seconds
+None.
+BC
+Bryan Camaglia
+16 minutes 9 seconds16:09
+Bryan Camaglia 16 minutes 9 seconds
+And that's why because it can only be a gig.
+Bryan Camaglia 16 minutes 12 seconds
+And he's bumping against that. So that's more of just a A for your, for your knowledge.
+Bryan Camaglia 16 minutes 16 seconds
+So when Steven does development, he's on the same box.
+ZH
+Zeeshan Hashmi
+16 minutes 18 seconds16:18
+Zeeshan Hashmi 16 minutes 18 seconds
+Mm hmm.
+Zeeshan Hashmi 16 minutes 21 seconds
+OK.
+BC
+Bryan Camaglia
+16 minutes 22 seconds16:22
+Bryan Camaglia 16 minutes 22 seconds
+He goes into E.
+Bryan Camaglia 16 minutes 22 seconds
+He has his own.
+Bryan Camaglia 16 minutes 26 seconds
+Workspace where he does stuff.
+Bryan Camaglia 16 minutes 27 seconds
+So if you go into the sandbox and then he goes into this semantic and then he has, we created this folder called to deploy and so he he really shouldn't have anything in here to be honest with you.
+
+
+Bryan Camaglia
+16 minutes 42 seconds16:42
+Bryan Camaglia 16 minutes 42 seconds
+But he does, and that's alright.
+Bryan Camaglia 16 minutes 44 seconds
+It doesn't impact me, but what I've told him I said listen, if you want anything to develop, you need to 1st.
+Bryan Camaglia 16 minutes 52 seconds
+Here, grab the report.
+Bryan Camaglia 16 minutes 53 seconds
+Move it over here.
+Bryan Camaglia 16 minutes 55 seconds
+Do your development and save it, and then when he's ready to deploy, he'll say, hey, Brian, in the deploy folder, take this particular report and bring it over.
+Bryan Camaglia 17 minutes 5 seconds
+And so typically, he'll have just either snapshot walk out or SST. And what I'll do is I'll I'll first obviously rename this, then I will cut it out of here, I will actually.
+ZH
+Zeeshan Hashmi
+17 minutes 14 seconds17:14
+Zeeshan Hashmi 17 minutes 14 seconds
+OK.
+BC
+Bryan Camaglia
+17 minutes 17 seconds17:17
+Bryan Camaglia 17 minutes 17 seconds
+Cut it and paste it, not copy it because I don't and like I now have it.
+Bryan Camaglia 17 minutes 23 seconds
+And then I'll bring it over here.
+Bryan Camaglia 17 minutes 26 seconds
+And then for the sake of time, I'm just gonna bring up a smaller report. Right. I'll open it.
+Bryan Camaglia 17 minutes 37 seconds
+And then basically I'll, I'll do two things.
+Bryan Camaglia 17 minutes 40 seconds
+Well, actually three things including deploying it.
+Bryan Camaglia 17 minutes 44 seconds
+I will open it up and and just sanity check it to make sure that it opens and you know that it that data is there.
+Bryan Camaglia 17 minutes 53 seconds
+It's not all aired out and messaging, you know, all all kinds of wacky stuff.
+Bryan Camaglia 17 minutes 58 seconds
+And then I will do a refresh myself and make sure that doesn't error out.
+Bryan Camaglia 18 minutes 3 seconds
+Because if it looks bad or if it errors out, it's gonna look bad.
+Bryan Camaglia 18 minutes 7 seconds
+Add her air out when we publish it and right. So just kind of quality control, if you will.
+Bryan Camaglia 18 minutes 15 seconds
+In there so.
+Bryan Camaglia 18 minutes 18 seconds
+Just give it a second power. Like I said, Power Bi is kinda heavy heavy application.
+ZH
+Zeeshan Hashmi
+18 minutes 23 seconds18:23
+Zeeshan Hashmi 18 minutes 23 seconds
+Exactly.
+BC
+Bryan Camaglia
+18 minutes 25 seconds18:25
+Bryan Camaglia 18 minutes 25 seconds
+Sorry, was there a question?
+ZH
+Zeeshan Hashmi
+18 minutes 27 seconds18:27
+Zeeshan Hashmi 18 minutes 27 seconds
+No, I said exactly.
+BC
+Bryan Camaglia
+18 minutes 27 seconds18:27
+Bryan Camaglia 18 minutes 27 seconds
+Oh, OK.
+Bryan Camaglia 18 minutes 30 seconds
+So.
+Bryan Camaglia 18 minutes 47 seconds
+OK, so right, so so if this was his report, it would come up and I would just look just, OK, it's blank 'cause. There's probably no no data yet and some of that. So then what I do is I click the refresh then it'll take anywhere from 1:00.
+Bryan Camaglia 19 minutes 7 seconds
+To however many minutes it needs to take, and then what I do is when.
+Bryan Camaglia 19 minutes 13 seconds
+It say when it does that it saves and then I hit publish.
+Bryan Camaglia 19 minutes 18 seconds
+It'll ask to save.
+Bryan Camaglia 19 minutes 21 seconds
+Do I have to save it?
+Bryan Camaglia 19 minutes 26 seconds
+Anyways, we'll we'll just save it anyways.
+Bryan Camaglia 19 minutes 30 seconds
+Must make you save it.
+Bryan Camaglia 19 minutes 32 seconds
+So then what it'll do? It'll bring up a list of workspaces.
+Bryan Camaglia 19 minutes 36 seconds
+So you have to know which workspace it goes into.
+Bryan Camaglia 19 minutes 38 seconds
+So like the sales report goes into the finance, you would highlight it, you hit select and then it's going to say, OK.
+Bryan Camaglia 19 minutes 46 seconds
+Hey, this report exists.
+Bryan Camaglia 19 minutes 48 seconds
+Do you want to replace it? Yes.
+Bryan Camaglia 19 minutes 51 seconds
+If you didn't get that, then you're like, oh, maybe I picked the wrong workspace. Right? So.
+
+
+Bryan Camaglia
+19 minutes 55 seconds19:55
+Bryan Camaglia 19 minutes 55 seconds
+It'll ask you if you want to replace it.
+Bryan Camaglia 19 minutes 57 seconds
+You click yes, it'll start circling and tell you it's transferring.
+Bryan Camaglia 20 minutes 1 second
+And then then it's done.
+Bryan Camaglia 20 minutes 3 seconds
+Kind of a thing.
+Bryan Camaglia 20 minutes 4 seconds
+So that that's kind of the deployment process that I go through.
+Bryan Camaglia 20 minutes 9 seconds
+And then that's the process I go to, Steven. Yep.
+ZH
+Zeeshan Hashmi
+20 minutes 10 seconds20:10
+Zeeshan Hashmi 20 minutes 10 seconds
+Whenever there is a but this publishing we do the publishing only when there is a change in the report, right?
+BC
+Bryan Camaglia
+20 minutes 19 seconds20:19
+Bryan Camaglia 20 minutes 19 seconds
+Correct a report.
+Bryan Camaglia 20 minutes 20 seconds
+Not when there's, you know, if the tables have new data, you don't do this, right?
+Bryan Camaglia 20 minutes 27 seconds
+Yeah, that's that.
+Bryan Camaglia 20 minutes 28 seconds
+That's what you know.
+Bryan Camaglia 20 minutes 30 seconds
+The refresh does the data refresh the publishing kinda moves the whole.
+Bryan Camaglia 20 minutes 34 seconds
+Yep, I think you.
+Bryan Camaglia 20 minutes 35 seconds
+I think you got it. So the other way to see that is right.
+Bryan Camaglia 20 minutes 40 seconds
+So that's when you know when you come into here. So the sales report, right?
+Bryan Camaglia 20 minutes 47 seconds
+There's two things that you're mainly concerned about, security, which we went over last time, which gets people access to the.
+Bryan Camaglia 20 minutes 53 seconds
+Report and then settings. This is where.
+Bryan Camaglia 20 minutes 57 seconds
+Gateways are set up so this says OK and we'll go over this a second, right?
+Bryan Camaglia 21 minutes 1 second
+Like how do I connect to the data and then up here you could go refresh history and you could see OK scheduled this morning.
+ZH
+Zeeshan Hashmi
+21 minutes 5 seconds21:05
+Zeeshan Hashmi 21 minutes 5 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+21 minutes 13 seconds21:13
+Bryan Camaglia 21 minutes 13 seconds
+It refreshed and it completed.
+Bryan Camaglia 21 minutes 14 seconds
+Completed. I don't think we have any errors on this one, but usually it come in here if it errors out and you could say oh OK on that so.
+ZH
+Zeeshan Hashmi
+21 minutes 20 seconds21:20
+Zeeshan Hashmi 21 minutes 20 seconds
+M.
+BC
+Bryan Camaglia
+21 minutes 25 seconds21:25
+Bryan Camaglia 21 minutes 25 seconds
+Now and then the gateways.
+Bryan Camaglia 21 minutes 27 seconds
+This is the. This is different than the runtime, right?
+Bryan Camaglia 21 minutes 30 seconds
+We were working with the runtime, which is the way I kind of look at it is gateways is almost like sending data to the cloud and integration runtime is kind of.
+Bryan Camaglia 21 minutes 44 seconds
+Data factory ish kinda stuff.
+Bryan Camaglia 21 minutes 46 seconds
+So the gateways are kinda this. You can read all about it and I'm probably not doing 100% justice, but this is gateway which is different than runtime.
+Bryan Camaglia 21 minutes 54 seconds
+So we have two gateways, right?
+Bryan Camaglia 21 minutes 55 seconds
+I started to do the one on DC1.
+ZH
+Zeeshan Hashmi
+21 minutes 59 seconds21:59
+Zeeshan Hashmi 21 minutes 59 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+21 minutes 59 seconds21:59
+Bryan Camaglia 21 minutes 59 seconds
+Which will go away and then ultimately I think we're gonna set up a gateway and are you will on AZ01 and then you'll have to switch all of these reports to go through that gateway.
+Bryan Camaglia 22 minutes 9 seconds
+But we we use.
+Bryan Camaglia 22 minutes 13 seconds
+The main data cluster gateway.
+Bryan Camaglia 22 minutes 17 seconds
+Right now, and this, this one's running on the F AP 02.
+Bryan Camaglia 22 minutes 23 seconds
+So that's why we gotta get off of this before we can shut down AP02 data, one data in two in there, and then what you do is you kind of pick your database and hear what you have now you won't be able to do this.
+
+
+Bryan Camaglia
+22 minutes 39 seconds22:39
+Bryan Camaglia 22 minutes 39 seconds
+What you would need to do first is see I'm the.
+Bryan Camaglia 22 minutes 43 seconds
+I'm the model owner right now. If you're an admin person, you could come and say hey, I want it and there'll be a button to click and you would click it and then you would be able to do this stuff too.
+Bryan Camaglia 22 minutes 54 seconds
+So you need to be there, but the other part then is this refresh. This is the schedule so I have it refreshing twice a day just in case it fails for some reason at the first one, then it comes back and does the second one.
+ZH
+Zeeshan Hashmi
+22 minutes 54 seconds22:54
+Zeeshan Hashmi 22 minutes 54 seconds
+Mm hmm.
+Zeeshan Hashmi 23 minutes
+Mm hmm.
+Zeeshan Hashmi 23 minutes 10 seconds
+Thank you.
+BC
+Bryan Camaglia
+23 minutes 11 seconds23:11
+Bryan Camaglia 23 minutes 11 seconds
+And and this is to guard against transient errors which basically says network or something whatever would have you.
+Bryan Camaglia 23 minutes 18 seconds
+So I I have that so you know if you want depending on how far.
+Bryan Camaglia 23 minutes 24 seconds
+You you wanna go on this?
+Bryan Camaglia 23 minutes 27 seconds
+Where is it?
+Bryan Camaglia 23 minutes 30 seconds
+Right send refresh failure notifications. Right now we just have it going to the model owner, which is me, but we could always add more contacts in here so you can go in here and add you or you can take over as owner.
+ZH
+Zeeshan Hashmi
+23 minutes 36 seconds23:36
+Zeeshan Hashmi 23 minutes 36 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+23 minutes 45 seconds23:45
+Bryan Camaglia 23 minutes 45 seconds
+That's fine by me.
+Bryan Camaglia 23 minutes 46 seconds
+I'm not.
+Bryan Camaglia 23 minutes 46 seconds
+You know then this way they all kind of come to you or the system it.
+Bryan Camaglia 23 minutes 52 seconds
+In there so.
+Bryan Camaglia 23 minutes 53 seconds
+So those are the main points about setting up reports, right?
+Bryan Camaglia 23 minutes 57 seconds
+Like so, obviously when you deploy an existing report, this is all set up and it just goes and maintains. If you send a new report, you gotta come in here and set all this up for that new report.
+ZH
+Zeeshan Hashmi
+24 minutes 10 seconds24:10
+Zeeshan Hashmi 24 minutes 10 seconds
+Alright, I will see.
+BC
+Bryan Camaglia
+24 minutes 12 seconds24:12
+Bryan Camaglia 24 minutes 12 seconds
+So. So that's the process, Yep.
+ZH
+Zeeshan Hashmi
+24 minutes 14 seconds24:14
+Zeeshan Hashmi 24 minutes 14 seconds
+I will see.
+Zeeshan Hashmi 24 minutes 14 seconds
+I will see if if we could deploy A1 test report and if you can.
+Zeeshan Hashmi 24 minutes 21 seconds
+Give us a walk through to Josh and myself.
+Zeeshan Hashmi 24 minutes 24 seconds
+So that would be again a great help.
+Zeeshan Hashmi 24 minutes 28 seconds
+Because at times while doing the deployment, you might get some errors or different things so.
+Zeeshan Hashmi 24 minutes 35 seconds
+I think that would also help us.
+Zeeshan Hashmi 24 minutes 37 seconds
+What do you think, Josh?
+
+Yeah, I agree.
+Josh Courson 24 minutes 43 seconds
+And I did want to clarify what you were showing with those reports that would just be like if somebody requests a a change to it or if you know, like what happened the other day that turned out to not actually be an issue, but they're like, hey there.
+Josh Courson 25 minutes
+Some sort of issue?
+Josh Courson 25 minutes 3 seconds
+And them just refreshing on their side doesn't fix it.
+Josh Courson 25 minutes 6 seconds
+Then that's when we need to go through, check into it and potentially republish.
+Josh Courson 25 minutes 11 seconds
+Right. It's just like if somebody escalates an issue.
+BC
+Bryan Camaglia
+25 minutes 15 seconds25:15
+Bryan Camaglia 25 minutes 15 seconds
+Yeah, I.
+Bryan Camaglia 25 minutes 17 seconds
+Rarely. Well, I shouldn't say rarely.
+Bryan Camaglia 25 minutes 20 seconds
+Yeah. I mean, if someone has an issue republishing it is is probably not.
+Bryan Camaglia 25 minutes 27 seconds
+The.
+Bryan Camaglia 25 minutes 29 seconds
+Gonna gonna solve it, right?
+Bryan Camaglia 25 minutes 30 seconds
+Like if it's a data issue that's different. So I would say, you know, going back to these reports.
+Bryan Camaglia 25 minutes 41 seconds
+We let's just say the three of us, right, I I view.
+Bryan Camaglia 25 minutes 48 seconds
+Us, the owners of you know, all these reports, right?
+Bryan Camaglia 25 minutes 55 seconds
+So let's say someone's working with.
+Bryan Camaglia 25 minutes 59 seconds
+The the bonus promotion data, right?
+Bryan Camaglia 26 minutes 1 second
+Like that.
+Bryan Camaglia 26 minutes 1 second
+That's one of them. That kind of gets.
+Bryan Camaglia 26 minutes 5 seconds
+Refreshed after each financial period. Like let's say, they're like, oh, hey, the calculation is wrong and they open a ticket.
+Bryan Camaglia 26 minutes 12 seconds
+They do that right.
+Bryan Camaglia 26 minutes 14 seconds
+That's our responsibility.
+Bryan Camaglia 26 minutes 15 seconds
+Go in here. Come in and fix it.
+Bryan Camaglia 26 minutes 17 seconds
+Let's assume it's a report issue. Then we'll save it, deploy it, and that's all within ours.
+JC
+Josh Courson
+26 minutes 18 seconds26:18
+Josh Courson 26 minutes 18 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+26 minutes 23 seconds26:23
+Bryan Camaglia 26 minutes 23 seconds
+The only other person that's gonna ask for a report change is gonna be Steven and Steven's gonna do it for these reports. And when he's done, he's just gonna tell us to publish.
+JC
+Josh Courson
+26 minutes 23 seconds26:23
+Josh Courson 26 minutes 23 seconds
+OK.
+BC
+Bryan Camaglia
+26 minutes 32 seconds26:32
+Bryan Camaglia 26 minutes 32 seconds
+So so really, we're not gonna have, like, a random person going.
+JC
+Josh Courson
+26 minutes 33 seconds26:33
+Josh Courson 26 minutes 33 seconds
+OK.
+BC
+Bryan Camaglia
+26 minutes 37 seconds26:37
+Bryan Camaglia 26 minutes 37 seconds
+Hey, you know what? On the facilities report, you know, I need you to publish it. Like 'cause. No one should be in here doing that.
+Bryan Camaglia 26 minutes 44 seconds
+Kind of stuff.
+Bryan Camaglia 26 minutes 45 seconds
+They're gonna maybe report.
+Bryan Camaglia 26 minutes 47 seconds
+Hey, when I was looking at the facility fees, I saw a value for $1000.
+Bryan Camaglia 26 minutes 53 seconds
+That's crazy.
+Bryan Camaglia 26 minutes 54 seconds
+Can you go research it? And then that'll most likely probably be a data issue. And then what would happen is you fix the data issue all the way through, and then what you would do is come back into here and and click a manual refresh to to kind.
+Bryan Camaglia 27 minutes 11 seconds
+Of well, first you'd probably refresh it on the development box.
+Bryan Camaglia 27 minutes 15 seconds
+And then if it's good there, then you can refresh it and deploy it and then the the it'll come out live on the cloud model.
+
+
+Zeeshan Hashmi
+27 minutes 25 seconds27:25
+Zeeshan Hashmi 27 minutes 25 seconds
+Here I would request you only not, not today.
+Zeeshan Hashmi 27 minutes 29 seconds
+Maybe next week, but we should have a one session. If somebody has changed the report, then we should be able to publish it and and if there is a new report like I know.
+Zeeshan Hashmi 27 minutes 42 seconds
+Steve would be creating.
+Zeeshan Hashmi 27 minutes 45 seconds
+The new report.
+Zeeshan Hashmi 27 minutes 46 seconds
+Or maybe he would be asking to do the publish things frequently, right?
+Zeeshan Hashmi 27 minutes 53 seconds
+So if we would have.
+Zeeshan Hashmi 27 minutes 55 seconds
+We we can.
+Zeeshan Hashmi 27 minutes 56 seconds
+We can have a walkthrough on these two items, so I think.
+Zeeshan Hashmi 28 minutes 1 second
+That would be great helpful for us.
+BC
+Bryan Camaglia
+28 minutes 6 seconds28:06
+Bryan Camaglia 28 minutes 6 seconds
+Yeah, happy to help.
+Bryan Camaglia 28 minutes 7 seconds
+I'm I'm sorry, Suzanne.
+Bryan Camaglia 28 minutes 8 seconds
+I'm just probably missing.
+Bryan Camaglia 28 minutes 9 seconds
+Do you need me to do something right now or just kinda? OK, all right.
+ZH
+Zeeshan Hashmi
+28 minutes 12 seconds28:12
+Zeeshan Hashmi 28 minutes 12 seconds
+Not now.
+Zeeshan Hashmi 28 minutes 12 seconds
+Not next week? Maybe, probably.
+Zeeshan Hashmi 28 minutes 14 seconds
+Yeah, because otherwise we won't won't be able to focus on this.
+Zeeshan Hashmi 28 minutes 19 seconds
+Your thing stuff right now.
+BC
+Bryan Camaglia
+28 minutes 19 seconds28:19
+Bryan Camaglia 28 minutes 19 seconds
+Yeah. No. OK.
+Bryan Camaglia 28 minutes 22 seconds
+Yeah. No, no.
+Bryan Camaglia 28 minutes 23 seconds
+No problem there.
+Bryan Camaglia 28 minutes 25 seconds
+So. So yeah, so.
+Bryan Camaglia 28 minutes 29 seconds
+So that's kind of the process when Steven says, hey, I, I need you to publish this report.
+Bryan Camaglia 28 minutes 36 seconds
+So.
+Bryan Camaglia 28 minutes 39 seconds
+So looking at this, the second thing is, is we had, right? So the ticket.
+Bryan Camaglia 28 minutes 46 seconds
+They said that they have access but.
+Bryan Camaglia 28 minutes 51 seconds
+She's saying that both Candace and Sonia.
+Bryan Camaglia 28 minutes 54 seconds
+Can log in, but neither of them access to see any shops and cannot see any data in shared drive.
+Bryan Camaglia 28 minutes 59 seconds
+So what we're gonna do is we're gonna go into the franchise.
+ZH
+Zeeshan Hashmi
+29 minutes 2 seconds29:02
+Zeeshan Hashmi 29 minutes 2 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+29 minutes 6 seconds29:06
+Bryan Camaglia 29 minutes 6 seconds
+OK, because that's the only thing that they should have access to.
+Bryan Camaglia 29 minutes 9 seconds
+And this franchise payroll reports always a good one.
+Bryan Camaglia 29 minutes 12 seconds
+Or this operational?
+Bryan Camaglia 29 minutes 13 seconds
+So we're gonna go into it. And so first, let's go make sure both of them have access in here. And so Candace.
+ZH
+Zeeshan Hashmi
+29 minutes 21 seconds29:21
+Zeeshan Hashmi 29 minutes 21 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+29 minutes 23 seconds29:23
+Bryan Camaglia 29 minutes 23 seconds
+Has it as well as.
+ZH
+Zeeshan Hashmi
+29 minutes 26 seconds29:26
+Zeeshan Hashmi 29 minutes 26 seconds
+Romeo.
+BC
+Bryan Camaglia
+29 minutes 27 seconds29:27
+Bryan Camaglia 29 minutes 27 seconds
+Sonia, thank you.
+Bryan Camaglia 29 minutes 31 seconds
+Right there.
+Bryan Camaglia 29 minutes 31 seconds
+So they both have access.
+Bryan Camaglia 29 minutes 33 seconds
+So then what we're gonna do is there's a handy, the dandy little thing here. If you go up to here, right?
+
+
+Bryan Camaglia
+29 minutes 41 seconds29:41
+Bryan Camaglia 29 minutes 41 seconds
+And you get. The more you can test as a person.
+ZH
+Zeeshan Hashmi
+29 minutes 45 seconds29:45
+Zeeshan Hashmi 29 minutes 45 seconds
+Thank you.
+BC
+Bryan Camaglia
+29 minutes 48 seconds29:48
+Bryan Camaglia 29 minutes 48 seconds
+We're gonna see what they see.
+Bryan Camaglia 29 minutes 50 seconds
+So obviously being admin I see everything.
+Bryan Camaglia 29 minutes 55 seconds
+So right up in here, we're gonna select the person.
+Bryan Camaglia 29 minutes 59 seconds
+And we're gonna do what was Jen's first name?
+Bryan Camaglia 30 minutes 3 seconds
+Candace gin. We're gonna do Candice.
+Bryan Camaglia 30 minutes 7 seconds
+Jen.
+Bryan Camaglia 30 minutes 9 seconds
+And we're going to alley that, and let's see what she sees.
+Bryan Camaglia 30 minutes 21 seconds
+So shear drive.
+ZH
+Zeeshan Hashmi
+30 minutes 23 seconds30:23
+Zeeshan Hashmi 30 minutes 23 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+30 minutes 24 seconds30:24
+Bryan Camaglia 30 minutes 24 seconds
+That's all she can see.
+Bryan Camaglia 30 minutes 26 seconds
+So I I in here is and.
+Bryan Camaglia 30 minutes 31 seconds
+These are their locations.
+ZH
+Zeeshan Hashmi
+30 minutes 34 seconds30:34
+Zeeshan Hashmi 30 minutes 34 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+30 minutes 35 seconds30:35
+Bryan Camaglia 30 minutes 35 seconds
+So right, they cannot see.
+Bryan Camaglia 30 minutes 38 seconds
+Anything else? Now, if I come back?
+Bryan Camaglia 30 minutes 43 seconds
+Actually, what I'm gonna do is I'm gonna erase this.
+ZH
+Zeeshan Hashmi
+30 minutes 46 seconds30:46
+Zeeshan Hashmi 30 minutes 46 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+30 minutes 47 seconds30:47
+Bryan Camaglia 30 minutes 47 seconds
+Say all.
+Bryan Camaglia 30 minutes 50 seconds
+And look, she and still is restricted to that.
+Bryan Camaglia 30 minutes 52 seconds
+Now if I come back.
+Bryan Camaglia 30 minutes 55 seconds
+And.
+Bryan Camaglia 30 minutes 57 seconds
+Come back to if I click this box, it basically says whoever Active Directory is, apply that security right and I'm so I can see everything right so.
+ZH
+Zeeshan Hashmi
+31 minutes 7 seconds31:07
+Zeeshan Hashmi 31 minutes 7 seconds
+Right.
+BC
+Bryan Camaglia
+31 minutes 9 seconds31:09
+Bryan Camaglia 31 minutes 9 seconds
+I would say we have a little bit of potentially user error, but we'll we'll do it, Sonia.
+ZH
+Zeeshan Hashmi
+31 minutes 15 seconds31:15
+Zeeshan Hashmi 31 minutes 15 seconds
+Hmm.
+BC
+Bryan Camaglia
+31 minutes 16 seconds31:16
+Bryan Camaglia 31 minutes 16 seconds
+I forget what her last name was long.
+ZH
+Zeeshan Hashmi
+31 minutes 18 seconds31:18
+Zeeshan Hashmi 31 minutes 18 seconds
+Long.
+JC
+Josh Courson
+31 minutes 18 seconds31:18
+Josh Courson 31 minutes 18 seconds
+Long.
+BC
+Bryan Camaglia
+31 minutes 20 seconds31:20
+Bryan Camaglia 31 minutes 20 seconds
+So I'm gonna apply her.
+Bryan Camaglia 31 minutes 23 seconds
+OK.
+Bryan Camaglia 31 minutes 24 seconds
+She cannot see anything so.
+Bryan Camaglia 31 minutes 27 seconds
+I believe her now.
+Bryan Camaglia 31 minutes 29 seconds
+So that's kinda interesting.
+Bryan Camaglia 31 minutes 30 seconds
+So so we have kind of both going on.
+Bryan Camaglia 31 minutes 33 seconds
+So now I'm gonna go into AZ01, right?
+Bryan Camaglia 31 minutes 37 seconds
+And I'm gonna pull up.
+Bryan Camaglia 31 minutes 41 seconds
+The security. And So what I'm gonna do is I wanna find her name.
+Bryan Camaglia 31 minutes 47 seconds
+I gotta be in the silver.
+Bryan Camaglia 31 minutes 54 seconds
+Should I? Should probably.
+Bryan Camaglia 32 minutes 3 seconds
+By name.
+Bryan Camaglia 32 minutes 13 seconds
+Sonia Long is number.
+Bryan Camaglia 32 minutes 16 seconds
+50 so she's in here once. One e-mail.
+Bryan Camaglia 32 minutes 21 seconds
+So she should be.
+Bryan Camaglia 32 minutes 24 seconds
+Let's see.
+Bryan Camaglia 32 minutes 25 seconds
+Is she in here?
+Bryan Camaglia 32 minutes 26 seconds
+50 No, she should not be in these which is good.
+Bryan Camaglia 32 minutes 30 seconds
+So then I'm just checking everywhere.
+Bryan Camaglia 32 minutes 32 seconds
+She's not.
+Bryan Camaglia 32 minutes 33 seconds
+She's shear drive.
+Bryan Camaglia 32 minutes 35 seconds
+She is not in here, so let's add her.
+Bryan Camaglia 32 minutes 41 seconds
+50.
+Bryan Camaglia 32 minutes 45 seconds
+Make sure she didn't get put somewhere else, right?
+Bryan Camaglia 32 minutes 47 seconds
+I doubt it.
+Bryan Camaglia 32 minutes 48 seconds
+Or else we would have seen it on the front end.
+Bryan Camaglia 32 minutes 51 seconds
+K.
+Bryan Camaglia 32 minutes 54 seconds
+Not there.
+Bryan Camaglia 32 minutes 54 seconds
+Not there, not there.
+Bryan Camaglia 33 minutes 1 second
+OK.
+Bryan Camaglia 33 minutes 2 seconds
+So she was not in there interestingly enough.
+Bryan Camaglia 33 minutes 6 seconds
+So then what we got to do is just rebuild that table.
+Bryan Camaglia 33 minutes 12 seconds
+Put this back.
+Bryan Camaglia 33 minutes 16 seconds
+So we'll truncate it, make sure it's empty, it is.
+Bryan Camaglia 33 minutes 27 seconds
+To this final check.
+Bryan Camaglia 33 minutes 30 seconds
+K.
+Bryan Camaglia 33 minutes 31 seconds
+So starting tomorrow, she should have access if they're, like, urgent we need. We need her to have access today because if we go into here now, let me just.
+Bryan Camaglia 33 minutes 46 seconds
+And will come back to her.
+Bryan Camaglia 33 minutes 50 seconds
+Right. So I just wanna show you. Let's see, Sonia.
+Bryan Camaglia 33 minutes 55 seconds
+Long.
+Bryan Camaglia 34 minutes 1 second
+'Cause the reason is that table is not a direct table, so it's not a live table.
+Bryan Camaglia 34 minutes 6 seconds
+It needs to be part of the refresh so, but if you want right when we come back to the report, if you just want to refresh every one of these, you can and then she can have instant like an emergency. Like, hey, I need this today do the.
+
+
+Bryan Camaglia
+34 minutes 25 seconds34:25
+Bryan Camaglia 34 minutes 25 seconds
+Data side database side. Then you can do this side.
+Bryan Camaglia 34 minutes 28 seconds
+So if you want So what I'm guessing.
+Bryan Camaglia 34 minutes 31 seconds
+The issue with Candace Chin is that she had this open.
+Bryan Camaglia 34 minutes 37 seconds
+We gave her access and maybe I always remind people I'm like, OK, if you don't see it at first, hit your refresh button.
+Bryan Camaglia 34 minutes 45 seconds
+You know, clear the cache and make sure that the stored report is actually taking the current one versus the old one, right?
+ZH
+Zeeshan Hashmi
+34 minutes 46 seconds34:46
+Zeeshan Hashmi 34 minutes 46 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+34 minutes 52 seconds34:52
+Bryan Camaglia 34 minutes 52 seconds
+And then I'm like after you refresh your browser, if you still have problems.
+ZH
+Zeeshan Hashmi
+34 minutes 52 seconds34:52
+Zeeshan Hashmi 34 minutes 52 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+34 minutes 56 seconds34:56
+Bryan Camaglia 34 minutes 56 seconds
+Then send me a screenshot showing me what's going on.
+Bryan Camaglia 35 minutes 1 second
+So.
+Bryan Camaglia 35 minutes 4 seconds
+I'm going to if would you like me to reply that ticket or Zeeshan would you like to reply?
+Bryan Camaglia 35 minutes 7 seconds
+I would reply back and say, hey, yes, Sonia did not have access.
+Bryan Camaglia 35 minutes 13 seconds
+She does.
+Bryan Camaglia 35 minutes 13 seconds
+Now it'll refresh.
+Bryan Camaglia 35 minutes 15 seconds
+Tonight she should be good to go tomorrow. Let us know if not. And then for Candace.
+Bryan Camaglia 35 minutes 19 seconds
+Go. Candace has access. We saw it as we, you know, imitated her role. Have make sure she refreshes her browser. If she still has issues, send screenshot.
+Bryan Camaglia 35 minutes 30 seconds
+I can send that or would you like to send that?
+ZH
+Zeeshan Hashmi
+35 minutes 33 seconds35:33
+Zeeshan Hashmi 35 minutes 33 seconds
+And it either.
+BC
+Bryan Camaglia
+35 minutes 34 seconds35:34
+Bryan Camaglia 35 minutes 34 seconds
+OK. When?
+ZH
+Zeeshan Hashmi
+35 minutes 35 seconds35:35
+Zeeshan Hashmi 35 minutes 35 seconds
+Either way, I'm comfortable with on both, but if you I can send also as well.
+BC
+Bryan Camaglia
+35 minutes 41 seconds35:41
+Bryan Camaglia 35 minutes 41 seconds
+OK.
+Bryan Camaglia 35 minutes 41 seconds
+So whenever I mean so that that is what I would.
+Bryan Camaglia 35 minutes 44 seconds
+That's what how I handle that particular ticket.
+ZH
+Zeeshan Hashmi
+35 minutes 49 seconds35:49
+Zeeshan Hashmi 35 minutes 49 seconds
+But I'll I'll I'll make sure that you should be copied in that right communication so.
+BC
+Bryan Camaglia
+35 minutes 56 seconds35:56
+Bryan Camaglia 35 minutes 56 seconds
+Yeah. Did you are, are you on this?
+ZH
+Zeeshan Hashmi
+35 minutes 56 seconds35:56
+Zeeshan Hashmi 35 minutes 56 seconds
+Maybe.
+BC
+Bryan Camaglia
+35 minutes 59 seconds35:59
+Bryan Camaglia 35 minutes 59 seconds
+Actually, I thought it was you, not John.
+ZH
+Zeeshan Hashmi
+35 minutes 59 seconds35:59
+Zeeshan Hashmi 35 minutes 59 seconds
+Uh.
+Zeeshan Hashmi 36 minutes 3 seconds
+Actually, I replied him yesterday.
+Zeeshan Hashmi 36 minutes 5 seconds
+Or the e-mail and he replied on the order ticket.
+Zeeshan Hashmi 36 minutes 7 seconds
+So I'll I'm gonna reply him on the on the order the ticket only.
+BC
+Bryan Camaglia
+36 minutes 8 seconds36:08
+Bryan Camaglia 36 minutes 8 seconds
+Got it.
+Bryan Camaglia 36 minutes 12 seconds
+OK, OK.
+Bryan Camaglia 36 minutes 14 seconds
+All right, so I will if you need anything else, let me know on that. So.
+ZH
+Zeeshan Hashmi
+36 minutes 18 seconds36:18
+Zeeshan Hashmi 36 minutes 18 seconds
+Sure.
+
+
+Bryan Camaglia
+36 minutes 19 seconds36:19
+Bryan Camaglia 36 minutes 19 seconds
+OK.
+Bryan Camaglia 36 minutes 20 seconds
+That was the power BI side.
+Bryan Camaglia 36 minutes 25 seconds
+I.
+Bryan Camaglia 36 minutes 26 seconds
+You know, we can always ask more questions on that. I I have to say I, Josh I thanks for sending out. I have to admit though, I didn't look at it.
+Bryan Camaglia 36 minutes 32 seconds
+We can look at some of that now if we want to.
+Bryan Camaglia 36 minutes 36 seconds
+Or if there's other topic we wanna pivot to, I I think we'll save the punches for Monday.
+Bryan Camaglia 36 minutes 46 seconds
+The whole time card punches.
+Bryan Camaglia 36 minutes 48 seconds
+Because it's just it's it's a bigger topic.
+Bryan Camaglia 36 minutes 51 seconds
+And so I just don't wanna run out of time and it'll be easier on Monday.
+Bryan Camaglia 36 minutes 55 seconds
+But we could.
+Bryan Camaglia 36 minutes 56 seconds
+We could do other things, and if not I have another topic. We can always go but.
+Bryan Camaglia 37 minutes
+They sign out, defer to you what you would like to do next.
+ZH
+Zeeshan Hashmi
+37 minutes 3 seconds37:03
+Zeeshan Hashmi 37 minutes 3 seconds
+OK.
+Zeeshan Hashmi 37 minutes 4 seconds
+There's a, you know, deep power BI refreshing and spending. Can you?
+Zeeshan Hashmi 37 minutes 10 seconds
+Can you show me the how we can do it as power BI refresh for the SFT reports?
+BC
+Bryan Camaglia
+37 minutes 19 seconds37:19
+Bryan Camaglia 37 minutes 19 seconds
+What's? I'm sorry I missed the first part.
+Bryan Camaglia 37 minutes 22 seconds
+What? What's the trigger?
+Bryan Camaglia 37 minutes 23 seconds
+What were you asking?
+ZH
+Zeeshan Hashmi
+37 minutes 23 seconds37:23
+Zeeshan Hashmi 37 minutes 23 seconds
+Well, you know Steve is asking to for SSD power BI refreshing we did.
+Zeeshan Hashmi 37 minutes 31 seconds
+We did discuss.
+Zeeshan Hashmi 37 minutes 34 seconds
+Yesterday but we thought, OK, we should discuss it tomorrow.
+Zeeshan Hashmi 37 minutes 38 seconds
+So he's asking, yeah.
+BC
+Bryan Camaglia
+37 minutes 38 seconds37:38
+Bryan Camaglia 37 minutes 38 seconds
+Oh, that's what I showed you. That's what I started with.
+Bryan Camaglia 37 minutes 41 seconds
+That's what I started with.
+ZH
+Zeeshan Hashmi
+37 minutes 41 seconds37:41
+Zeeshan Hashmi 37 minutes 41 seconds
+Uh, huh. OK.
+BC
+Bryan Camaglia
+37 minutes 42 seconds37:42
+Bryan Camaglia 37 minutes 42 seconds
+So when Steven says, hey, I have.
+Bryan Camaglia 37 minutes 47 seconds
+A report, the SST needs to be deployed, right? So what?
+Bryan Camaglia 37 minutes 51 seconds
+What you'll do again in here, right?
+Bryan Camaglia 37 minutes 55 seconds
+You'll come into the management one you'll he'll have. He'll have just. He'll name the report and say, deploy SST. This is where you'll just take it.
+Bryan Camaglia 38 minutes 6 seconds
+You know, after you rename it here.
+Bryan Camaglia 38 minutes 8 seconds
+Move it out of the directory.
+Bryan Camaglia 38 minutes 9 seconds
+Bring it in here.
+Bryan Camaglia 38 minutes 10 seconds
+Bring it up.
+Bryan Camaglia 38 minutes 10 seconds
+Sanity check it, refresh it and publish it when he sends you that request.
+Bryan Camaglia 38 minutes 15 seconds
+This is exactly what he's asking for.
+Bryan Camaglia 38 minutes 18 seconds
+So when he says refresh he, he may interchangeably say hey can you refresh or can you you know deploy?
+Bryan Camaglia 38 minutes 26 seconds
+He's usually pretty good about it, he'll say. Deploy it.
+Bryan Camaglia 38 minutes 29 seconds
+So what happened with that ticket was?
+Bryan Camaglia 38 minutes 32 seconds
+He Karen came back and said, hey, I need a change, Steven said. Great.
+Bryan Camaglia 38 minutes 37 seconds
+I made a change.
+Bryan Camaglia 38 minutes 38 seconds
+Brian, can you deploy the report?
+Bryan Camaglia 38 minutes 40 seconds
+So then I would see it in here.
+Bryan Camaglia 38 minutes 41 seconds
+I moved it over here.
+Bryan Camaglia 38 minutes 42 seconds
+I deployed it.
+Bryan Camaglia 38 minutes 43 seconds
+Karen came back and said, hey, that doesn't look right. Steven looked.
+Bryan Camaglia 38 minutes 48 seconds
+He goes. Oops. Yep. I used the wrong table.
+Bryan Camaglia 38 minutes 50 seconds
+He changed the report yet again.
+Bryan Camaglia 38 minutes 52 seconds
+Brian, can you deploy it again?
+Bryan Camaglia 38 minutes 53 seconds
+So I came in here and moved it again there. Then Karen said, hey, wait a second.
+Bryan Camaglia 38 minutes 59 seconds
+I thought this was retro to the first of the year, Steven said. OK.
+Bryan Camaglia 39 minutes 3 seconds
+I need to make a data change and then he said can you?
+Bryan Camaglia 39 minutes 7 seconds
+Either refresh or publish it again, and that one he sent to use is on.
+Bryan Camaglia 39 minutes 10 seconds
+So you got like the third communication on it and then I jumped in, I said Steven, that third one is a data issue.
+
+That's just a refresh of the report that will happen tonight.
+Bryan Camaglia 39 minutes 21 seconds
+You do not need to deploy a new model, so that's what happened with that particular scenario.
+ZH
+Zeeshan Hashmi
+39 minutes 28 seconds39:28
+Zeeshan Hashmi 39 minutes 28 seconds
+OK.
+Zeeshan Hashmi 39 minutes 28 seconds
+So tonight it will be automatically resolved, right?
+BC
+Bryan Camaglia
+39 minutes 30 seconds39:30
+Bryan Camaglia 39 minutes 30 seconds
+Oh, it it's been going.
+Bryan Camaglia 39 minutes 32 seconds
+I I did that like two or three days ago.
+Bryan Camaglia 39 minutes 34 seconds
+So you can you can ignore it.
+ZH
+Zeeshan Hashmi
+39 minutes 38 seconds39:38
+Zeeshan Hashmi 39 minutes 38 seconds
+I'll back to that's that's right, because yesterday he was asking the same thing. That's why I told him yes.
+BC
+Bryan Camaglia
+39 minutes 39 seconds39:39
+Bryan Camaglia 39 minutes 39 seconds
+Yeah.
+Bryan Camaglia 39 minutes 43 seconds
+He was.
+Bryan Camaglia 39 minutes 45 seconds
+Can can you let let me.
+Bryan Camaglia 39 minutes 48 seconds
+Can you forward the e-mail and I'll bring it up real quickly.
+ZH
+Zeeshan Hashmi
+39 minutes 50 seconds39:50
+Zeeshan Hashmi 39 minutes 50 seconds
+Yes, I can.
+BC
+Bryan Camaglia
+39 minutes 51 seconds39:51
+Bryan Camaglia 39 minutes 51 seconds
+I I just want to make sure.
+ZH
+Zeeshan Hashmi
+39 minutes 51 seconds39:51
+Zeeshan Hashmi 39 minutes 51 seconds
+I can come forward today.
+BC
+Bryan Camaglia
+39 minutes 53 seconds39:53
+Bryan Camaglia 39 minutes 53 seconds
+Sorry, I don't.
+Bryan Camaglia 39 minutes 53 seconds
+I want to make yeah, make sure we have a good transition.
+Bryan Camaglia 39 minutes 56 seconds
+So yeah, go ahead. Send that to me.
+Bryan Camaglia 40 minutes
+Let me take a look at that.
+ZH
+Zeeshan Hashmi
+40 minutes 2 seconds40:02
+Zeeshan Hashmi 40 minutes 2 seconds
+I thank you and just give me two minutes.
+Zeeshan Hashmi 40 minutes 4 seconds
+I'll be back.
+Zeeshan Hashmi 40 minutes 5 seconds
+Meanwhile, you can have a look on that e-mail.
+Zeeshan Hashmi 40 minutes 7 seconds
+I'm give me two minutes, OK?
+BC
+Bryan Camaglia
+40 minutes 8 seconds40:08
+Bryan Camaglia 40 minutes 8 seconds
+Yeah, that's fine.
+ZH
+Zeeshan Hashmi
+40 minutes 9 seconds40:09
+Zeeshan Hashmi 40 minutes 9 seconds
+Thank you.
+Zeeshan Hashmi 42 minutes 6 seconds
+Yeah, I'm back. Sorry.
+BC
+Bryan Camaglia
+42 minutes 8 seconds42:08
+Bryan Camaglia 42 minutes 8 seconds
+OK.
+Bryan Camaglia 42 minutes 9 seconds
+I I have to say I'm I'm a little.
+Bryan Camaglia 42 minutes 11 seconds
+I would if Steven sent that to me, I would probably seek clarification from him. Even me, I I would.
+ZH
+Zeeshan Hashmi
+42 minutes 18 seconds42:18
+Zeeshan Hashmi 42 minutes 18 seconds
+In fact.
+BC
+Bryan Camaglia
+42 minutes 18 seconds42:18
+Bryan Camaglia 42 minutes 18 seconds
+So here's here's what I think is happening. I think he's bumping against the limit here and.
+ZH
+Zeeshan Hashmi
+42 minutes 22 seconds42:22
+Zeeshan Hashmi 42 minutes 22 seconds
+Hmm.
+Zeeshan Hashmi 42 minutes 25 seconds
+OK, because he told me that. OK, it's better to discuss with Bryan and then come back to me. OK? I told him. OK, no problem.
+Zeeshan Hashmi 42 minutes 32 seconds
+Give me some time. I'll discuss it with Brian and then.
+BC
+Bryan Camaglia
+42 minutes 34 seconds42:34
+Bryan Camaglia 42 minutes 34 seconds
+See.
+Bryan Camaglia 42 minutes 36 seconds
+Yeah. So so to me this is a little vague, right?
+
+
+Bryan Camaglia
+42 minutes 42 seconds42:42
+Bryan Camaglia 42 minutes 42 seconds
+Can't. So. So there's a couple things like I showed Steven. Like I think he wants to.
+Bryan Camaglia 42 minutes 49 seconds
+He wants to deploy some reports. I think he's doing some stuff with Karen. And So what?
+ZH
+Zeeshan Hashmi
+42 minutes 54 seconds42:54
+Zeeshan Hashmi 42 minutes 54 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+42 minutes 55 seconds42:55
+Bryan Camaglia 42 minutes 55 seconds
+I usually try to do is.
+Bryan Camaglia 42 minutes 57 seconds
+And and Steven moves fast and kind of does his things. But I always try to be the the Yang to the Yang, right?
+Bryan Camaglia 43 minutes 4 seconds
+And, like, bring a little like well.
+Bryan Camaglia 43 minutes 5 seconds
+I'd still like to be part of the at least deployment process.
+Bryan Camaglia 43 minutes 8 seconds
+Just, I said.
+Bryan Camaglia 43 minutes 9 seconds
+You know, for my awareness and support and he understands that. So sometimes he may move a little quickly, but this is kind of just can you refresh the daily SST report as I'm still not able to do this so so.
+Bryan Camaglia 43 minutes 24 seconds
+What Steven?
+Bryan Camaglia 43 minutes 24 seconds
+I think.
+Bryan Camaglia 43 minutes 27 seconds
+Wants to become like admin on a couple of them, but I I'm really sure why and I'm not really sure where he's having trouble refreshing this.
+Bryan Camaglia 43 minutes 35 seconds
+Because this is kind of an odd request.
+Bryan Camaglia 43 minutes 38 seconds
+And he still.
+Bryan Camaglia 43 minutes 39 seconds
+And then you were like, hey, do you still have the issue?
+Bryan Camaglia 43 minutes 41 seconds
+And he's like, yes, I do.
+Bryan Camaglia 43 minutes 43 seconds
+O the refresh is kind of odd, but as you can see it's been refreshing without any issue.
+Bryan Camaglia 43 minutes 50 seconds
+So that's why I'm confused. Like well, where are you trying to refresh this, Steven. Right, like we're we've been refreshing daily without issues twice a day, right?
+Bryan Camaglia 44 minutes
+So I'm I'm kind of a little puzzled by that.
+Bryan Camaglia 44 minutes 3 seconds
+So then what I'm gonna do is.
+Bryan Camaglia 44 minutes 7 seconds
+I this is the report here.
+ZH
+Zeeshan Hashmi
+44 minutes 10 seconds44:10
+Zeeshan Hashmi 44 minutes 10 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+44 minutes 11 seconds44:11
+Bryan Camaglia 44 minutes 11 seconds
+And so the other thing that I would say is.
+Bryan Camaglia 44 minutes 14 seconds
+If he had in his deployment, if he had just SST without dash copy or a date or anything in there, then I would say, oh, Steven, are you looking for me to deploy this copied over and deploy it? But these two do not look ready to go so.
+ZH
+Zeeshan Hashmi
+44 minutes 25 seconds44:25
+Zeeshan Hashmi 44 minutes 25 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+44 minutes 33 seconds44:33
+Bryan Camaglia 44 minutes 33 seconds
+I don't know what's going on there. And so now I'm just going to hit this is going to take a little while.
+Bryan Camaglia 44 minutes 40 seconds
+But I'm going to.
+Bryan Camaglia 44 minutes 41 seconds
+I'm going to just try to refresh it, just as if he was refreshing it.
+Bryan Camaglia 44 minutes 45 seconds
+And I want to see if it errors out.
+Bryan Camaglia 44 minutes 47 seconds
+So what I'm wondering is that is he doing development work and now he wants to refresh it and it's having an issue and so.
+Bryan Camaglia 44 minutes 58 seconds
+OK, side note so.
+Bryan Camaglia 45 minutes 2 seconds
+He built queries like native queries into this.
+
+
+Bryan Camaglia
+45 minutes 5 seconds45:05
+Bryan Camaglia 45 minutes 5 seconds
+This is and I've tried to work with him, but this is bad practice, right? You know this?
+Bryan Camaglia 45 minutes 11 seconds
+This should all be done first of all in a database level.
+Bryan Camaglia 45 minutes 14 seconds
+Let alone this should be done through the whole transformation but.
+Bryan Camaglia 45 minutes 21 seconds
+You know, as the as they say, you know, there's, you know, only so many things you can tackle at once and so.
+Bryan Camaglia 45 minutes 28 seconds
+He's he's reduced a lot of that stuff in there so.
+ZH
+Zeeshan Hashmi
+45 minutes 32 seconds45:32
+Zeeshan Hashmi 45 minutes 32 seconds
+Mm hmm.
+JC
+Josh Courson
+45 minutes 34 seconds45:34
+Josh Courson 45 minutes 34 seconds
+Is it possible that maybe his blocker where like you can say run anyways, but he might not be able to?
+BC
+Bryan Camaglia
+45 minutes 34 seconds45:34
+Bryan Camaglia 45 minutes 34 seconds
+He's not a.
+Bryan Camaglia 45 minutes 37 seconds
+No, no, he, he he would get that same pop up as well in there and and Steven's not a power BI development guy.
+JC
+Josh Courson
+45 minutes 44 seconds45:44
+Josh Courson 45 minutes 44 seconds
+OK.
+BC
+Bryan Camaglia
+45 minutes 50 seconds45:50
+Bryan Camaglia 45 minutes 50 seconds
+He he's a he's he's kind of, he's he serves as kind of a data scientist kind of guy, right?
+Bryan Camaglia 45 minutes 57 seconds
+So he's a lab guy, right?
+Bryan Camaglia 45 minutes 59 seconds
+So he's gonna go and.
+Bryan Camaglia 46 minutes 2 seconds
+Forth and conquer, right?
+Bryan Camaglia 46 minutes 3 seconds
+That's just where his mindset is.
+Bryan Camaglia 46 minutes 5 seconds
+And I think there's anything wrong with that.
+Bryan Camaglia 46 minutes 6 seconds
+It's just.
+Bryan Camaglia 46 minutes 7 seconds
+Giving you some background in it. So as you can see right when he pulls in these tables, right, he's pulling in.
+Bryan Camaglia 46 minutes 14 seconds
+Tables with millions of rows and so this gets pretty unwieldy or gets to the limit there.
+Bryan Camaglia 46 minutes 23 seconds
+But let's see.
+Bryan Camaglia 46 minutes 46 seconds
+And you can see he's got basically a ton of tables, right?
+Bryan Camaglia 46 minutes 51 seconds
+So that's why it's so big.
+Bryan Camaglia 47 minutes 7 seconds
+You know, Josh to your question, I I should say I I feel like that I I I should know better than to definitively say anything.
+Bryan Camaglia 47 minutes 14 seconds
+I mean.
+Bryan Camaglia 47 minutes 16 seconds
+You know, maybe.
+Bryan Camaglia 47 minutes 18 seconds
+I don't think so.
+Bryan Camaglia 47 minutes 19 seconds
+But you know, as as we all know, being around this stuff long enough, stranger things have happened so.
+Bryan Camaglia 47 minutes 26 seconds
+But but I I feel like he's my first inclination.
+Bryan Camaglia 47 minutes 30 seconds
+Is that he's starting to run against the size limit, although the error would come back and say too big and he should.
+Bryan Camaglia 47 minutes 37 seconds
+See that? So if this successfully refreshes.
+Bryan Camaglia 47 minutes 44 seconds
+What we'll do Zeeshan, is I'm going to reply to that e-mail. You forward to me and I'll be like Steven, I even.
+Bryan Camaglia 47 minutes 50 seconds
+I'm not sure what you're asking here, so let me help. Try to bridge the gap.
+ZH
+Zeeshan Hashmi
+47 minutes 58 seconds47:58
+Zeeshan Hashmi 47 minutes 58 seconds
+Just one request, if you could copy Josh and myself as well. So we.
+BC
+Bryan Camaglia
+48 minutes 2 seconds48:02
+Bryan Camaglia 48 minutes 2 seconds
+Oh yeah, yeah, for sure.
+Bryan Camaglia 48 minutes 3 seconds
+No, for sure. I was going to.
+Bryan Camaglia 48 minutes 5 seconds
+Yep, just so we're all on the same page. Yep.
+
+
+Josh Courson
+48 minutes 14 seconds48:14
+Josh Courson 48 minutes 14 seconds
+I was thinking while this is doing its thing, I did put together a, you know, not professional or anything but a kind of data flow of the.
+Josh Courson 48 minutes 26 seconds
+Schedule stuff.
+Josh Courson 48 minutes 28 seconds
+Could I show that and get some initial feedback?
+BC
+Bryan Camaglia
+48 minutes 30 seconds48:30
+Bryan Camaglia 48 minutes 30 seconds
+Yeah, I think that would be great.
+Bryan Camaglia 48 minutes 32 seconds
+Maybe take the, you know, last few minutes of this one.
+Bryan Camaglia 48 minutes 36 seconds
+Yeah, you could, you could.
+JC
+Josh Courson
+48 minutes 37 seconds48:37
+Josh Courson 48 minutes 37 seconds
+OK.
+BC
+Bryan Camaglia
+48 minutes 39 seconds48:39
+Bryan Camaglia 48 minutes 39 seconds
+Share and I'll let you know if this success is it or not.
+Bryan Camaglia 48 minutes 41 seconds
+I'm trying to how I stop sharing and oh, there's where I get it. OK, cool.
+JC
+Josh Courson
+48 minutes 41 seconds48:41
+Josh Courson 48 minutes 41 seconds
+OK.
+Josh Courson 48 minutes 45 seconds
+I think I just took over, so I assume you all can see.
+BC
+Bryan Camaglia
+48 minutes 49 seconds48:49
+Bryan Camaglia 48 minutes 49 seconds
+Yep, I got it.
+JC
+Josh Courson
+48 minutes 50 seconds48:50
+Josh Courson 48 minutes 50 seconds
+So yeah, I just kind of color-coded everything for what's done and you know my time in green ADP, orange and then kind of transfers between azio one and O2.
+Josh Courson 49 minutes 1 second
+So you know, I'm sure some more clarification can be added, but just kinda rough thing to you know the manager set the schedule and then they're moved to date until two where the employee data is pulled from.
+BC
+Bryan Camaglia
+49 minutes 9 seconds49:09
+Bryan Camaglia 49 minutes 9 seconds
+Yeah.
+JC
+Josh Courson
+49 minutes 15 seconds49:15
+Josh Courson 49 minutes 15 seconds
+ADP umm.
+Josh Courson 49 minutes 17 seconds
+That's then sent back to AZ 01 combined into schedule or or into a combined schedule.
+Josh Courson 49 minutes 26 seconds
+Then back over to data int O2 and upload it to ADP. The combined schedules.
+Josh Courson 49 minutes 33 seconds
+That all good so far.
+BC
+Bryan Camaglia
+49 minutes 36 seconds49:36
+Bryan Camaglia 49 minutes 36 seconds
+So let's see manager set schedule if if you want and and and this is a good I get it.
+Bryan Camaglia 49 minutes 43 seconds
+So we're just refining, right?
+Bryan Camaglia 49 minutes 44 seconds
+So in that first one, maybe if you want to manage that schedule, what was green again?
+JC
+Josh Courson
+49 minutes 49 seconds49:49
+Josh Courson 49 minutes 49 seconds
+My time.
+BC
+Bryan Camaglia
+49 minutes 50 seconds49:50
+Bryan Camaglia 49 minutes 50 seconds
+Oh, OK.
+Bryan Camaglia 49 minutes 51 seconds
+Yep. Perfect.
+Bryan Camaglia 49 minutes 52 seconds
+Sorry, I forgot about that part.
+Bryan Camaglia 49 minutes 53 seconds
+OK.
+Bryan Camaglia 49 minutes 53 seconds
+Yep, Nope, that's right. Scheduled. Moved from.
+Bryan Camaglia 49 minutes 57 seconds
+Arizona 012 employee data combined with schedule.
+ZH
+Zeeshan Hashmi
+50 minutes 4 seconds50:04
+Zeeshan Hashmi 50 minutes 4 seconds
+I guess the schedule moved from the my tank to the easy one and the the data int O2.
+Zeeshan Hashmi 50 minutes 11 seconds
+Is that correct or?
+BC
+Bryan Camaglia
+50 minutes 14 seconds50:14
+Bryan Camaglia 50 minutes 14 seconds
+Well again, right?
+Bryan Camaglia 50 minutes 15 seconds
+You know, if we're going to stick to high level, I would almost say schedule moved.
+Bryan Camaglia 50 minutes 21 seconds
+It goes yeah, from my time.
+Bryan Camaglia 50 minutes 25 seconds
+To and I would just go AZ01 slash data into and we'll treat because it's split because it's split processing.
+Bryan Camaglia 50 minutes 34 seconds
+Let's treat them as one, right?
+
+
+Bryan Camaglia
+50 minutes 36 seconds50:36
+Bryan Camaglia 50 minutes 36 seconds
+And then if you ever wanted to get to the next layer down, we could determine what's done on AZ101 and what's done on data INT 2.
+JC
+Josh Courson
+50 minutes 44 seconds50:44
+Josh Courson 50 minutes 44 seconds
+OK.
+BC
+Bryan Camaglia
+50 minutes 44 seconds50:44
+Bryan Camaglia 50 minutes 44 seconds
+But I would say it's probably better to say schedule moved from my time.
+ZH
+Zeeshan Hashmi
+50 minutes 51 seconds50:51
+Zeeshan Hashmi 50 minutes 51 seconds
+M.
+BC
+Bryan Camaglia
+50 minutes 52 seconds50:52
+Bryan Camaglia 50 minutes 52 seconds
+To AZ 01 slash data into.
+JC
+Josh Courson
+50 minutes 55 seconds50:55
+Josh Courson 50 minutes 55 seconds
+OK. So simultaneously goes to both.
+ZH
+Zeeshan Hashmi
+50 minutes 56 seconds50:56
+Zeeshan Hashmi 50 minutes 56 seconds
+Yeah.
+BC
+Bryan Camaglia
+50 minutes 58 seconds50:58
+Bryan Camaglia 50 minutes 58 seconds
+Well, it doesn't it to to be to be very specific, it first goes to.
+JC
+Josh Courson
+50 minutes 59 seconds50:59
+Josh Courson 50 minutes 59 seconds
+Alright.
+BC
+Bryan Camaglia
+51 minutes 6 seconds51:06
+Bryan Camaglia 51 minutes 6 seconds
+AZ, 01, and then then it's moved back and forth.
+Bryan Camaglia 51 minutes 10 seconds
+Then then the actual processing happens on both of those machines, and it goes back and forth back and forth, kind of a thing until it's done.
+JC
+Josh Courson
+51 minutes 13 seconds51:13
+Josh Courson 51 minutes 13 seconds
+Mm hmm.
+Josh Courson 51 minutes 18 seconds
+OK.
+BC
+Bryan Camaglia
+51 minutes 18 seconds51:18
+Bryan Camaglia 51 minutes 18 seconds
+So that's why it's like at at this level, I think that fits the bill and it it, it shows that, hey, listen, there's processing being done both on AZ 01.
+JC
+Josh Courson
+51 minutes 19 seconds51:19
+Josh Courson 51 minutes 19 seconds
+Gotcha.
+BC
+Bryan Camaglia
+51 minutes 28 seconds51:28
+Bryan Camaglia 51 minutes 28 seconds
+As well as data int O2.
+Bryan Camaglia 51 minutes 29 seconds
+So I think that's the important thing. Employee data combined with schedules, what is is that orange rate in ADP?
+JC
+Josh Courson
+51 minutes 30 seconds51:30
+Josh Courson 51 minutes 30 seconds
+OK. Gotcha.
+Josh Courson 51 minutes 39 seconds
+Yeah. So that's yeah, 'cause, I think that was what you talked about where it pulls in like the wages and you know all that fun stuff for employees that have.
+Josh Courson 51 minutes 48 seconds
+Are are on the schedule for the next two weeks.
+BC
+Bryan Camaglia
+51 minutes 48 seconds51:48
+Bryan Camaglia 51 minutes 48 seconds
+Yep.
+Bryan Camaglia 51 minutes 51 seconds
+Yeah. Can you also put employee data and punches?
+Bryan Camaglia 51 minutes 56 seconds
+'Cause, I think that's very important, right?
+Bryan Camaglia 51 minutes 58 seconds
+So employees punch in and out of ADP and it's that information that is combined with the schedules. Yep.
+JC
+Josh Courson
+51 minutes 59 seconds51:59
+Josh Courson 51 minutes 59 seconds
+OK.
+Josh Courson 52 minutes 6 seconds
+OK, gotcha. And that's where I may need to come by these 'cause. I did kind of that flow and then I have like here's the punches and you know goes further from there.
+BC
+Bryan Camaglia
+52 minutes 8 seconds52:08
+Bryan Camaglia 52 minutes 8 seconds
+Yep.
+JC
+Josh Courson
+52 minutes 16 seconds52:16
+Josh Courson 52 minutes 16 seconds
+So yeah.
+BC
+Bryan Camaglia
+52 minutes 17 seconds52:17
+Bryan Camaglia 52 minutes 17 seconds
+OK.
+Bryan Camaglia 52 minutes 19 seconds
+Then purple is data int.
+JC
+Josh Courson
+52 minutes 25 seconds52:25
+Josh Courson 52 minutes 25 seconds
+So that's where it said it. You were talking about. It was sent to because ADP only interacts with data int O2.
+Josh Courson 52 minutes 33 seconds
+It's then sent back to Azure one.
+Josh Courson 52 minutes 38 seconds
+For kind of the processing to combine everything.
+Josh Courson 52 minutes 42 seconds
+That right?
+BC
+Bryan Camaglia
+52 minutes 46 seconds52:46
+Bryan Camaglia 52 minutes 46 seconds
+So actually the first top three are probably the the whole schedule process, but if we wanna build this out then what happens is that.
+Bryan Camaglia 52 minutes 57 seconds
+Then what comes out of ADP?
+Bryan Camaglia 52 minutes 59 seconds
+What comes out of that orange are the time cards, right?
+Bryan Camaglia 53 minutes 3 seconds
+So then, so then the combined information, then I would say now we're we're pulling out.
+
+JC
+Josh Courson
+53 minutes 46 seconds53:46
+Josh Courson 53 minutes 46 seconds
+Yeah. So I think I kind of split out where this is more or less like the schedule flow and then this is the, I mean it's still related to schedule, but like the actual kind of payment side, I guess.
+BC
+Bryan Camaglia
+53 minutes 47 seconds53:47
+Bryan Camaglia 53 minutes 47 seconds
+OK.
+Bryan Camaglia 54 minutes 3 seconds
+But the time, time card and Commission. OK, yeah, I think.
+JC
+Josh Courson
+54 minutes 6 seconds54:06
+Josh Courson 54 minutes 6 seconds
+Yeah.
+ZH
+Zeeshan Hashmi
+54 minutes 11 seconds54:11
+Zeeshan Hashmi 54 minutes 11 seconds
+One thing one thing.
+Zeeshan Hashmi 54 minutes 15 seconds
+Josh.
+Zeeshan Hashmi 54 minutes 18 seconds
+As Brian mentioned, on the second step where the schedules move from my time to the AZ 01 and data 02, I guess there is some back and forth process in between these databases because it doesn't update the AZ01AD and data INT 02.
+JC
+Josh Courson
+54 minutes 25 seconds54:25
+Josh Courson 54 minutes 25 seconds
+Mm hmm.
+Josh Courson 54 minutes 38 seconds
+Mm hmm.
+ZH
+Zeeshan Hashmi
+54 minutes 39 seconds54:39
+Zeeshan Hashmi 54 minutes 39 seconds
+Databases.
+Zeeshan Hashmi 54 minutes 40 seconds
+Simultaneously.
+JC
+Josh Courson
+54 minutes 42 seconds54:42
+Josh Courson 54 minutes 42 seconds
+Yeah.
+ZH
+Zeeshan Hashmi
+54 minutes 43 seconds54:43
+Zeeshan Hashmi 54 minutes 43 seconds
+So we we might need to add few steps for the pack and forth as well.
+JC
+Josh Courson
+54 minutes 49 seconds54:49
+Josh Courson 54 minutes 49 seconds
+Yeah, and that's what I believe was kind of this stuff is it goes to data int O2 to combine with the ADP data employee data punch. All that fun stuff.
+Josh Courson 55 minutes 3 seconds
+But then for Azure one to kind of combine everything and then back to two.
+Josh Courson 55 minutes 13 seconds
+Where it's, you know, loaded to ADP.
+Josh Courson 55 minutes 17 seconds
+So, and that's where like.
+Josh Courson 55 minutes 20 seconds
+Yeah. Really just.
+Josh Courson 55 minutes 22 seconds
+All the back and forth.
+ZH
+Zeeshan Hashmi
+55 minutes 24 seconds55:24
+Zeeshan Hashmi 55 minutes 24 seconds
+Uh huh.
+JC
+Josh Courson
+55 minutes 25 seconds55:25
+Josh Courson 55 minutes 25 seconds
+A little confusing, so I think I'd understand the flow.
+Josh Courson 55 minutes 27 seconds
+But you know, when we're like, all right, this is schedule, but then clock in and out and like payment. Is that the same as schedule? And really we we'll need to add in like I haven't done you know the second day's report yet of like all the.
+Josh Courson 55 minutes 41 seconds
+Tips to see how that factors into the workflow.
+Josh Courson 55 minutes 44 seconds
+So obviously it's gonna get more complicated.
+ZH
+Zeeshan Hashmi
+55 minutes 47 seconds55:47
+Zeeshan Hashmi 55 minutes 47 seconds
+Mm hmm.
+JC
+Josh Courson
+55 minutes 49 seconds55:49
+Josh Courson 55 minutes 49 seconds
+But.
+ZH
+Zeeshan Hashmi
+55 minutes 49 seconds55:49
+Zeeshan Hashmi 55 minutes 49 seconds
+I would.
+Zeeshan Hashmi 55 minutes 50 seconds
+I would suggest we're here if you add.
+Zeeshan Hashmi 55 minutes 56 seconds
+The the missing steps on this this sheet and if you can send the editable to the blind.
+Zeeshan Hashmi 56 minutes 4 seconds
+So Brian, I would request you if you can have a look and would you like to make some changes if we are doing wrong or or do you think that OK, something has been missed, missed out in this data flow diagram. So by the next week at least?
+Zeeshan Hashmi 56 minutes 22 seconds
+We would have the high level.
+Zeeshan Hashmi 56 minutes 24 seconds
+You know.
+Zeeshan Hashmi 56 minutes 25 seconds
+The flow diagram.
+Zeeshan Hashmi 56 minutes 26 seconds
+Then we would be able to create some documentation.
+BC
+Bryan Camaglia
+56 minutes 32 seconds56:32
+Bryan Camaglia 56 minutes 32 seconds
+Oh yeah, happy to.
+ZH
+Zeeshan Hashmi
+56 minutes 32 seconds56:32
+Zeeshan Hashmi 56 minutes 32 seconds
+What do you think?
+BC
+Bryan Camaglia
+56 minutes 33 seconds56:33
+Bryan Camaglia 56 minutes 33 seconds
+Happy to help.
+Bryan Camaglia 56 minutes 34 seconds
+So you want me to take this document here? Yeah.
+ZH
+Zeeshan Hashmi
+56 minutes 36 seconds56:36
+Zeeshan Hashmi 56 minutes 36 seconds
+Yes, to validate all this thing.
+Zeeshan Hashmi 56 minutes 38 seconds
+Yep. So I would request right now that Scott, Josh that OK if he can edit the few things, what you have recommended right now and then send it over to you, copy to me as well. And if you get a chance over the weekend maybe today, so just.
+Zeeshan Hashmi 56 minutes 57 seconds
+Tweak just do some tweaking on this sheet and then on Monday morning we would be able to have.
+Zeeshan Hashmi 57 minutes 3 seconds
+Finalize this flow diagram.
+Zeeshan Hashmi 57 minutes 5 seconds
+Because we have to create the documentation, we have to share this documentation that OK how this process is working because everyone is now.
+Zeeshan Hashmi 57 minutes 16 seconds
+In a.
+Zeeshan Hashmi 57 minutes 16 seconds
+In a in a shape that will get their way where they should be able to get the high level documentation that how the entire process is working and that's that's the right now it's missing part.
+BC
+Bryan Camaglia
+57 minutes 30 seconds57:30
+Bryan Camaglia 57 minutes 30 seconds
+OK.
+Bryan Camaglia 57 minutes 30 seconds
+Well, I'll when we hang up here, let me.
+ZH
+Zeeshan Hashmi
+57 minutes 34 seconds57:34
+Zeeshan Hashmi 57 minutes 34 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+57 minutes 35 seconds57:35
+Bryan Camaglia 57 minutes 35 seconds
+I I may give it to you, Josh and just e-mail format. I may not spend the time on the on the boxes and then you can bring that back so.
+JC
+Josh Courson
+57 minutes 38 seconds57:38
+Josh Courson 57 minutes 38 seconds
+OK.
+Josh Courson 57 minutes 41 seconds
+Yeah, yeah, no worries.
+ZH
+Zeeshan Hashmi
+57 minutes 42 seconds57:42
+Zeeshan Hashmi 57 minutes 42 seconds
+Yeah.
+BC
+Bryan Camaglia
+57 minutes 45 seconds57:45
+Bryan Camaglia 57 minutes 45 seconds
+Because is this an I can't see is this word or.
+JC
+Josh Courson
+57 minutes 47 seconds57:47
+Josh Courson 57 minutes 47 seconds
+Yeah, it's just word.
+BC
+Bryan Camaglia
+57 minutes 48 seconds57:48
+Bryan Camaglia 57 minutes 48 seconds
+OK.
+Bryan Camaglia 57 minutes 49 seconds
+No, that's good.
+JC
+Josh Courson
+57 minutes 49 seconds57:49
+Josh Courson 57 minutes 49 seconds
+I only have my own like basic copy of office. I was gonna ask.
+Josh Courson 57 minutes 54 seconds
+I don't know if we could get access to Visio or anything like that through either Floyd's or elevate, because that would make this a whole lot easier. 'cause I know they're like if you want to add something you just add something, whereas this it's all like man.
+
+Stupid arrows that need to be adjusted and crap so you know.
+BC
+Bryan Camaglia
+58 minutes 11 seconds58:11
+Bryan Camaglia 58 minutes 11 seconds
+Well, I don't.
+Bryan Camaglia 58 minutes 11 seconds
+I don't have Visio right now either, so that's why I was making sure it wasn't.
+JC
+Josh Courson
+58 minutes 14 seconds58:14
+Josh Courson 58 minutes 14 seconds
+OK.
+BC
+Bryan Camaglia
+58 minutes 14 seconds58:14
+Bryan Camaglia 58 minutes 14 seconds
+But I agree with you.
+Bryan Camaglia 58 minutes 15 seconds
+It's probably easier, but I'll I'll get you something here today so that you can, OK.
+JC
+Josh Courson
+58 minutes 20 seconds58:20
+Josh Courson 58 minutes 20 seconds
+Alright, cool.
+Josh Courson 58 minutes 22 seconds
+Yeah, I'll go ahead and send this over just as a start and then I can also work on trying to, you know, add in the the tips and other stuff and and yeah, just you send back notes even if you just like add comments or whatever or you.
+Josh Courson 58 minutes 39 seconds
+Know add a new sheet with you know a workflow. Whatever you know I can work on the visuals. You don't need to waste your time with that so.
+ZH
+Zeeshan Hashmi
+58 minutes 49 seconds58:49
+Zeeshan Hashmi 58 minutes 49 seconds
+One more thing, Josh, we we can use lucid chart as well.
+Zeeshan Hashmi 58 minutes 54 seconds
+It's pretty much free because Visio is probably good for the networking diagram only and nobody use it, and it requires that you know the license as well. So we can use the lucid as well. And in fact, once if if you have a high level diagram over here.
+JC
+Josh Courson
+59 minutes59:00
+Josh Courson 59 minutes
+OK.
+ZH
+Zeeshan Hashmi
+59 minutes 12 seconds59:12
+Zeeshan Hashmi 59 minutes 12 seconds
+So I can replicate all those things on the lucid as well.
+Zeeshan Hashmi 59 minutes 15 seconds
+That's that's not an issue.
+JC
+Josh Courson
+59 minutes 17 seconds59:17
+Josh Courson 59 minutes 17 seconds
+OK, cool.
+ZH
+Zeeshan Hashmi
+59 minutes 18 seconds59:18
+Zeeshan Hashmi 59 minutes 18 seconds
+Hmm.
+JC
+Josh Courson
+59 minutes 20 seconds59:20
+Josh Courson 59 minutes 20 seconds
+Sounds good.
+ZH
+Zeeshan Hashmi
+59 minutes 23 seconds59:23
+Zeeshan Hashmi 59 minutes 23 seconds
+All right, Sir.
+BC
+Bryan Camaglia
+59 minutes 25 seconds59:25
+Bryan Camaglia 59 minutes 25 seconds
+All right.
+Bryan Camaglia 59 minutes 26 seconds
+Well, we will.
+Bryan Camaglia 59 minutes 29 seconds
+Until Monday, as they say.

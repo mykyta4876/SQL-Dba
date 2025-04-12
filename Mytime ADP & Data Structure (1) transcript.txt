@@ -1,0 +1,379 @@
+[Bryan Camaglia]
+Like you know, 'cause, I'm personally not a fan of that. That is more cost to me. Do we really need that? Are we really that critical in our data? Like I'm not really a proponent today of standing up our own environment to manage that replica,
+
+[Zeeshan Hashmi]
+Exactly. To some point, if their AWS instance is stepping out. So there is no point to have our own AWS instance because it would disconnect in middle as well.
+
+[Bryan Camaglia]
+Yeah, regarding the New Year's Day outage instance - I could personally live with an outage like that happening once a quarter. And I think Floyd's team should understand and be able to accept that level of availability.
+I'm able to live with dropping a connection once a quarter and missing a day of data. I know that's not five nines of availability, but I think that's an acceptable level of service.
+Given how we're using this data, I think that level of availability is a reasonable outcome.
+
+[Zeeshan Hashmi]
+I pretty much agree with this issue, because in the IT world, no one guarantees that the software would run 365 days, seven days a week and 24 hours.
+
+[Bryan Camaglia]
+Right.
+
+[Zeeshan Hashmi]
+Outage doesn't happen at the Microsoft level as well as the AWS level.
+
+[Bryan Camaglia]
+Right, it does happen. So I think we did the right thing.
+
+[Zeeshan Hashmi]
+Yes.
+
+[Bryan Camaglia]
+We went to them. We asked them. They showed us. Now, again, back to your original statement or original thing, it's like I feel like at times I get a little smoke and mirrors.
+I'm not well versed at that level of the technology stack, especially in AWS. I know Azure a little better, but you know that's still infrastructure and that's not.
+
+sweet spot.
+So you know, I feel like they could smoke and mirrors me a little bit like "Well, look at these graphs."
+See, I'm showing you these graphs, but I wouldn't know better to say "Well, what kind of graphs are those?"
+Like, what's behind those graphs, right?
+Like the questions you started to ask.
+
+And then I feel like the smoke starts to dissipate. I mean, I have to question - really you guys? But you know, some fights are worth it and some fights aren't.
+
+[Zeeshan Hashmi]
+Right, I completely agree.
+I believe I was discussing with Josh as well that now here, the process has improved a lot since we moved to the Arizona instance. Even though there's a little outage occasionally, we can account for that and work on improving it further.
+So my suggestion is that instead of spending money on AWS infrastructure, we should build a process to get notified earlier when issues occur.
+Like what happened with the payroll incident - there were only four franchise data files available. We should implement a mechanism where we get notified early in the morning if data is missing, so we can go in and run the payroll process manually.
+
+[Bryan Camaglia] 03:44
+There's two ways to approach that.
+One is going into MyTime and saying you need to set up something that if you don't see, you know, 60 some files in here you should be emailing us.
+Or the other approach is we go out and do a count and if we don't see it by a certain time, then you know we get an internal notification.
+Which way were you thinking of going about it?
+
+[Zeeshan Hashmi] 04:11
+OK, since the files are moved from the S3 bucket to Azure Data Factory, we could set up a process in Azure Data Factory that counts the number of files and notifies us whenever there are any missing. What do you think?
+
+[Bryan Camaglia] 04:29
+Yeah, I think that's by far the easiest path, right? Asking MyTime to do that will not only take time, but they'll charge us for it as well.
+
+[Zeeshan Hashmi] 04:38
+So they won't probably do that.
+
+[Bryan Camaglia] 04:38
+They will charge us for it. It will take time and we would still be dependent on their infrastructure.
+
+[Zeeshan Hashmi] 04:40
+So it is better to have this type of process on our infrastructure.
+
+[Bryan Camaglia] 04:45
+Right. That should be done before triggering the pipeline.
+
+[Zeeshan Hashmi] 04:56
+It should count all the CSV files and notify us about the total number of files present.
+
+[Bryan Camaglia] 05:05
+If we get 60 files and process the payroll, we would at least have an idea through that email. If there are any missing CSV files, we can inform Floyd management earlier rather than waiting for them to come to us about missing payroll.
+So there are two or three steps to that, right.
+Step one is identifying the solution. I think that's it.
+Spot on. Step 2 would be allocating time and resources to implement this solution, but that's out of my control.
+
+[Zeeshan Hashmi] 06:02
+Josh, would you like to add something over here on this point?
+
+[Josh Courson] 06:02
+I mean, I think we're all on the same page that we definitely need to get some sort of notification when jobs have failed to run by a specific time.
+So again, you know, we can be proactive and not wait for Floyd's to reach out to us.
+Like, "Hey, something's missing."
+
+[Zeeshan Hashmi] 06:22
+Right now I'm thinking we need a proactive approach rather than being reactive and waiting for Floyd's to come to us. We should be able to tell Floyd "There is something missing, we are working on it, and you will be getting all the reports shortly."
+So do you have any thoughts on how we can build this process on the Azure Data Factory side?
+Any opinions?
+
+[Josh Courson] 07:12
+Off the top of my head, no.
+I mean, we can look into it.
+You know, if it is possible for us to set up some sort of alert.
+Yeah, I mean, like you said, they're going to charge us if we try to go to MyTime.
+
+[Zeeshan Hashmi] 07:24
+By the way, there is an alert available.
+
+[Josh Courson] 07:30
+So yeah, we can try and figure that out on our end and get something set up.
+
+[Zeeshan Hashmi] 07:37
+Alert is already set up by Bryan. The pipeline currently alerts us on failure or success of the run. However, we need to build an additional process that counts the CSV files and sends a notification about the count, since the pipeline itself is running smoothly. We need to build functionality to count the CSV files and notify about that.
+
+[Zeeshan Hashmi] 08:13
+We need to implement a process for counting the CSV files.
+Alright, we'll figure it out.
+I think we should all think about potential solutions individually, and then we can brainstorm together on how to implement this process.
+Now let's move on to discuss the project challenges we're having with ADP and other items. Josh, over to you.
+You had some questions about the process.
+Specifically about how data flows from ADP and MyTime into our database.
+
+[Josh Courson] 09:05
+Oh, sorry. What? What was that?
+
+[Zeeshan Hashmi] 09:08
+I guess you need to understand MyTime and ADP integration.
+I wanted to ask Brian if you have any high-level workflow diagram that could help us understand how ADP is working and how it connects with everything.
+I know you shared some information on last week's call.
+But if you have any documentation or workflows, that would be helpful since we were discussing AWS access and ADP yesterday.
+Now Josh understands that we can only access the AWS instance via SSH connection to fetch the data from the database.
+So my question is - do you have any workflow documentation in place that provides a better understanding of how ADP, MyTime and our databases are integrated?
+
+[Bryan Camaglia] 10:25
+Yeah, I don't have any workflow documentation on that unfortunately, so.
+You know, as we go through this process, I thought part of it was your documentation is output, right?
+So I can walk through it now if you want.
+
+[Zeeshan Hashmi] 10:41
+Yes, please.
+And I guess let's start with the ADP side first, because I believe
+ADP gives the input to MyTime and then MyTime processes things on the other side, right?
+
+[Bryan Camaglia] 10:58
+I'm going to switch you a little bit Zeeshan.
+Let's start with the schedules, because it's the beginning of the train, right, so we have.
+We have 35 minutes here, so let's tackle this first one, then tomorrow, unless there's another topic we can tackle another one in there so.
+
+Just give me a second as I log into all these machines.
+Here, I'll share my screen.
+So I'm logging into two machines that this runs on today - dataintO2 and az01-db01, which is our core data warehouse database.
+For some background, dataintO2 acts as the orchestrator for schedules moving from MyTime into ADP. It's the orchestrator because it's one of only three machines (along with AP02) that can communicate with ADP.
+The reason we include az01-db01 is because dataintO2 is also a gateway server. About a year ago, a decision was made to lighten the load on dataintO2. Since the machine in the closet (az01-db01) has a lot of horsepower, we moved some processing there to take advantage of its capacity.
+When we migrated to the current data warehouse, we did a lift-and-shift to maintain the same concepts and principles for a quick migration. That's why we currently run on two machines.
+The end goal would be to have ADP communicate directly with az01-db01, which would allow us to migrate off dataintO2 and run the whole process on one machine.
+So that's the background of how it works. While that's still coming up, let's look at MyTime. Remember, this is just for corporate shops since franchises handle their own scheduling.
+
+[Bryan Camaglia] 14:16
+So I'm going to go into anyone's schedule here.
+We're in the Broadway shop and looking at hours.
+Here we are viewing it by week.
+A manager comes in here and builds out the schedule.
+Looking at it by days is probably easier to understand conceptually.
+They build out the schedule, typically doing it once a week for the next 4 weeks.
+Then they make adjustments as needed during the week.
+If I look at tomorrow's schedule for the Broadway shop, I can see everyone's scheduled hours.
+
+[Zeeshan Hashmi] 15:07
+And that has been set up by their manager, right? And is all the payroll processing done in ADP, or is only the time scheduling done in ADP?
+
+[Bryan Camaglia] 15:10
+Correct. I may have missed the difference there. So what was that Zeeshan?
+
+[Zeeshan Hashmi] 15:30
+Here I can see the scheduling. So the payroll processing is also being done in ADP.
+
+[Bryan Camaglia] 15:39
+Yes, payroll is calculated in ADP based on data fed from MyTime.
+
+[Zeeshan Hashmi] 15:47
+So MyTime feeds the shift time-in and time-out data, right?
+
+[Bryan Camaglia] 15:57
+ADP handles time in/out and transfers. Let me give you the high level overview.
+Schedules are done in MyTime. Schedules are transferred to ADP.
+Employees clock in and out in ADP, where the schedule is married with the punches to create a time card.
+The time card data in ADP is moved back into MyTime so they stay in sync.
+The reason we need to sync back to MyTime is because MyTime is the source of commission calculations.
+MyTime then produces the commission reports we talked about earlier.
+Payroll takes those commission reports and puts them back into ADP.
+This allows ADP to calculate comprehensive payroll that includes both hours worked and commissions earned.
+
+[Zeeshan Hashmi] 17:00
+I get it. I was wondering - if ADP is calculating the payroll, why does it need to send data to MyTime and then have that data flow to Azure Data Factory?
+
+[Bryan Camaglia] 17:02
+Yes, because MyTime is the commission calculation component of it.
+So that's why that little snake exists - going back and forth between systems.
+Now yes, we could have integrated those payroll files directly back into ADP, but that was never done for two reasons.
+One, it's critical data - we didn't want to start automatically dumping data into ADP payroll without review. We wanted to look at that data before it went into ADP.
+And two, we weren't 100% confident in the stability, so we decided we needed manual oversight of payroll data.
+So while technically we could have automated sending those files back into ADP and been hands-off, we chose not to.
+The impact of paying people incorrectly is huge on both sides - underpaying or overpaying employees is problematic regardless of perspective. It's just a bad situation we wanted to avoid.
+
+[Bryan Camaglia] 18:15
+Today, we'll look at the schedule.
+This is the schedule view you're looking at.
+Let me select an employee and go out to next week.
+You can see the schedule here.
+The white areas show when people are scheduled to work.
+The grey areas indicate when they're not scheduled. For example, Christina is scheduled to work from 9:30 to 1:15, then she takes a 30-minute lunch break.
+She returns at 2:00 and works until 5:45.
+
+[Bryan Camaglia] 19:00
+Dana is going to come in at 9:00, and she's going to work her first shift until 1:00. She has put a block on that time.
+She's going to be doing some admin work during that time, so she won't be available to cut hair, and that also means we need to transfer her code in ADP.
+
+[Bryan Camaglia] 19:27
+She'll switch from stylist work to admin work automatically when we move the schedule over. After lunch, she'll start again at 1:30 and work until 5:00 doing stylist work.
+This is the schedule that gets transferred to ADP.
+We transfer schedules two weeks at a time, both importing and exporting.
+This schedule transfer is the first step in the process.
+
+[Bryan Camaglia] 20:04
+In dataintO2, under ADP communication, we have two main components:
+1. Schedule processing
+2. Time card processing
+
+We're focusing on schedule processing right now. The other components are for ad-hoc fixes when issues arise.
+
+The schedule processing job:
+- Runs daily at 11:15 PM
+- Shows up on the daily report
+- Originally had 2 steps for orchestrating across machines
+- Now only uses 1 step since we migrated to az01-db01
+- The second step can be deleted as it was for the old v2 DC1 machine
+
+The process starts by triggering a stored procedure on az01-db01 that:
+- Clears relevant tables
+- Has a 2-week schedule outlook
+- Contains all required variables for processing
+
+[Bryan Camaglia] 21:51
+This process pulls all the scheduled data we need from MyTime. If you look in az01-db01, you'll see a package at the bronze level - this is the package it's calling. It's the schedule package that handles all of this, sitting on our main machine in the bronze packages/bronze solution.
+
+First, it clears the tables and connects directly to MyTime to get the data. You might ask why we don't get it from the warehouse - while the timing is close (warehouse updates around 1-2 AM), I wanted to keep warehouse and operations separate at this point. We're pulling about 4-5 weeks worth of schedules directly from MyTime, since MyTime is our source of truth for schedules.
+
+When this step succeeds, it moves to Step 3 which kicks off another package. If these were on the same machine, we would just get the MyTime schedule directly. But since it's on another machine, this step is grayed out. Because we're running on two machines, this step is just moving the schedule data from one machine to the other.
+
+So now we have schedules for every employee. There's a separate process for wages - which are stored in both ADP and MyTime (the joy of dual data). While we're pulling employee records and information, we also grab their rate and update the rate table. This wage data isn't really relevant to schedules - it was just convenient to combine the data pulls.
+
+For the schedule process, we look at the next two weeks. Let's say we have 1000 employees total, but maybe 900 are actively scheduled in that period. For those 900 active employees, we then pull their employee information from ADP using Zeeshan's Zappy sys implementation.
+
+[Bryan Camaglia] 26:14
+So when we look at GetEmployees, this is where Zappy sys comes into play because it has a nice XML package.
+
+We use Zappy sys to pull in all employee data which we store in our tables. We're primarily getting employee information.
+
+For labor rates, we store that separately for other usage - that's why it's on its own track. We take both the ADP information because we need to know everyone's home code. We have people in shops where their home position is a stylist or barber - that's the majority of our employees. We also have front desk staff and managers.
+
+When we build the schedule, we need to know their primary location, which is why we pull this information.
+
+We then move this data to az01-db01 (note: should be updated from DC1). We do processing there to generate the schedule through stored procedures. The schedule gets built out in increments (either 5 or 20 minute intervals - need to verify).
+
+We bring those results back to dataintO2, and then we need to build the upload statement in XML format. These schedules then get loaded into ADP.
+
+The schedules get complicated because of one key scenario: when we send a schedule to ADP, it overwrites whatever is there. Consider PTO and bereavement - these are managed only in ADP, not in MyTime. We can't lose that information. So when we're pulling data earlier, we need to check if an employee has time off. For example, if someone has a half day of PTO, we need to preserve that when sending the updated schedule. Otherwise, they'll lose their PTO record.
+
+Looking at the ADP tables, we have schedule tables and time card tables. For the send operation, we build a specific statement format. The stored procedure generates this statement based on the schedule, formatting it correctly for the ADP REST API.
+
+I've also implemented a history file - everything we send gets recorded in this table for troubleshooting purposes. The table includes:
+- The date it was copied
+- The schedule date
+- Employee information
+
+This table is quite large but can be maintained through deletes as needed.
+
+As an example, if today is the 14th and we create a schedule for the 21st, that schedule might be sent multiple times before the 21st arrives due to schedule changes. There might be a comparison check to avoid resending unchanged schedules (would need to verify this optimization).
+
+These are the tables and steps in the process - not quite a 50,000-foot view, but more of a 25,000-foot view of where to find everything.
+
+[Zeeshan Hashmi] 31:45
+Now here's my question:
+Managers do the scheduling on the ADP portal which gets data from the ADP portal and ADP database.
+So if there are 1000 people working in the first week, and only 900 people working the next week, do we need to make manual adjustments to the workflow before sending this data to ADP?
+
+[Bryan Camaglia] 32:17
+Let me clarify. When I say 1000 people are working - let's say today is the 14th and I'm going to send schedules for the next two weeks. 
+What I do is pull all the schedules out of MyTime and determine the distinct number of employees who are scheduled to work at any point during those next two weeks.
+I get that list of employees, and if we have 1000 active employees total, we'll likely see all or nearly all of them scheduled - maybe 995 if someone is on a two week vacation.
+But for the most part, pretty much every active employee will appear in that list.
+
+[Zeeshan Hashmi] 33:06
+And how frequently do you run this? Do you run it every two weeks or every day?
+
+[Bryan Camaglia] 33:10
+No. Everyday I run it everyday.
+So it's a rolling two week calendar, if you will.
+
+[Zeeshan Hashmi] 33:29
+Josh, do you have any questions at this point?
+
+[Josh Courson] 33:36
+Not at this point.
+I'm definitely glad I'm recording this so I can go back and review it, but yeah, not at this point.
+
+[Zeeshan Hashmi] 33:48
+OK.
+
+[Bryan Camaglia] 33:48
+So yeah, I think it's a lot to go into the other details, but we can cover time cards tomorrow. I'm not saying we have to stop now - I just don't want to overload with information.
+Let me give you a flavor of some of the data. Here are the schedules:
+I have a regular schedule with my start time and end time. The Labor Code is blank because it defaults to my home code, which is probably stylist.
+Here's an example where someone did a transfer - they worked from 14:30 to 19:00, and then at 19:00 they transferred to a different job code for half an hour.
+On this day, if I had to guess, they probably did a close, which means they weren't cutting hair - they were closing the shop down.
+Looking at this person on the 17th - their schedule shows they came in at 10:00, cut hair until 14:00, took lunch, came back at 14:30, finished at 19:00, and then from 19:00 to 19:30 probably did close.
+This is the data that we get back, and this ultimately gets transferred into XML format - that's the process we follow.
+Let's look at another scenario - the deletes. If someone has a schedule but then decides they're not working that day, we have to delete their schedule. Deleting their schedule means sending a blank schedule. However, you don't want to send a blank schedule when there's no change.
+I'm not trying to get into all the details, but rather give you appreciation for the things you need to consider. As we know, it's an intensive process keeping two databases in sync because you have to accommodate all the edge cases.
+For deletes, I send a separate delete record which needs to be converted to XML format for that employee.
+We also have schedule time tables which are intermediate build tables.
+Then we have overrides - this is the stuff I pull from ADP that isn't in MyTime. For example, if someone has vacation for a specific date, I need to make sure that vacation stays in ADP no matter what. Because someone might have a schedule, change it to vacation, then change it back.
+
+[Bryan Camaglia] 37:40
+You know, have a schedule, then change it to vacation, then change it back and all that.
+So we keep those in sync just for your knowledge. A manager premium means every manager is given an hour.
+Think of it as an hour bonus, right?
+So if I work, I'm paid an extra hour every week to just do manager stuff.
+You know, to approve time cards, schedule people.
+Do that kind of stuff.
+Right, so we have sick time and vacation.
+Make sure we don't lose any of that stuff.
+So that's how this thing kind of works, right?
+So if I go back...
+
+[Zeeshan Hashmi] 38:28
+And it's a daily job that you have to look into - checking the ADP schedules and the databases, right?
+It's a daily task that you perform on the ADP site, right?
+You pull the data from ADP and look at the schedules, handle any overrides, and process any deletions?
+And then update ADP with the changes in XML format?
+
+[Bryan Camaglia] 39:03
+Right.
+
+[Bryan Camaglia] 39:16
+Let me explain the process. For example, let's say you, Zeeshan, are working tomorrow. Here's what happens:
+First, I pull your current schedule from both ADP and MyTime. Then I need to reconcile those schedules.
+MyTime is always treated as the source of truth for the base schedule. However, I also check ADP for any overrides - things like vacation time or other exceptions that may be recorded there.
+If there are overrides in ADP, those take precedence and become part of the final schedule. If there are no overrides, I take your MyTime schedule and format it properly to send to ADP.
+That's essentially the daily synchronization process between the two systems.
+
+[Zeeshan Hashmi] 40:19
+Can we have access to the MyTime portal?
+Sorry, ADP portal, the portal you were showing for the scheduling?
+
+[Bryan Camaglia] 40:26
+Yeah, I don't have access to the ADP portal.
+
+[Bryan Camaglia] 40:39
+So this is the MyTime application. This isn't ADP's portal, but this is actually what the staff uses and logs into - this is the exact same front-end interface.
+I don't control access to it though. You'll have to go back to Todd and Floyd's to get a login. I encourage getting access, I just don't have the ability to issue licenses myself.
+But having access is good because when someone reports an issue, like "Dana's schedule isn't transferring", the first thing I can do is look up Dana's schedule for that date and see what appears in the interface.
+
+[Bryan Camaglia] 41:21
+I might have to go into the database to check if the replica database matches. I'll verify that the data matches between the databases.
+Then I need to confirm if the replica database matches those tables I just showed you.
+I'm essentially looking through our workflow to see if we made any mistakes.
+Without access to the MyTime interface, troubleshooting becomes challenging.
+You might also ask about getting access to ADP or E-Time, but I don't have access to those either.
+I don't have access to their front-end interfaces.
+Which is interesting because if I had access to the ADP API, I could probably pull most of the data I need anyway.
+It would be a bit trickier to work with, but I currently don't have access to ADP's front-end interface.
+For access to either system, you'll need to go through either Todd or directly to Floyd's.
+Floyd's is ultimately the one who handles access permissions.
+
+[Zeeshan Hashmi] 42:23
+OK, I think we've covered enough for today. We need to take time to process all this information. What do you think, Josh?
+
+[Josh Courson] 42:39
+Yeah, definitely. We should work on documenting all this information.
+
+[Zeeshan Hashmi] 42:42
+We might need to review the recordings as well. That will help us connect the dots. From my understanding, ADP is where you can schedule employees and the data flows into the ADP database. From there it goes to the ADP site for payroll processing.
+The data then comes to MyTime to calculate tips and commissions before finalizing the payroll. Is that right, Brian?
+I'll create a high-level sketch and verify it tomorrow. We need to create a flow diagram showing how the entire process works, so if something breaks we know which part to investigate. I know where all the databases are running, but we need a clear understanding of how the databases connect with other tools like MyTime and ADP.
+We need to have a clear understanding of that part.
+Alright, thanks for your time Brian and Josh. Let's meet tomorrow.
+I'll try to create a high level sketch and then we'll verify it with you tomorrow.

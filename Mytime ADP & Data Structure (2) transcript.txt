@@ -1,0 +1,1819 @@
+[Bryan Camaglia] 00:00
+Well, my first question is, are you getting the daily?
+You know what I'm talking about.
+
+[Zeeshan Hashmi] 00:11
+Yes, I know. I saw your email this morning.
+
+[Bryan Camaglia] 00:15
+If not, I'll just add you real quickly. If you're not, it's easy enough.
+
+[Zeeshan Hashmi] 00:19
+Yes, I've seen the SSIS failed on the dataintO2, right?
+
+[Bryan Camaglia] 00:25
+Yes.
+
+[Zeeshan Hashmi] 00:26
+And there are a couple other emails. Did you get those?
+I need to add myself to the job monitor execution list. While I didn't get this specific report, I do get notified when the job fails.
+
+[Bryan Camaglia] 00:52
+So you got the job failure notification, OK.
+
+[Zeeshan Hashmi] 00:55
+Exactly in the morning.
+
+[Bryan Camaglia] 00:57
+Let's add you first and foremost. I'm logging in here.
+So I figured we should go over this. Like I said, I have a pretty high suspicion that it's the Zappy sys license that caused the issue.
+We'll verify that in a second. Then we can look at that and pivot over to the Power BI security and access configuration.
+
+[Zeeshan Hashmi] 01:39
+Yes, I see them there. Also, I received an email from Steve that we should discuss after this.
+
+[Bryan Camaglia] 01:46
+Yeah, I think he wanted you to deploy the SST report again, right?
+Yeah, he doesn't need to. He just needed to refresh the data. He didn't need that, but we do need to go over how to deploy a report when he asks you for it. Because he asked me and I said "Hey, I need you to go through Zeeshan for all of this stuff."
+So he's okay right now.
+We can tackle that one tomorrow since I think this will keep us busy here. Unfortunately I do have a stop at the top of the hour at 10:00.
+Come on. Don't be afraid to connect.
+
+[Zeeshan Hashmi] 02:49
+So would this SSIS report failure have any impact on Floyd's operations right now?
+
+[Bryan Camaglia] 02:50
+Now, so let's log in.
+
+[Zeeshan Hashmi] 02:50
+They are good. The data indeed went through.
+
+[Bryan Camaglia] 02:56
+Yeah, that's correct as well. Let me get that started. And then I'll... 
+Come on, connect already.
+
+[Zeeshan Hashmi] 03:09
+I got this email around 11:30 PM, but I was sleeping at that time. If I could get notified earlier, I would be able to look into it.
+
+[Bryan Camaglia] 03:09
+Sorry, my machine is locked up at the moment. Let me address your question about the schedule.
+We run schedules once per night at 11:00 PM. For time cards, we run those twice daily - once around 10:00 PM and again at 5:00 AM.
+If this process fails, it's generally not an emergency situation. It can be addressed the next morning without major impact to operations.
+So this is not a "sky is falling" situation where your phone will be ringing off the hook.
+Time card processing follows pretty much the same principle.
+The only time this isn't true is...
+
+[Zeeshan Hashmi] 04:33
+Sorry, can you maximize the screen? It's a bit hard to see.
+
+[Bryan Camaglia] 04:37
+Yeah, fair enough.
+
+[Zeeshan Hashmi] 04:40
+Yeah, that's fine.
+
+[Bryan Camaglia] 04:41
+Yep. Fair enough.
+So the only time we really need to be concerned about time cards is Monday night after payroll closes.
+The payroll period closes on Sunday, right? Then everyone makes their updates on Monday every two weeks, and we run the final process at 10:00 PM that night.
+That Monday night run is the critical one. On any other day, if there's an issue you can resolve it the next morning - the sky's not falling. But for that 10:00 PM Monday run after payroll closes, it's important because that's the last opportunity before payroll reports generate from that data.
+If there is an issue, you'll need to fix it, move the date forward, and then contact MyTime to regenerate those reports.
+To regenerate those reports. Does that all make sense?
+
+[Zeeshan Hashmi] 05:42
+Alright, OK. Yeah.
+
+[Bryan Camaglia] 05:44
+OK. Now, if these jobs fail - this main warehouse one - right? That means reporting will be delayed in the morning.
+You don't need to stay up every night watching it. This is just reporting, not a manufacturing facility. If this fails, people will still be able to cut hair tomorrow. That's always my perspective.
+Floyd's sets the priorities, not me. The client sets priority. But I want you to know - if this doesn't refresh on time, the stores can still open and people can still work, so you have time to address it.
+
+[Zeeshan Hashmi] 06:29
+Exactly. In fact, it is going to affect the finance department majorly, right?
+
+[Bryan Camaglia] 06:37
+Yes, that's correct. If this final process doesn't run, then the finance department won't receive their batch data.
+And again, you resolve it when you can. Now if it's the last day of closing the period, yeah, John Hardy and the finance team will get a bit anxious, but this is probably the only truly critical operational scenario.
+Don't get me wrong, if other things fail in here, there are consequences that need to be assessed. For example, with marketing data, we have interactions with the marketing application where we need to determine if missing a day is significant.
+So right now we have this particular failure. Looking into DataintO2, let me pull this down. Step one, as we went over yesterday, is pulling the data on AZ01. This machine ran that successfully, but something failed in the next steps.
+Once we pull this up... we failed on that step. Looking at the messages here - yep, we have a Zappy sys error. I bet it's our license.
+
+[Bryan Camaglia] 8:59
+So I need your help resolving this. When we pull this up, I thought we had a valid license.
+I don't know why this machine stopped working, but I haven't been tracking the licenses.
+I don't know if both machines were using the same license.
+I'm not sure about the details.
+Let me pull up the particular schedules job.
+When we look in here...
+Our subscription is...
+
+[Bryan Camaglia] 9:55
+The license shows as expired.
+I'm not familiar with the licensing setup since I didn't configure it originally.
+Would you like to try fixing the license issue, or should we explore other options?
+
+[Zeeshan Hashmi] 10:11
+Can we move this job to AZ01? I believe we only have one license available - we discussed this last time. Let me check the email quickly.
+If I recall correctly, it was running on both DataintO2 and az01-db01 before, but we consolidated by pulling the information from az01-db01 and setting it up there.
+That's right.
+
+[Bryan Camaglia] 10:40
+Correct. That's what we did - we consolidated it to az01-db01.
+I'm not sure why this machine is still trying to use the license though.
+
+[Zeeshan Hashmi] 10:48
+Let me check something.
+I can provide you with the license key to try activating it.
+Let's see if that resolves the issue.
+We can try updating it through the General tab.
+Click on "Activate new license" and I'll share the key.
+The other settings look good.
+Go ahead and launch the license manager.
+
+[Bryan Camaglia] 12:00
+But was it called License Manager?
+
+[Zeeshan Hashmi] 12:02
+License manager, yes.
+
+[Bryan Camaglia] 12:12
+Wait a second, sorry.
+
+[Zeeshan Hashmi] 12:13
+No problem.
+
+[Bryan Camaglia] 12:14
+OK. Here we go.
+
+[Zeeshan Hashmi] 12:18
+Why do activate and put this license key?
+
+[Bryan Camaglia] 12:22
+Yeah.
+
+[Zeeshan Hashmi] 12:34
+I have given you in the chat.
+
+[Bryan Camaglia] 12:36
+Yep.
+
+[Zeeshan Hashmi] 12:37
+Status is valid now for me.
+
+[Bryan Camaglia] 12:51
+I don't.
+
+[Zeeshan Hashmi] 12:52
+One yes it is. Do the reload.
+
+[Bryan Camaglia] 12:54
+I didn't reload. Try it again.
+
+[Zeeshan Hashmi] 13:02
+Thank you. One explained it is showing under one. OK.
+
+[Bryan Camaglia] 13:22
+Oh, that's OK the trial.
+
+[Zeeshan Hashmi] 13:23
+Delete trial is expired, yes.
+
+[Bryan Camaglia] 13:24
+It says status valid.
+
+[Zeeshan Hashmi] 13:28
+Delete the below 1.
+
+[Bryan Camaglia] 13:29
+Hold on. Let me try here if you want. OK it. It worked. OK.
+
+[Zeeshan Hashmi] 13:45
+Maybe it was getting updated from the trial period. That was likely the issue.
+
+[Bryan Camaglia] 13:51
+Yeah, I don't know what was causing that issue. Anyway, let me show you what we have here. Since we're looking at this the next day, and this process ran yesterday...
+Let me walk you through how we troubleshoot this process. First, I'll bring up the email notification. If we see a failure at this point, our first step is to execute the process on az01-db01.
+And so if that happens, I'm going to pull up az01-db01. Let me show you what I created.
+We have two stored procedures - data_schedules and data_schedules_t_minus_1 (which is time minus 1 or day minus 1). Let me explain the difference between them.
+The main difference is in the dates and variables. data_schedules runs automatically each night, while data_schedules_t_minus_1 is only run manually when needed - like if you're troubleshooting an issue from the previous day and need to reprocess the data.
+Let's look at t_minus_1. The key change is in this variable. Since t_minus_1 is set to 1, it shifts the date range back by one day.
+I'll show you what happens when we run it today. When the regular job runs tonight, it starts with today's date as the opening date and goes out two weeks. But since yesterday's job failed, we need to use t_minus_1 to back everything off by one day - so it processes yesterday through two weeks from yesterday.
+Does that make sense? Let me explain one more time how the job works.
+The job runs at 10:00 PM each night. When it runs tonight, it needs to pull everything starting from today's date, since schedules may have changed throughout the day. It pulls schedules from today through two weeks out.
+For example, last night's job was supposed to pull schedules from yesterday through two weeks out, but the job failed.
+
+[Bryan Camaglia] 17:20
+But the job failed yesterday.
+If we run it today, we need to back up the dates by one day.
+To run it with t-minus-1, we need to process data from yesterday through two weeks from yesterday. We're just shifting everything back one day.
+These are the variables it should have run with last night, but if it failed and I just click rerun, it's not going to run with the right dates.
+So I set up another job to subtract 1 day from everything.
+
+[Zeeshan Hashmi] 17:56
+We have to run 2 jobs separately right over here.
+
+[Bryan Camaglia] 18:00
+Yes, in a rerun scenario you would need to run both jobs.
+
+[Zeeshan Hashmi] 18:03
+OK, got you.
+
+[Bryan Camaglia] 18:04
+Once you fix the issue, you would need to run these two jobs individually. The first job ran successfully, so I know I have the right data there and don't need to worry about it.
+I did a similar setup here - I have the schedule job with all its variables. Let me show you. When I pull up the T-minus-1 version, you can see I have the schedules job that I called "rerun with T-minus-1". 
+If I run this today, but need to reprocess yesterday's failed job, all the dates are automatically subtracted by 1 day. Then you would come into here...
+You can execute it from either location.
+
+[Zeeshan Hashmi] 19:41
+Yes, let's make it simple.
+Let's suppose that job failed last night.
+So if I come over here under this package and select these two jobs individually, would it process everything correctly?
+
+[Bryan Camaglia] 20:04
+Yeah you can.
+
+[Zeeshan Hashmi] 20:04
+Meaning that instead of going to different machines, I can run both jobs from here. Yeah, sorry, go ahead.
+
+[Bryan Camaglia] 20:05
+Even though the first job passed, you can run it again.
+Yes, if you want to keep it simple from that perspective, you can come in and say "hey, it failed."
+I fixed the issue.
+I'm gonna run this one, and then I'm gonna go with the other machine. Run the other one that. That's OK.
+Is that your question?
+
+[Zeeshan Hashmi] 20:35
+So these these two task is running on different machines.
+So the normal schedule is running on dataintO2 and the T -. 1 is running on az01-db01. That's right.
+
+[Bryan Camaglia] 20:41
+Yes.
+Both jobs have the t-minus-1 adjustment in them.
+Let me show you side by side.
+Here's the MyTime schedule job.
+You need to run the az01-db01 job first - the Schedule t-minus-1 job.
+That only takes a few seconds to complete.
+Then you come over to dataintO2 and run this job.
+That's the process to fix a failed run.
+Let me demonstrate that now.
+[Checking jobs]
+This is running on az01-db01, so I'm not concerned about this one.
+Let me cancel that.
+This is the az01-db01 job.
+[Adjusting window]
+I seem to have lost the bottom of my screen.
+I'll close these windows.
+Let me verify everything is current before we proceed.
+
+[Bryan Camaglia] 22:46
+OK. So we'll run this. Syndromes, yeah.
+
+[Zeeshan Hashmi] 22:55
+First we need to run the job on az01-db01, right?
+
+[Bryan Camaglia] 22:58
+We don't need to. The data is already there and good. We could have run it, but it would only save about 3 seconds.
+
+[Bryan Camaglia] 23:16
+So this job is running now. Let me check how long it typically takes.
+Looking at the logs from last night, it took about 2 hours to complete.
+That's around 7200 seconds of processing time.
+It's been running for a while already, so we'll need to let it continue executing.
+The progress won't show up in this view, but we can monitor it in the job history.
+So we kicked this off and it's now running.
+This job will continue running for a while longer.
+That's the process for rerunning a failed job.
+Any questions?
+
+[Bryan Camaglia] 25:21
+So the next thing, let's go over Power BI.
+
+[Zeeshan Hashmi] 25:30
+One question only. Sorry, why is this T-minus job running on both az01-db01 and dataintO2?
+I'd like to understand the background of this setup.
+
+[Bryan Camaglia] 25:46
+So, as mentioned yesterday when we went over the scheduled job,
+it's kind of a domino effect. We would love for the scheduled job to run on one machine.
+So naturally, the machine should be az01-db01.
+But let's back up. When we had DC1, we could not talk to ADP from there.
+The only machines that could talk to ADP were dataInt1 and dataInt2.
+So we moved the scheduled job to dataInt2, but as you can see that job runs for two hours. The purpose of dataInt2 is to be a gateway, not really a processor, and so there was concern.
+If we ran this all on dataInt2, it was going to overload that machine.
+So a decision was made.
+Jim asked me to move some of the heavy processing to DC1DB01 because that machine was more powerful. So in the process, we moved some of those jobs there and back.
+That's why it's got kind of a split personality, if you will.
+Ideally, if we can get ADP to talk to az01-db01, then we will move the job off dataInt2. We will have it all running on az01-db01, but until that happens, it's got this split personality.
+
+[Zeeshan Hashmi] 27:25
+I'll try to fix it down by next week.
+
+[Bryan Camaglia] 27:40
+OK. Yeah.
+And then we can also move the timecard process down there. That one I think may also have some split processing happening.
+So that would be a cleaner, better solution without a doubt.
+That's the series of domino effects like I mentioned.
+OK. Do you want to move on to Power BI access?
+
+[Bryan Camaglia] 28:18
+Let's start with Power BI.
+From a security perspective, there are a couple of levels.
+Number one, we have these workspaces.
+So first, a person has to have access to a workspace to access the report.
+I'm going to go backwards here - from the report to the database.
+The first thing is you have to have access into here.
+What we have is Power BI. 
+All Share already has access to Share as a reminder.
+Let's take Candice Gin who needs Power BI access to all Share Dr. shops in the franchise.
+The first thing before we can even do this is that Candice is going to need a Floyd's credential.
+If that doesn't get set up, then you can't really do anything here.
+I'm going to assume that by being asked that she's already set up and we'll find out here very shortly.
+Since she is franchise, we have a Franchise Ops workspace.
+I'm going to go to that workspace and then go up here to manage access to see if Candice is in here.
+Looking for Candice Gin...
+There is no Candice Gin in here.
+Good. So now we're going to add her.
+
+[Bryan Camaglia] 30:22
+OK, now.
+Quick side note, this should all be done with security groups, but it's not. We never got to that project, never set it up.
+It should be, but because of that pain we now have to go individually.
+
+[Bryan Camaglia] 30:35
+So before I ask the obvious question, I thought I'd help you out with that.
+So then what we do is we look for Candice Gin.
+And spelled her name wrong - it's with an 'i' not an 'e'.
+So there she is. I'll select her.
+And then usually I just copy it,
+because we're going to need it again.
+OK. So we add her as a viewer.
+We're going to come back and let's see if you're in here too, Zeeshan.
+
+[Zeeshan Hashmi] 31:10
+That's my next question. That's OK. I don't have this access.
+I'm using IT Systems, try to put IT Systems.
+This is not Zeeshan, it's IT Systems.
+
+[Bryan Camaglia] 31:21
+I got I got you.
+Is this you here?
+
+[Zeeshan Hashmi] 31:26
+Yes, that's correct.
+
+[Bryan Camaglia] 31:27
+OK. So we put you as admin.
+
+[Zeeshan Hashmi] 31:29
+Yes, exactly.
+
+[Bryan Camaglia] 31:31
+Yep, OK.
+So now if I look...
+Show me Candice Gin.
+There she is.
+OK, now let me find IT Systems.
+I'm not sure what it would be listed under.
+Maybe under I?
+Hmm, what's the display name for IT Systems?
+
+[Zeeshan Hashmi] 31:58
+ID systems only.
+
+[Bryan Camaglia] 31:59
+Mm hmm.
+Oh, here we are IT systems.
+
+[Zeeshan Hashmi] 32:11
+Yes. On the down, yes.
+
+[Bryan Camaglia] 32:14
+OK.
+So that's the first level. Then the second level is each report can have (but doesn't have to have) additional security, and typically that is RD-level security, which is typically by shop. So right, we would want...
+
+[Bryan Camaglia] 32:40
+Candice, who works at one of our franchises. We don't want her having access to all the other franchise data.
+We don't want her having access to corporate data. 
+OK. So what we do is in each one of these reports.
+
+[Zeeshan Hashmi] 32:53
+Right.
+
+[Bryan Camaglia] 32:56
+So there are two things you're seeing.
+Why are these duplicated?
+This little handy dandy icon indicates this is the model where all the data sits.
+This one is the report, which is the presentation layer.
+OK. So we refresh the data.
+
+[Zeeshan Hashmi] 33:12
+Right.
+
+[Bryan Camaglia] 33:15
+We look at the report.
+So if I go into, I'm just going to pick payroll report. Here. I click on that.
+I get the report.
+Now I have access to all locations, so I see all locations. If I only had access
+to Lowell Industry franchise, then I would only see that data.
+Again, so if you went into say, whoops, I went into this and you're like, whoa, I don't see a report.
+That's because we went into the database and then it'll show you. Hey, if you want to see the report, you could click here.
+But that's why everything is doubled up. So you have to give access at the database.
+And I'm using the word database loosely, right?
+Like the data model.
+At the model, so we so for every one of these franchise reports.
+Right. We're going to go in to security.
+We're gonna add her.
+Shoot.
+It's a bummer. What was it?
+Candice Gin.
+And we'll do it.
+Systems. OK, so now we add that and we save.
+OK, now we get to go do.
+That was the facility one we did right.
+Right. So security, just make sure.
+Candice, we did.
+Just 'cause I'm tough, so then I gotta do.
+We're gonna do this for.
+So no one uses this report.
+That's why it's not filled out so, but we'll put it in here anyways.
+And it's been like this for a while and no one has complained.
+So they clearly are not looking at it, but we'll just do it now for.
+OK. So now she has access to all these reports as well as obviously this workspace. If she was to go in right now, she would not see data because now we have to set up a database.
+And add her to the back end, which we'll do here shortly.
+So the way these reports are set up, they have a table which gives permissions to everyone.
+It loads this table from the silver database out of az01-db01 and so that's why we got to go and assign which locations or shops she has access to.
+So what this pulls from is a table in the silver database. Let me show you - if we open up E integration in SQL, I have a script called "power bi silver security" that I've used many times before that handles this exact scenario.
+So this lays out the process.
+You have to go and I'm gonna explain this and then we'll execute it.
+So there's a couple tables that build the security. First thing we have to do is add
+her and then we'll add into security as a user into the table.
+Then we will find the user's number.
+So let's do this as we go here.
+I think she was C Jin.
+And then her name is Candice Jin.
+OK, so first we'll add her into the security table.
+OK, now we need to find her assigned ID number.
+Here she is - ID 109.
+You can see everyone listed here as part of security.
+So she's ID 109, and this is the final security table called 80_user_shop.
+Let me show you the current state before we truncate it - whenever you add someone,
+you have to regenerate the whole table.
+So right now the table contains user IDs mapped to locations.
+The user ID will be 109 in her case, and it shows every location they have access to.
+This data can be filtered different ways.
+For example, looking at location 1013,
+we can see all 40 users that have access to that location.
+And similarly for each location, we can see which users have access.
+
+[Bryan Camaglia] 40:54
+So I don't forget it 109.
+So what we're gonna do is we're gonna truncate the table.
+Just making sure it's empty so she works for sheer drive.
+So if you want to give someone access to every location, both franchise and corporate, you would add their ID here.
+If you want them to just have corporate locations, you give them this one.
+
+[Bryan Camaglia] 41:23
+Since she works at Sheer Drive, which is one of our franchises, we'll add her ID 109 here.
+When I say "all", you don't need to add it in multiple places - this one entry covers all franchises.
+So we've added 109 to give her franchise access.
+
+Now I'll rebuild the table by executing all these queries in sequence down to the final check.
+*executes queries*
+
+The table has been rebuilt with the new permissions. You can verify the data is there by querying the table.
+
+Once this is done, I let users know:
+"You now have access. The Power BI reports refresh overnight, so you should see your data tomorrow morning. While we could refresh the reports manually to get you access today, we typically wait for the overnight refresh."
+
+They'll be able to access the workspace and see the report structure right away since that's live, but the actual data in the reports won't appear until after the next refresh of these security tables.
+
+[Bryan Camaglia] 43:04
+So what we would need to do, we'll do this real quickly too.
+Do you remember the email address for IT systems?
+Is it one word or dash? Or do you not remember?
+
+[Zeeshan Hashmi] 43:15
+IT system.
+
+[Bryan Camaglia] 43:17
+I'll check real quickly.
+IT-systems is one word.
+Your ID is 110 and you'll need access to everything.
+So I'll add you to this security group.
+I'll truncate the table first.
+Table is now empty.
+OK. We're all set there. That takes care of Candice.
+
+[Bryan Camaglia] 44:23
+In there as well as IT Systems.
+Now I'm going to show you something else.
+And then you'll get your homework, right?
+So we have all these other ones - there's no need to give her access to the other ones since she shouldn't be in there, right?
+But you are going to want access to pretty much everything.
+So what I'm going to do right now - the other major ones are IT Ops.
+So what I'm going to do is add you in here.
+So now, what you're going to see is - you're like "OK, do I have to go through every one of these reports?"
+Yes, some of them you'll have to go through and add security, but then there are going to be some that don't have security.
+So I want to show you what that looks like.
+So if you go into security and you get this,
+it basically says that any previously defined security is no longer working.
+
+[Bryan Camaglia] 45:27
+It may also mean that security was never set up for this report. This is an example of a report where you don't need to configure security.
+
+[Bryan Camaglia] 45:32
+If you went in, you would see all the data because no security has been built at that level.
+
+[Bryan Camaglia] 45:47
+Adding IT Systems into MyTime Finance, HR
+
+Those are the main workspaces. The other ones aren't really used much.
+We did set up Franchise, but I don't think anything is in the other workspaces since we did the migration.
+Some of these are just temporary workspaces.
+So those are the key workspaces. Now I'm going to give you your homework.
+Says she lost access to Power Bi. OK.
+
+[Bryan Camaglia] 46:45
+So the first thing I would recommend you do on this one is make sure she has a license. I don't have access to licensing, so I would go look her up and see she is checked for Power Bi Pro and she's got a license that would be the.
+
+[Bryan Camaglia] 46:58
+OK.
+46 minutes 52 seconds46:52
+Zeeshan Hashmi 46 minutes 52 seconds
+M.
+Zeeshan Hashmi 46 minutes 58 seconds
+OK.
+BC
+Bryan Camaglia
+47 minutes47:00
+Bryan Camaglia 47 minutes
+1st place I would look and then and then if she does.
+Bryan Camaglia 47 minutes 6 seconds
+I don't even know who she is.
+Bryan Camaglia 47 minutes 9 seconds
+But let's.
+ZH
+Zeeshan Hashmi
+47 minutes 10 seconds47:10
+Zeeshan Hashmi 47 minutes 10 seconds
+It looked like she he.
+BC
+Bryan Camaglia
+47 minutes 14 seconds47:14
+Bryan Camaglia 47 minutes 14 seconds
+Sivanan.
+ZH
+Zeeshan Hashmi
+47 minutes 14 seconds47:14
+Zeeshan Hashmi 47 minutes 14 seconds
+John is saying that she she, she she lost the access of the power Bi.
+BC
+Bryan Camaglia
+47 minutes 19 seconds47:19
+Bryan Camaglia 47 minutes 19 seconds
+Yeah, we don't.
+ZH
+Zeeshan Hashmi
+47 minutes 19 seconds47:19
+Zeeshan Hashmi 47 minutes 19 seconds
+So somehow she.
+BC
+Bryan Camaglia
+47 minutes 20 seconds47:20
+Bryan Camaglia 47 minutes 20 seconds
+We don't take away access here.
+Bryan Camaglia 47 minutes 22 seconds
+We don't have a good off boarding process.
+Bryan Camaglia 47 minutes 26 seconds
+So for her to lose access.
+Bryan Camaglia 47 minutes 31 seconds
+I I have not removed anybody off the list yet, so that's why I'm feeling.
+Bryan Camaglia 47 minutes 37 seconds
+The licensing issue first.
+ZH
+Zeeshan Hashmi
+47 minutes 40 seconds47:40
+Zeeshan Hashmi 47 minutes 40 seconds
+OK.
+Zeeshan Hashmi 47 minutes 42 seconds
+I can check real really quick.
+Zeeshan Hashmi 47 minutes 44 seconds
+Real quick.
+BC
+Bryan Camaglia
+47 minutes 45 seconds47:45
+Bryan Camaglia 47 minutes 45 seconds
+Yeah. And if that doesn't work, then we can go down. The thing I don't like I said.
+Bryan Camaglia 47 minutes 49 seconds
+If I knew who she worked for, let's see.
+Bryan Camaglia 47 minutes 52 seconds
+Let's see if she's a franchise person.
+Bryan Camaglia 48 minutes 1 second
+So Savannah's not here.
+Bryan Camaglia 48 minutes 3 seconds
+Let's see if she's a finance person.
+Bryan Camaglia 48 minutes 13 seconds
+I don't even know who she is, and quite frankly, when I hear lost, I feel like I'm not getting the whole story. So she's S Curry.
+Bryan Camaglia 48 minutes 28 seconds
+So what?
+Bryan Camaglia 48 minutes 30 seconds
+I would recommend normally is like. What does that mean you lost?
+Bryan Camaglia 48 minutes 34 seconds
+Like what report and what Workspace did you have access to that you no longer like?
+Bryan Camaglia 48 minutes 39 seconds
+That's usually a better way to start this thing after if you want to check licensing, but I don't even know.
+Bryan Camaglia 48 minutes 45 seconds
+Let's check one last. Let's see if she's in OPS.
+Bryan Camaglia 48 minutes 51 seconds
+Then I'm gonna kinda give you one more piece of context.
+Bryan Camaglia 49 minutes
+Oh, she's here. So she's set up, right?
+Bryan Camaglia 49 minutes 3 seconds
+So you could see she still has access here. So I would say maybe her license got taken away and that's where it is.
+Bryan Camaglia 49 minutes 10 seconds
+So as I mentioned, there's there's four main workspaces. It OPS is generally corporate people and who work in corporate.
+Bryan Camaglia 49 minutes 20 seconds
+So sometimes we don't want corporate people to have access to franchise. That's why.
+Bryan Camaglia 49 minutes 25 seconds
+In the security we have everybody or just corporate.
+Bryan Camaglia 49 minutes 31 seconds
+Mytime finance. If someone comes in and says I need access to finance, typically that means they need access to everybody. Franchise incorporate in an and then HR gets access to pretty much everybody in corporate because they only do HR for corporate and then franchise gets their specific Fran.
+ZH
+Zeeshan Hashmi
+49 minutes 39 seconds49:39
+Zeeshan Hashmi 49 minutes 39 seconds
+Hmm.
+BC
+Bryan Camaglia
+49 minutes 51 seconds49:51
+Bryan Camaglia 49 minutes 51 seconds
+Data only and that's where the role of security is.
+Bryan Camaglia 49 minutes 54 seconds
+So, so again, franchise folks get access to their specific franchise only.
+Bryan Camaglia 49 minutes 59 seconds
+Not all franchises, but just their own HR gets corporate.
+Bryan Camaglia 50 minutes 3 seconds
+Only Mytime OPS usually gets corporate only unless it's the executive team, right?
+Bryan Camaglia 50 minutes 12 seconds
+Like obviously Karen or Vps and maybe some directors might get more and then finance gets access to everybody. Is is the general rule of thumb.
+ZH
+Zeeshan Hashmi
+50 minutes 24 seconds50:24
+Zeeshan Hashmi 50 minutes 24 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+50 minutes 24 seconds50:24
+Bryan Camaglia 50 minutes 24 seconds
+To come in.
+ZH
+Zeeshan Hashmi
+50 minutes 26 seconds50:26
+Zeeshan Hashmi 50 minutes 26 seconds
+M.
+BC
+Bryan Camaglia
+50 minutes 27 seconds50:27
+Bryan Camaglia 50 minutes 27 seconds
+I usually get the hey, what do they need access to?
+Bryan Camaglia 50 minutes 31 seconds
+And usually they should tell you like, hey, here's Candace Power Bay access.
+Bryan Camaglia 50 minutes 37 seconds
+She's a sheer drive in the franchise workspace, right?
+Bryan Camaglia 50 minutes 41 seconds
+Validation that Sonia Long already has access to.
+Bryan Camaglia 50 minutes 47 seconds
+Sheer Dr. this lady.
+Bryan Camaglia 50 minutes 49 seconds
+I don't know why we we have had her forever.
+Bryan Camaglia 50 minutes 53 seconds
+I set her up years ago.
+Bryan Camaglia 50 minutes 55 seconds
+So let's see.
+Bryan Camaglia 50 minutes 58 seconds
+So let's start with her.
+Bryan Camaglia 51 minutes 1 second
+Sonia.
+Bryan Camaglia 51 minutes 4 seconds
+She does have access, and then I'll just pull the payroll report. 'cause, that's most critical is these two are the most critical.
+
+Bryan Camaglia
+51 minutes 11 seconds51:11
+Bryan Camaglia 51 minutes 11 seconds
+So I usually just kinda check those.
+Bryan Camaglia 51 minutes 13 seconds
+So if I go into here.
+Bryan Camaglia 51 minutes 17 seconds
+Sonia has access.
+Bryan Camaglia 51 minutes 20 seconds
+And then I'm gonna check the OPS report.
+Bryan Camaglia 51 minutes 30 seconds
+Yep, so.
+Bryan Camaglia 51 minutes 34 seconds
+But I would recommend you reply back to is hey, Candice is set up.
+Bryan Camaglia 51 minutes 39 seconds
+She should be good to go tomorrow. If she still has issues, let us know.
+ZH
+Zeeshan Hashmi
+51 minutes 40 seconds51:40
+Zeeshan Hashmi 51 minutes 40 seconds
+Mm hmm.
+Zeeshan Hashmi 51 minutes 45 seconds
+OK.
+BC
+Bryan Camaglia
+51 minutes 45 seconds51:45
+Bryan Camaglia 51 minutes 45 seconds
+Savannah, once you check the license, if she's not either that resolved it or go hey.
+Bryan Camaglia 51 minutes 54 seconds
+Setup looks good.
+Bryan Camaglia 51 minutes 55 seconds
+Please provide a specific example of what's missing and then the same thing with Sonia. Say setup looks good.
+ZH
+Zeeshan Hashmi
+52 minutes 3 seconds52:03
+Zeeshan Hashmi 52 minutes 3 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+52 minutes 4 seconds52:04
+Bryan Camaglia 52 minutes 4 seconds
+Need a specific example of where you're having an issue.
+ZH
+Zeeshan Hashmi
+52 minutes 6 seconds52:06
+Zeeshan Hashmi 52 minutes 6 seconds
+OK.
+Zeeshan Hashmi 52 minutes 10 seconds
+Gotcha.
+BC
+Bryan Camaglia
+52 minutes 14 seconds52:14
+Bryan Camaglia 52 minutes 14 seconds
+So there we covered 2 topics.
+Bryan Camaglia 52 minutes 19 seconds
+With a few minutes to spare.
+ZH
+Zeeshan Hashmi
+52 minutes 24 seconds52:24
+Zeeshan Hashmi 52 minutes 24 seconds
+Josh.
+Zeeshan Hashmi 52 minutes 26 seconds
+Do you have any questions so far?
+Zeeshan Hashmi 52 minutes 35 seconds
+Yes you do.
+Zeeshan Hashmi 52 minutes 46 seconds
+OK.
+BC
+Bryan Camaglia
+52 minutes 50 seconds52:50
+Bryan Camaglia 52 minutes 50 seconds
+Mm hmm.
+ZH
+Zeeshan Hashmi
+52 minutes 51 seconds52:51
+Zeeshan Hashmi 52 minutes 51 seconds
+Umm.
+Zeeshan Hashmi 52 minutes 54 seconds
+I think Josh is not here, OK. Let me. Meanwhile, let me check the license thing.
+Zeeshan Hashmi 53 minutes
+So Svan Svan, right?
+BC
+Bryan Camaglia
+53 minutes53:00
+Bryan Camaglia 53 minutes
+OK.
+Bryan Camaglia 53 minutes 3 seconds
+Yep, both Sonya and in that e-mail.
+Bryan Camaglia 53 minutes 7 seconds
+Yeah, for both of them.
+ZH
+Zeeshan Hashmi
+53 minutes 8 seconds53:08
+Zeeshan Hashmi 53 minutes 8 seconds
+Looks like swanna the rehears the power BI Pro license, yes.
+BC
+Bryan Camaglia
+53 minutes 14 seconds53:14
+Bryan Camaglia 53 minutes 14 seconds
+OK, she does, huh?
+ZH
+Zeeshan Hashmi
+53 minutes 19 seconds53:19
+Zeeshan Hashmi 53 minutes 19 seconds
+You for the other one.
+Zeeshan Hashmi 53 minutes 23 seconds
+Sonia.
+Zeeshan Hashmi 53 minutes 36 seconds
+Both have.
+Zeeshan Hashmi 53 minutes 39 seconds
+Our VIP pool license.
+BC
+Bryan Camaglia
+53 minutes 41 seconds53:41
+Bryan Camaglia 53 minutes 41 seconds
+Welcome.
+ZH
+Zeeshan Hashmi
+53 minutes 45 seconds53:45
+Zeeshan Hashmi 53 minutes 45 seconds
+So then what could be 9 issue?
+Zeeshan Hashmi 53 minutes 49 seconds
+Or should I ask the some reference example?
+BC
+Bryan Camaglia
+53 minutes 51 seconds53:51
+Bryan Camaglia 53 minutes 51 seconds
+Yeah, yeah, I would, you know.
+Bryan Camaglia 53 minutes 56 seconds
+'Cause. Now we're in no man's land.
+Bryan Camaglia 53 minutes 57 seconds
+Like, did they lose their URL? Are they not refreshing?
+Bryan Camaglia 54 minutes 1 second
+Did maybe a glitch happened right?
+Bryan Camaglia 54 minutes 3 seconds
+I I I have no idea.
+ZH
+Zeeshan Hashmi
+54 minutes 3 seconds54:03
+Zeeshan Hashmi 54 minutes 3 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+54 minutes 5 seconds54:05
+Bryan Camaglia 54 minutes 5 seconds
+You know 'cause, we we changed nothing on our side.
+Bryan Camaglia 54 minutes 8 seconds
+So then you know, maybe they got a new computer, right?
+Bryan Camaglia 54 minutes 12 seconds
+I mean, now we're in no man's land.
+Bryan Camaglia 54 minutes 14 seconds
+So that's usually when I said send me a screenshot, you know, tell me specifically what you're trying to access.
+Bryan Camaglia 54 minutes 20 seconds
+Success and then we can triage from there. Once she starts getting new information.
+ZH
+Zeeshan Hashmi
+54 minutes 21 seconds54:21
+Zeeshan Hashmi 54 minutes 21 seconds
+Mm hmm.
+Zeeshan Hashmi 54 minutes 28 seconds
+Got you.
+Zeeshan Hashmi 54 minutes 31 seconds
+All right.
+Zeeshan Hashmi 54 minutes 34 seconds
+Sounds good.
+Zeeshan Hashmi 54 minutes 35 seconds
+No problem. I'll send them e-mail and I'll copy to you as well.
+BC
+Bryan Camaglia
+54 minutes 39 seconds54:39
+Bryan Camaglia 54 minutes 39 seconds
+Sure.
+ZH
+Zeeshan Hashmi
+54 minutes 39 seconds54:39
+Zeeshan Hashmi 54 minutes 39 seconds
+If yeah.
+Zeeshan Hashmi 54 minutes 40 seconds
+So you, you and I can work together.
+BC
+Bryan Camaglia
+54 minutes 43 seconds54:43
+Bryan Camaglia 54 minutes 43 seconds
+Yeah.
+ZH
+Zeeshan Hashmi
+54 minutes 43 seconds54:43
+Zeeshan Hashmi 54 minutes 43 seconds
+Josh, Josh, you are there.
+Zeeshan Hashmi 54 minutes 54 seconds
+OK.
+Zeeshan Hashmi 54 minutes 55 seconds
+No problem.
+Zeeshan Hashmi 54 minutes 56 seconds
+Alright Bryan, thanks for your time.
+BC
+Bryan Camaglia
+54 minutes 59 seconds54:59
+Bryan Camaglia 54 minutes 59 seconds
+Of course.
+ZH
+Zeeshan Hashmi
+55 minutes55:00
+Zeeshan Hashmi 55 minutes
+I'll ping you if I need any require your help.
+BC
+Bryan Camaglia
+55 minutes 4 seconds55:04
+Bryan Camaglia 55 minutes 4 seconds
+Absolutely, absolutely no problem.
+Bryan Camaglia 55 minutes 6 seconds
+And then I will, oh, the last thing that I will do is I will add you to those reports which.
+Bryan Camaglia 55 minutes 15 seconds
+Right.
+ZH
+Zeeshan Hashmi
+55 minutes 19 seconds55:19
+Zeeshan Hashmi 55 minutes 19 seconds
+Yes, the IT execut 1.
+BC
+Bryan Camaglia
+55 minutes 20 seconds55:20
+Bryan Camaglia 55 minutes 20 seconds
+So right here, we'll we'll do that real quickly, right? So the information technology.
+ZH
+Zeeshan Hashmi
+55 minutes 26 seconds55:26
+Zeeshan Hashmi 55 minutes 26 seconds
+A unity share your screens? Why I can I know.
+BC
+Bryan Camaglia
+55 minutes 27 seconds55:27
+Bryan Camaglia 55 minutes 27 seconds
+OK.
+Bryan Camaglia 55 minutes 28 seconds
+Oh, I'm sorry.
+Bryan Camaglia 55 minutes 29 seconds
+I did stop sharing it, I.
+ZH
+Zeeshan Hashmi
+55 minutes 30 seconds55:30
+Zeeshan Hashmi 55 minutes 30 seconds
+No problem.
+BC
+Bryan Camaglia
+55 minutes 32 seconds55:32
+Bryan Camaglia 55 minutes 32 seconds
+Thank you.
+Bryan Camaglia 55 minutes 34 seconds
+So again, in information technology, this is the IT job monitoring.
+Bryan Camaglia 55 minutes 42 seconds
+And manage subscriptions.
+Bryan Camaglia 55 minutes 50 seconds
+And you want me to send it to you or to IT systems?
+
+Zeeshan Hashmi
+55 minutes 55 seconds55:55
+Zeeshan Hashmi 55 minutes 55 seconds
+No, me because IT system we use for the admin task and it shouldn't come on my e-mail address because then I would be able to check yeah.
+BC
+Bryan Camaglia
+56 minutes 2 seconds56:02
+Bryan Camaglia 56 minutes 2 seconds
+OK.
+Bryan Camaglia 56 minutes 4 seconds
+No problem.
+ZH
+Zeeshan Hashmi
+56 minutes 5 seconds56:05
+Zeeshan Hashmi 56 minutes 5 seconds
+Because ID system is not the actual e-mail address itself.
+Zeeshan Hashmi 56 minutes 8 seconds
+It's a mailbox and we use it for the admin purpose only.
+BC
+Bryan Camaglia
+56 minutes 10 seconds56:10
+Bryan Camaglia 56 minutes 10 seconds
+Yeah.
+Bryan Camaglia 56 minutes 13 seconds
+Makes sense?
+Bryan Camaglia 56 minutes 33 seconds
+So I send it twice a day at 4:00 AM and like well 4:15 and 6:00 just.
+Bryan Camaglia 56 minutes 39 seconds
+Just to get it.
+Bryan Camaglia 56 minutes 50 seconds
+So you, me, John, Bresso and Josh are on it.
+Bryan Camaglia 57 minutes 8 seconds
+You are now proud recipient of more information.
+ZH
+Zeeshan Hashmi
+57 minutes 14 seconds57:14
+Zeeshan Hashmi 57 minutes 14 seconds
+He he.
+BC
+Bryan Camaglia
+57 minutes 16 seconds57:16
+Bryan Camaglia 57 minutes 16 seconds
+OK, awesome.
+ZH
+Zeeshan Hashmi
+57 minutes 17 seconds57:17
+Zeeshan Hashmi 57 minutes 17 seconds
+Alright, thank you so much Sir for your time.
+BC
+Bryan Camaglia
+57 minutes 22 seconds57:22
+Bryan Camaglia 57 minutes 22 seconds
+Yeah, hold on one second.
+ZH
+Zeeshan Hashmi
+57 minutes 24 seconds57:24
+Zeeshan Hashmi 57 minutes 24 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+57 minutes 29 seconds57:29
+Bryan Camaglia 57 minutes 29 seconds
+So this just came across.
+Bryan Camaglia 57 minutes 30 seconds
+I'm still working on John to include you.
+Bryan Camaglia 57 minutes 33 seconds
+It appears that the corporate tip files for today never posted to our Azure account this morning.
+ZH
+Zeeshan Hashmi
+57 minutes 36 seconds57:36
+Zeeshan Hashmi 57 minutes 36 seconds
+OK.
+BC
+Bryan Camaglia
+57 minutes 40 seconds57:40
+Bryan Camaglia 57 minutes 40 seconds
+So this is.
+Bryan Camaglia 57 minutes 43 seconds
+An issue that is definitely sky is falling so.
+Bryan Camaglia 57 minutes 48 seconds
+If we look real quickly, what John is saying.
+ZH
+Zeeshan Hashmi
+57 minutes 51 seconds57:51
+Zeeshan Hashmi 57 minutes 51 seconds
+Yeah, please.
+BC
+Bryan Camaglia
+57 minutes 52 seconds57:52
+Bryan Camaglia 57 minutes 52 seconds
+They're going to the S3 bucket.
+Bryan Camaglia 57 minutes 54 seconds
+I'm bringing it up.
+Bryan Camaglia 57 minutes 55 seconds
+Hold on one second. Come here.
+Bryan Camaglia 57 minutes 59 seconds
+Right. So if we go into here.
+Bryan Camaglia 58 minutes 3 seconds
+Right. If we go into the daily tips.
+ZH
+Zeeshan Hashmi
+58 minutes 6 seconds58:06
+Zeeshan Hashmi 58 minutes 6 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+58 minutes 9 seconds58:09
+Bryan Camaglia 58 minutes 9 seconds
+So today's the 15th.
+ZH
+Zeeshan Hashmi
+58 minutes 12 seconds58:12
+Zeeshan Hashmi 58 minutes 12 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+58 minutes 13 seconds58:13
+Bryan Camaglia 58 minutes 13 seconds
+We have.
+Bryan Camaglia 58 minutes 14 seconds
+We have tip files in there.
+Bryan Camaglia 58 minutes 16 seconds
+I wonder why, John, if we, if we go in 14th we have 81 files.
+Bryan Camaglia 58 minutes 26 seconds
+We have 81 files so we we got the data from from my time.
+Bryan Camaglia 58 minutes 31 seconds
+And so 81 files.
+Bryan Camaglia 58 minutes 32 seconds
+So this file says OK, we have tips every you know and it's for yesterday so.
+Bryan Camaglia 58 minutes 40 seconds
+It's kind of a funny name, right?
+Bryan Camaglia 58 minutes 41 seconds
+Today's the 15th, but it's for tips. Yesterday 'cause. Obviously we're paying tips out for yesterday's sales, right?
+ZH
+Zeeshan Hashmi
+58 minutes 44 seconds58:44
+Zeeshan Hashmi 58 minutes 44 seconds
+Mm hmm.
+Zeeshan Hashmi 58 minutes 48 seconds
+Yep, right.
+BC
+Bryan Camaglia
+58 minutes 48 seconds58:48
+Bryan Camaglia 58 minutes 48 seconds
+Kind of a thing.
+Bryan Camaglia 58 minutes 49 seconds
+So let's so that's not the issue.
+Bryan Camaglia 58 minutes 52 seconds
+So John sent an e-mail that.
+Bryan Camaglia 58 minutes 55 seconds
+May not be exactly correct.
+Bryan Camaglia 58 minutes 57 seconds
+So now let's.
+Bryan Camaglia 58 minutes 59 seconds
+Go into and I'm gonna bring this up.
+Bryan Camaglia 59 minutes 1 second
+So now I'm gonna go into datafactory to see if any jobs failed.
+ZH
+Zeeshan Hashmi
+59 minutes 6 seconds59:06
+Zeeshan Hashmi 59 minutes 6 seconds
+OK.
+BC
+Bryan Camaglia
+59 minutes 14 seconds59:14
+Bryan Camaglia 59 minutes 14 seconds
+Sorry. Let me just tell my 10:00 then I'm gonna run just two minutes late.
+ZH
+Zeeshan Hashmi
+59 minutes 18 seconds59:18
+Zeeshan Hashmi 59 minutes 18 seconds
+Uh huh.
+Zeeshan Hashmi 59 minutes 22 seconds
+Which means.
+Zeeshan Hashmi 59 minutes 25 seconds
+There are a couple of jobs that still running right.
+Zeeshan Hashmi 59 minutes 29 seconds
+OK, ADP wisely.
+Zeeshan Hashmi 59 minutes 31 seconds
+Different pipeline.
+BC
+Bryan Camaglia
+59 minutes 33 seconds59:33
+Bryan Camaglia 59 minutes 33 seconds
+OK.
+Bryan Camaglia 59 minutes 33 seconds
+So yeah, so this stuff's still running.
+Bryan Camaglia 59 minutes 35 seconds
+That's three hours. That's not good.
+ZH
+Zeeshan Hashmi
+59 minutes 40 seconds59:40
+Zeeshan Hashmi 59 minutes 40 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+59 minutes 40 seconds59:40
+Bryan Camaglia 59 minutes 40 seconds
+So this looks like.
+Bryan Camaglia 59 minutes 43 seconds
+A.
+ZH
+Zeeshan Hashmi
+59 minutes 45 seconds59:45
+Zeeshan Hashmi 59 minutes 45 seconds
+You started at 6:30.
+BC
+Bryan Camaglia
+59 minutes 45 seconds59:45
+Bryan Camaglia 59 minutes 45 seconds
+Here. Yeah. Let me show you yesterday's right.
+Bryan Camaglia 59 minutes 51 seconds
+So here here are tip files right like so.
+Bryan Camaglia 59 minutes 54 seconds
+It's a couple jobs, right?
+Bryan Camaglia 59 minutes 56 seconds
+So this should take 4 minutes and 10 seconds.
+Bryan Camaglia 59 minutes 59 seconds
+Two minutes, so this should be done in like 10 minutes, right?
+Bryan Camaglia 1 hour 2 seconds
+And it runs twice a day.
+Bryan Camaglia 1 hour 4 seconds
+So the the first time it runs.
+Bryan Camaglia 1 hour 7 seconds
+Well, let's see.
+Bryan Camaglia 1 hour 10 seconds
+Sleeve corporate. Yeah. So it'll. And I don't wanna confuse it. It'll run.
+Bryan Camaglia 1 hour 19 seconds
+Twice a day. So the first time it runs it, it's going to do sleet, which let's see.
+Bryan Camaglia 1 hour 26 seconds
+So we start here.
+Bryan Camaglia 1 hour 29 seconds
+We don't do sleep.
+Bryan Camaglia 1 hour 29 seconds
+We do corporate.
+Bryan Camaglia 1 hour 30 seconds
+So this is the corporate run that runs at 6:30 and then it runs again at 7:00.
+ZH
+Zeeshan Hashmi
+1 hour 37 seconds1:00:37
+Zeeshan Hashmi 1 hour 37 seconds
+Mm, HM.
+BC
+Bryan Camaglia
+1 hour 37 seconds1:00:37
+Bryan Camaglia 1 hour 37 seconds
+Again, and this one does sleeve. So this is kind of so now if we look at this morning.
+Bryan Camaglia 1 hour 44 seconds
+Right. This first one started at 6:30.
+Bryan Camaglia 1 hour 50 seconds
+And all. And if we pull back to this.
+Bryan Camaglia 1 hour 57 seconds
+Right. If we look back at the jobs they came.
+JC
+Josh Courson
+1 hour 1 minute 3 seconds1:01:03
+Josh Courson 1 hour 1 minute 3 seconds
+We're all there.
+BC
+Bryan Camaglia
+1 hour 1 minute 5 seconds1:01:05
+Bryan Camaglia 1 hour 1 minute 5 seconds
+Wait, what time is this?
+Bryan Camaglia 1 hour 1 minute 6 seconds
+Oh yeah, 3/3 in the morning.
+Bryan Camaglia 1 hour 1 minute 8 seconds
+So. So they were all there in time.
+ZH
+Zeeshan Hashmi
+1 hour 1 minute 11 seconds1:01:11
+Zeeshan Hashmi 1 hour 1 minute 11 seconds
+Yep, before 6:30.
+BC
+Bryan Camaglia
+1 hour 1 minute 12 seconds1:01:12
+Bryan Camaglia 1 hour 1 minute 12 seconds
+Now the question is Yep. So the question is, why the heck is this thing still running and what is it running on?
+ZH
+Zeeshan Hashmi
+1 hour 1 minute 19 seconds1:01:19
+Zeeshan Hashmi 1 hour 1 minute 19 seconds
+Can we stop and rerun this one?
+BC
+Bryan Camaglia
+1 hour 1 minute 22 seconds1:01:22
+Bryan Camaglia 1 hour 1 minute 22 seconds
+Tips is super dangerous, OK?
+
+Zeeshan Hashmi
+1 hour 1 minute 26 seconds1:01:26
+Zeeshan Hashmi 1 hour 1 minute 26 seconds
+OK.
+BC
+Bryan Camaglia
+1 hour 1 minute 27 seconds1:01:27
+Bryan Camaglia 1 hour 1 minute 27 seconds
+I've been burnt.
+Bryan Camaglia 1 hour 1 minute 30 seconds
+A ton of times on this thing and and I we can stop it.
+ZH
+Zeeshan Hashmi
+1 hour 1 minute 32 seconds1:01:32
+Zeeshan Hashmi 1 hour 1 minute 32 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+1 hour 1 minute 33 seconds1:01:33
+Bryan Camaglia 1 hour 1 minute 33 seconds
+But we have to this one. We have to know specifically what happened because what we don't want to do is send the file twice 'cause if we send it twice.
+ZH
+Zeeshan Hashmi
+1 hour 1 minute 41 seconds1:01:41
+Zeeshan Hashmi 1 hour 1 minute 41 seconds
+It would be duplicate.
+Zeeshan Hashmi 1 hour 1 minute 42 seconds
+It would be a double double the amount, right?
+BC
+Bryan Camaglia
+1 hour 1 minute 43 seconds1:01:43
+Bryan Camaglia 1 hour 1 minute 43 seconds
+Pay twice and it and and it's hard to get that money back at times, or there's a lot of accounting work that has to be done. But I, but in this particular case, I agree with you.
+Bryan Camaglia 1 hour 1 minute 54 seconds
+Look at this, the survey.
+Bryan Camaglia 1 hour 1 minute 56 seconds
+So my question would be, why is Amazon or Azure choking on this thing so badly?
+Bryan Camaglia 1 hour 2 minutes 2 seconds
+I don't know.
+ZH
+Zeeshan Hashmi
+1 hour 2 minutes 5 seconds1:02:05
+Zeeshan Hashmi 1 hour 2 minutes 5 seconds
+So this this looks like on the Azure side because I believe all the files it runs the IT it started to run the pipeline when it gets a file right?
+BC
+Bryan Camaglia
+1 hour 2 minutes 5 seconds1:02:05
+Bryan Camaglia 1 hour 2 minutes 5 seconds
+Umm.
+ZH
+Zeeshan Hashmi
+1 hour 2 minutes 15 seconds1:02:15
+Zeeshan Hashmi 1 hour 2 minutes 15 seconds
+So I'm I am assuming that it has all the files 68 or 81 whatever the file count was there, but something something choking on the Azure data factory site.
+BC
+Bryan Camaglia
+1 hour 2 minutes 21 seconds1:02:21
+Bryan Camaglia 1 hour 2 minutes 21 seconds
+Right.
+Bryan Camaglia 1 hour 2 minutes 28 seconds
+Right. So something but like what though, right it's it.
+Bryan Camaglia 1 hour 2 minutes 32 seconds
+Got some of the files 'cause it's copying it.
+Bryan Camaglia 1 hour 2 minutes 34 seconds
+It's got some, but some of it's cued.
+Bryan Camaglia 1 hour 2 minutes 37 seconds
+This thing has been cued.
+ZH
+Zeeshan Hashmi
+1 hour 2 minutes 39 seconds1:02:39
+Zeeshan Hashmi 1 hour 2 minutes 39 seconds
+For two more than two hours.
+BC
+Bryan Camaglia
+1 hour 2 minutes 41 seconds1:02:41
+Bryan Camaglia 1 hour 2 minutes 41 seconds
+Value 75.
+Bryan Camaglia 1 hour 2 minutes 44 seconds
+So let's see what 75 is.
+ZH
+Zeeshan Hashmi
+1 hour 2 minutes 52 seconds1:02:52
+Zeeshan Hashmi 1 hour 2 minutes 52 seconds
+E.
+BC
+Bryan Camaglia
+1 hour 2 minutes 59 seconds1:02:59
+Bryan Camaglia 1 hour 2 minutes 59 seconds
+I don't even know if there's a 75 in here.
+JC
+Josh Courson
+1 hour 3 minutes 4 seconds1:03:04
+Josh Courson 1 hour 3 minutes 4 seconds
+I saw it a second ago.
+ZH
+Zeeshan Hashmi
+1 hour 3 minutes 13 seconds1:03:13
+Zeeshan Hashmi 1 hour 3 minutes 13 seconds
+Yeah, yeah.
+JC
+Josh Courson
+1 hour 3 minutes 13 seconds1:03:13
+Josh Courson 1 hour 3 minutes 13 seconds
+There.
+BC
+Bryan Camaglia
+1 hour 3 minutes 40 seconds1:03:40
+Bryan Camaglia 1 hour 3 minutes 40 seconds
+There is nothing unique in this file.
+JC
+Josh Courson
+1 hour 3 minutes 46 seconds1:03:46
+Josh Courson 1 hour 3 minutes 46 seconds
+Cute. Is there any way to force start that one job that's queued?
+BC
+Bryan Camaglia
+1 hour 3 minutes 52 seconds1:03:52
+Bryan Camaglia 1 hour 3 minutes 52 seconds
+No, I have no idea.
+Bryan Camaglia 1 hour 4 minutes 15 seconds
+Yeah, I don't.
+Bryan Camaglia 1 hour 4 minutes 16 seconds
+It kinda beyond the scope of what I don't know. If there are places where we could take this job and see what the problem is.
+Bryan Camaglia 1 hour 4 minutes 24 seconds
+The only.
+Bryan Camaglia 1 hour 4 minutes 27 seconds
+Issue that I I mean I don't know if we've lost connectivity to that bucket, but this this file is hanging.
+ZH
+Zeeshan Hashmi
+1 hour 4 minutes 39 seconds1:04:39
+Zeeshan Hashmi 1 hour 4 minutes 39 seconds
+Is there any process that?
+BC
+Bryan Camaglia
+1 hour 4 minutes 41 seconds1:04:41
+Bryan Camaglia 1 hour 4 minutes 41 seconds
+So we can we can rerun at this point, so.
+ZH
+Zeeshan Hashmi
+1 hour 4 minutes 42 seconds1:04:42
+Zeeshan Hashmi 1 hour 4 minutes 42 seconds
+We can.
+Zeeshan Hashmi 1 hour 4 minutes 45 seconds
+But you said there would be a duplication, right?
+BC
+Bryan Camaglia
+1 hour 4 minutes 48 seconds1:04:48
+Bryan Camaglia 1 hour 4 minutes 48 seconds
+No. If this is it just depends. Like if a. If you get far enough and a file is generated, it might pick it up and send it.
+Bryan Camaglia 1 hour 4 minutes 54 seconds
+But at this point, we're just ingesting the the data so.
+ZH
+Zeeshan Hashmi
+1 hour 5 minutes 1 second1:05:01
+Zeeshan Hashmi 1 hour 5 minutes 1 second
+Mm hmm.
+BC
+Bryan Camaglia
+1 hour 5 minutes 55 seconds1:05:55
+Bryan Camaglia 1 hour 5 minutes 55 seconds
+So I'm gonna.
+ZH
+Zeeshan Hashmi
+1 hour 5 minutes 57 seconds1:05:57
+Zeeshan Hashmi 1 hour 5 minutes 57 seconds
+So one question. Yes it is.
+BC
+Bryan Camaglia
+1 hour 5 minutes 58 seconds1:05:58
+Bryan Camaglia 1 hour 5 minutes 58 seconds
+Status.
+ZH
+Zeeshan Hashmi
+1 hour 6 minutes1:06:00
+Zeeshan Hashmi 1 hour 6 minutes
+It is sending the file after the once the pipeline runs, it sends the file to the storage.
+Zeeshan Hashmi 1 hour 6 minutes 7 seconds
+Azure storage, right?
+Zeeshan Hashmi 1 hour 6 minutes 9 seconds
+So can we?
+Zeeshan Hashmi 1 hour 6 minutes 9 seconds
+Can we stop this one? And if it has generated any output?
+Zeeshan Hashmi 1 hour 6 minutes 15 seconds
+A payroll file on the storage. Can we delete that one and then we can rerun this?
+BC
+Bryan Camaglia
+1 hour 6 minutes 19 seconds1:06:19
+Bryan Camaglia 1 hour 6 minutes 19 seconds
+Yeah, yeah, we, we we'll save it for another time.
+Bryan Camaglia 1 hour 6 minutes 24 seconds
+I don't have time to go through it right now.
+Bryan Camaglia 1 hour 6 minutes 26 seconds
+I'm. I'm gotta do it.
+ZH
+Zeeshan Hashmi
+1 hour 6 minutes 27 seconds1:06:27
+Zeeshan Hashmi 1 hour 6 minutes 27 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+1 hour 6 minutes 27 seconds1:06:27
+Bryan Camaglia 1 hour 6 minutes 27 seconds
+But. So here's the thing, right?
+Bryan Camaglia 1 hour 6 minutes 30 seconds
+Like this thing is choking on getting to AZ01, right?
+Bryan Camaglia 1 hour 6 minutes 35 seconds
+If if we had just the tips file then I would say it's a tip issue, but we we've got.
+ZH
+Zeeshan Hashmi
+1 hour 6 minutes 39 seconds1:06:39
+Zeeshan Hashmi 1 hour 6 minutes 39 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+1 hour 6 minutes 44 seconds1:06:44
+Bryan Camaglia 1 hour 6 minutes 44 seconds
+Three jobs that are all choking.
+Bryan Camaglia 1 hour 6 minutes 48 seconds
+On.
+Bryan Camaglia 1 hour 6 minutes 50 seconds
+I don't think it's a getting a data. I think it's a writing the data so something is not.
+JC
+Josh Courson
+1 hour 7 minutes 6 seconds1:07:06
+Josh Courson 1 hour 7 minutes 6 seconds
+Be related to the zapcase license thing, would it?
+BC
+Bryan Camaglia
+1 hour 7 minutes 10 seconds1:07:10
+Bryan Camaglia 1 hour 7 minutes 10 seconds
+I I it would be a big stretch.
+Bryan Camaglia 1 hour 7 minutes 13 seconds
+I mean, good question.
+Bryan Camaglia 1 hour 7 minutes 19 seconds
+I mean, this is almost one where like.
+Bryan Camaglia 1 hour 7 minutes 22 seconds
+You gotta may even have to end up opening a ticket with Microsoft to ask them what happened here.
+Bryan Camaglia 1 hour 7 minutes 31 seconds
+Where's the connection to?
+Bryan Camaglia 1 hour 7 minutes 35 seconds
+OK.
+Bryan Camaglia 1 hour 7 minutes 38 seconds
+AZ.
+Bryan Camaglia 1 hour 8 minutes 1 second
+Here we go azdb.
+Bryan Camaglia 1 hour 8 minutes 12 seconds
+OK, so that connects.
+Bryan Camaglia 1 hour 8 minutes 20 seconds
+The tips goes through this data staging.
+Bryan Camaglia 1 hour 8 minutes 36 seconds
+That looks like a problem.
+
+
+Zeeshan Hashmi
+1 hour 8 minutes 37 seconds1:08:37
+Zeeshan Hashmi 1 hour 8 minutes 37 seconds
+Yes, it's taking too much time.
+BC
+Bryan Camaglia
+1 hour 8 minutes 39 seconds1:08:39
+Bryan Camaglia 1 hour 8 minutes 39 seconds
+So this is beyond me. Unless someone change something in the network, right?
+Bryan Camaglia 1 hour 8 minutes 45 seconds
+Like I don't have any network configuration. I think access let alone right.
+Bryan Camaglia 1 hour 8 minutes 52 seconds
+So let's see why this is failing.
+Bryan Camaglia 1 hour 8 minutes 56 seconds
+So yeah, so this is a connectivity.
+Bryan Camaglia 1 hour 8 minutes 59 seconds
+All of a sudden connectivity to this dropped, which again this is an Azure.
+Bryan Camaglia 1 hour 9 minutes 9 seconds
+And.
+Bryan Camaglia 1 hour 9 minutes 12 seconds
+Machine to Azure, but this probably goes through.
+Bryan Camaglia 1 hour 9 minutes 26 seconds
+Somebody shut something down, Zeeshan.
+ZH
+Zeeshan Hashmi
+1 hour 9 minutes 29 seconds1:09:29
+Zeeshan Hashmi 1 hour 9 minutes 29 seconds
+Beta into 01.
+BC
+Bryan Camaglia
+1 hour 9 minutes 34 seconds1:09:34
+Bryan Camaglia 1 hour 9 minutes 34 seconds
+Now I gotta get the password.
+Bryan Camaglia 1 hour 9 minutes 43 seconds
+Are there other folks that work on the network besides you?
+ZH
+Zeeshan Hashmi
+1 hour 9 minutes 45 seconds1:09:45
+Zeeshan Hashmi 1 hour 9 minutes 45 seconds
+No, no, no, no, no.
+BC
+Bryan Camaglia
+1 hour 9 minutes 46 seconds1:09:46
+Bryan Camaglia 1 hour 9 minutes 46 seconds
+Yeah, I'm Diane. OK, alright.
+ZH
+Zeeshan Hashmi
+1 hour 9 minutes 47 seconds1:09:47
+Zeeshan Hashmi 1 hour 9 minutes 47 seconds
+Not at all.
+Zeeshan Hashmi 1 hour 9 minutes 54 seconds
+Reset the.
+Zeeshan Hashmi 1 hour 9 minutes 57 seconds
+Date you mean data INT 01 was rebooted somewhere around, right?
+BC
+Bryan Camaglia
+1 hour 10 minutes 3 seconds1:10:03
+Bryan Camaglia 1 hour 10 minutes 3 seconds
+I don't know was it?
+ZH
+Zeeshan Hashmi
+1 hour 10 minutes 5 seconds1:10:05
+Zeeshan Hashmi 1 hour 10 minutes 5 seconds
+OK, because it it looks like it has a connection with the data INT 01.
+BC
+Bryan Camaglia
+1 hour 10 minutes 11 seconds1:10:11
+Bryan Camaglia 1 hour 10 minutes 11 seconds
+Yeah, little bit of a misnomer, but this is a cluster with data INT 01 data int, O2.
+ZH
+Zeeshan Hashmi
+1 hour 10 minutes 24 seconds1:10:24
+Zeeshan Hashmi 1 hour 10 minutes 24 seconds
+So for for this Pacific connection it it gets connected with the data ID 01.
+BC
+Bryan Camaglia
+1 hour 10 minutes 30 seconds1:10:30
+Bryan Camaglia 1 hour 10 minutes 30 seconds
+No, it's a misnomer.
+Bryan Camaglia 1 hour 10 minutes 32 seconds
+It's bad name, so this is a cluster.
+Bryan Camaglia 1 hour 10 minutes 35 seconds
+This is not a physical name.
+Bryan Camaglia 1 hour 10 minutes 37 seconds
+This is a.
+ZH
+Zeeshan Hashmi
+1 hour 10 minutes 37 seconds1:10:37
+Zeeshan Hashmi 1 hour 10 minutes 37 seconds
+OK.
+BC
+Bryan Camaglia
+1 hour 10 minutes 38 seconds1:10:38
+Bryan Camaglia 1 hour 10 minutes 38 seconds
+This is a group of gateways that is happen to be called this as well as someone named the machine the same name.
+Bryan Camaglia 1 hour 10 minutes 47 seconds
+So that's what I'm saying.
+Bryan Camaglia 1 hour 10 minutes 48 seconds
+It's a kind of it's a subtlety.
+Bryan Camaglia 1 hour 10 minutes 50 seconds
+It's so.
+Bryan Camaglia 1 hour 10 minutes 50 seconds
+It's not so this if it if it's trying to go through data int it will try to go through data INT 01 But if it fails there should.
+Bryan Camaglia 1 hour 10 minutes 59 seconds
+Fail over to data int.
+Bryan Camaglia 1 hour 11 minutes
+O2 and Oregon AP 02.
+Bryan Camaglia 1 hour 11 minutes 4 seconds
+Oh no, I'm sorry.
+Bryan Camaglia 1 hour 11 minutes 4 seconds
+Just those two machines. So, but they're showing online which.
+ZH
+Zeeshan Hashmi
+1 hour 11 minutes 8 seconds1:11:08
+Zeeshan Hashmi 1 hour 11 minutes 8 seconds
+They are available right now and yes.
+BC
+Bryan Camaglia
+1 hour 11 minutes 10 seconds1:11:10
+Bryan Camaglia 1 hour 11 minutes 10 seconds
+I mean they they're showing that, yeah.
+Bryan Camaglia 1 hour 11 minutes 14 seconds
+It's still trying to get to it, but this is this is the problem.
+JC
+Josh Courson
+1 hour 11 minutes 38 seconds1:11:38
+Josh Courson 1 hour 11 minutes 38 seconds
+I assume it's not typical for testing connection to take this long.
+Josh Courson 1 hour 11 minutes 42 seconds
+I've I've never had it take that long and worked on other stuff.
+BC
+Bryan Camaglia
+1 hour 11 minutes 47 seconds1:11:47
+Bryan Camaglia 1 hour 11 minutes 47 seconds
+I I would agree.
+Bryan Camaglia 1 hour 11 minutes 48 seconds
+I would expect a failure here minutes ago.
+JC
+Josh Courson
+1 hour 11 minutes 53 seconds1:11:53
+Josh Courson 1 hour 11 minutes 53 seconds
+Yeah.
+ZH
+Zeeshan Hashmi
+1 hour 11 minutes 58 seconds1:11:58
+Zeeshan Hashmi 1 hour 11 minutes 58 seconds
+Can't see this one and do it again because it seems like stuck in the middle.
+BC
+Bryan Camaglia
+1 hour 11 minutes 58 seconds1:11:58
+Bryan Camaglia 1 hour 11 minutes 58 seconds
+2.
+Bryan Camaglia 1 hour 12 minutes 16 seconds
+Which one was I doing this data staging?
+Bryan Camaglia 1 hour 12 minutes 26 seconds
+So we have.
+Bryan Camaglia 1 hour 12 minutes 31 seconds
+So I'm gonna hit. Oh, let me cancel these jobs.
+Bryan Camaglia 1 hour 12 minutes 37 seconds
+Just so that they don't.
+Bryan Camaglia 1 hour 12 minutes 52 seconds
+OK.
+Bryan Camaglia 1 hour 12 minutes 53 seconds
+They're cancelling.
+Bryan Camaglia 1 hour 12 minutes 55 seconds
+Trisha 'cause the two tips. I don't want them over running each other.
+Bryan Camaglia 1 hour 12 minutes 58 seconds
+That could cause a little bit of chaos. So.
+ZH
+Zeeshan Hashmi
+1 hour 13 minutes 1 second1:13:01
+Zeeshan Hashmi 1 hour 13 minutes 1 second
+Mm hmm.
+BC
+Bryan Camaglia
+1 hour 13 minutes 2 seconds1:13:02
+Bryan Camaglia 1 hour 13 minutes 2 seconds
+So I would say at this point.
+Bryan Camaglia 1 hour 13 minutes 9 seconds
+I.
+Bryan Camaglia 1 hour 13 minutes 9 seconds
+I I would probably call you up and say Zeeshan I need help.
+Bryan Camaglia 1 hour 13 minutes 14 seconds
+So this one I think is now in in your hands to figure out why.
+Bryan Camaglia 1 hour 13 minutes 20 seconds
+You know, we're not able to connect.
+Bryan Camaglia 1 hour 13 minutes 27 seconds
+So I'm gonna reply.
+Bryan Camaglia 1 hour 13 minutes 29 seconds
+I'm gonna take Nolan off 'cause. He's my time.
+Bryan Camaglia 1 hour 14 minutes 39 seconds
+OK.
+Bryan Camaglia 1 hour 14 minutes 40 seconds
+So here I just want to show you and I don't want to feel like are you OK with this Zeeshan, right.
+ZH
+Zeeshan Hashmi
+1 hour 14 minutes 46 seconds1:14:46
+Zeeshan Hashmi 1 hour 14 minutes 46 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+1 hour 14 minutes 47 seconds1:14:47
+Bryan Camaglia 1 hour 14 minutes 47 seconds
+I said this is an Azure issue. We have connectivity issues between databases. I happen to be on the phone with Josh and Zeeshan Zeeshan. I showed them the issue. Zeeshan will have to track down the network issues. That is that fair?
+ZH
+Zeeshan Hashmi
+1 hour 15 minutes 1 second1:15:01
+Zeeshan Hashmi 1 hour 15 minutes 1 second
+Yes, that's completely fine.
+BC
+Bryan Camaglia
+1 hour 15 minutes 4 seconds1:15:04
+Bryan Camaglia 1 hour 15 minutes 4 seconds
+OK. And and I'm so I'm just gonna send that.
+Bryan Camaglia 1 hour 15 minutes 9 seconds
+So I'm I guess I have another call.
+Bryan Camaglia 1 hour 15 minutes 12 seconds
+I'm happy to.
+ZH
+Zeeshan Hashmi
+1 hour 15 minutes 23 seconds1:15:23
+Zeeshan Hashmi 1 hour 15 minutes 23 seconds
+Can you share the the credentials you are using? F99 admin right and there was another connection. BPO One says OK.
+BC
+Bryan Camaglia
+1 hour 15 minutes 31 seconds1:15:31
+Bryan Camaglia 1 hour 15 minutes 31 seconds
+Yeah, it should be an it glue that that should be an it glue.
+Bryan Camaglia 1 hour 15 minutes 34 seconds
+Yep, that's the that.
+ZH
+Zeeshan Hashmi
+1 hour 15 minutes 35 seconds1:15:35
+Zeeshan Hashmi 1 hour 15 minutes 35 seconds
+OK.
+Zeeshan Hashmi 1 hour 15 minutes 35 seconds
+I I do have the.
+BC
+Bryan Camaglia
+1 hour 15 minutes 38 seconds1:15:38
+Bryan Camaglia 1 hour 15 minutes 38 seconds
+Go ahead.
+ZH
+Zeeshan Hashmi
+1 hour 15 minutes 39 seconds1:15:39
+Zeeshan Hashmi 1 hour 15 minutes 39 seconds
+I do have the F99 admin.
+BC
+Bryan Camaglia
+1 hour 15 minutes 46 seconds1:15:46
+Bryan Camaglia 1 hour 15 minutes 46 seconds
+Yeah, you you should.
+ZH
+Zeeshan Hashmi
+1 hour 15 minutes 48 seconds1:15:48
+Zeeshan Hashmi 1 hour 15 minutes 48 seconds
+Yes, I do have this one.
+BC
+Bryan Camaglia
+1 hour 15 minutes 48 seconds1:15:48
+Bryan Camaglia 1 hour 15 minutes 48 seconds
+You should have this.
+Bryan Camaglia 1 hour 15 minutes 51 seconds
+Although wait one second before we depart.
+ZH
+Zeeshan Hashmi
+1 hour 15 minutes 52 seconds1:15:52
+Zeeshan Hashmi 1 hour 15 minutes 52 seconds
+OK.
+BC
+Bryan Camaglia
+1 hour 15 minutes 58 seconds1:15:58
+Bryan Camaglia 1 hour 15 minutes 58 seconds
+Yeah, I did use the correct one, sorry.
+Bryan Camaglia 1 hour 16 minutes
+Yeah, you should have that in it glue.
+Bryan Camaglia 1 hour 16 minutes 2 seconds
+I think that's the only one you would need.
+ZH
+Zeeshan Hashmi
+1 hour 16 minutes 4 seconds1:16:04
+Zeeshan Hashmi 1 hour 16 minutes 4 seconds
+Mm hmm.
+BC
+Bryan Camaglia
+1 hour 16 minutes 10 seconds1:16:10
+Bryan Camaglia 1 hour 16 minutes 10 seconds
+Alright, give me a you know an IM or e-mail or whatever.
+Bryan Camaglia 1 hour 16 minutes 16 seconds
+I do have a call here for the next about an hour, but obviously I can try to help you where I can. And then after that we can reconvene. If you have more questions.
+ZH
+Zeeshan Hashmi
+1 hour 16 minutes 20 seconds1:16:20
+Zeeshan Hashmi 1 hour 16 minutes 20 seconds
+Mm hmm.
+Zeeshan Hashmi 1 hour 16 minutes 25 seconds
+No problem.
+Zeeshan Hashmi 1 hour 16 minutes 27 seconds
+Meanwhile, meanwhile, let me figure it out that why the test connection is failing and I'll we'll connect later as well after Yuval.
+BC
+Bryan Camaglia
+1 hour 16 minutes 35 seconds1:16:35
+Bryan Camaglia 1 hour 16 minutes 35 seconds
+OK.
+Bryan Camaglia 1 hour 16 minutes 36 seconds
+All right. Wow.
+Bryan Camaglia 1 hour 16 minutes 37 seconds
+Real time issue solving.
+Bryan Camaglia 1 hour 16 minutes 38 seconds
+How about that?
+Bryan Camaglia 1 hour 16 minutes 39 seconds
+Lucky us.
+JC
+Josh Courson
+1 hour 16 minutes 41 seconds1:16:41
+Josh Courson 1 hour 16 minutes 41 seconds
+Yeah.
+ZH
+Zeeshan Hashmi
+1 hour 16 minutes 43 seconds1:16:43
+Zeeshan Hashmi 1 hour 16 minutes 43 seconds
+And I'll include the Josh as well in that call.
+Zeeshan Hashmi 1 hour 16 minutes 45 seconds
+So he can also have the background knowledge of the resolution, right?

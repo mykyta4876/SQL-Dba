@@ -1,0 +1,115 @@
+01-06 (1 hour)
+Discussed and Studied about the project. 
+
+01-07 (2 hours)
+Fixed the issue of Floyds Payroll & Employee Birthday.
+
+01-08 (2 hours)
+meeting with Bryan for the project. Studied the project.
+
+01-09 (3 hours)
+fixed SST issue.
+
+01-13 (1 hour)
+Meeting with Don and Zeeshan. Discussed about the direction of the project.
+
+Need to prepare the documentation of last meeting.
+What is the issue?
+When run in the payroll, there were only because the azure data factory gets the only four files.
+How we can get notification that all of the Excel files has not been uploaded to the Azure Data factory?
+
+
+Need to implement early notification system for payroll file processing:
+
+- Azure Data Factory should verify 60 files are present before processing
+- System should count CSV files and send notification if any are missing
+- Two notification options:
+  1. Email alert if MyTime files incomplete
+  2. Internal notification if files not received by deadline
+- Early notification allows manual payroll run if needed
+- Process flow: MyTime schedules -> S3 bucket -> Azure Data Factory -> ADP
+
+01-14 (5 hours)
+- Meeting with Don and Zeeshan.
+- Documentation of the meeting.
+
+01-15 (5 hour)
+- Meeting with Don and Zeeshan.
+- Documentation of the meeting.
+
+01-16 (5 hour)
+- Meeting with Don and Zeeshan.
+- Documentation of the meeting.
+
+01-17 (4 hour)
+- Meeting with Don and Zeeshan.
+- Documentation of the meeting.
+
+Here are the hours for the Don project. The -1 is where we are taking the 4 total hours off for the week.
+Monday 1/20
+Meetings with Zeeshan and Bryan – 2h20m
+Total 2h20m
+ 
+Tuesday 1/21
+Meetings with Zeeshan and Bryan – 2h21m
+Documentation of database structure 1h
+-1
+Total 2h21m
+ 
+Wednesday 1/22
+Meetings with Zeeshan and Bryan – 2h14m
+-1
+Total 1h14m
+ 
+Thursday 1/23
+Meetings with Zeeshan and Bryan – 2h10m
+Documentation of manual intervention processes 1h
+-1
+Total 2h10m
+ 
+Friday 1/24
+Meetings with Zeeshan and Bryan -  2h
+Review and Prioritization of Database Actions from Aaron recommendations 40m
+-1
+Total 1h40m
+ 
+Totals
+1/20 2h20m
+1/21 2h21m
+1/22 1h14m
+1/23 2h10m
+1/24 1h40m
+Total 9h45m
+
+Zeeshan hasn't approved it yet, so don't put the hours in yet, but here's what I did this week for Floyds
+1/27
+Meeting with Bryan and Zeeshan 1h
+Meeting with Zeeshan 30m
+1/28
+Meeting with Bryan and Zeeshan 1h
+PowerBI Documentation 1h
+1/29
+Meeting with Bryan and Zeeshan 1h20m
+1/30
+Meeting with Zeeshan 30m
+
+Total 5h20m
+
+02-07 (7.5 hours)
+
+
+
+Tuesday 2/11
+Meeting with Zeeshan 30m
+Query work 30m
+
+Wednesday 2/12
+Meeting with Zeeshan 30m
+Query work 30m
+
+Thursday 2/13
+Meeting with Zeeshan and Bryan 45m
+Query implementation 30m
+
+Friday 2/14
+Meeting with Zeeshan 30m

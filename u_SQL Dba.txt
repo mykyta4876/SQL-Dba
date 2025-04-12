@@ -1,0 +1,431 @@
+[job description]
+Phase 1: Discovery and Planning
+Objective: Gain an understanding of the current MyTime, ADP, and payroll workflows and identify pain points or inefficiencies.
+Tasks:
+• - Conduct working sessions with Bryan Camaglia and other key stakeholders.
+• - Review current MyTime / ADP setup and integration points.
+• - Identify existing issues with applications and workflows.
+Deliverables:
+• - A detailed summary of the current MyTime and ADP setup.
+• - A documented list of identified issues and inefficiencies.
+Phase 2: Issue Resolution
+Objective: Investigate and resolve issues with MyTime and ADP to ensure proper functionality.
+Tasks:
+• - Troubleshoot existing application issues and provide resolutions.
+• - Test resolved issues to confirm functionality.
+• - Collaborate with stakeholders to validate the resolution effectiveness.
+Deliverables:
+• - Documented resolutions for application issues.
+• - Test results demonstrating issue resolution.
+Phase 3: Workflow Optimization
+Objective: Suggest and document improved workflows for MyTime, ADP, and payroll processes.
+Tasks:
+• - Analyze existing workflows and identify areas for optimization.
+• - Develop recommendations for improving operational efficiency.
+• - Present recommendations to stakeholders for review and feedback.
+Deliverables:
+• - Workflow improvement recommendations.
+• - Process flow diagrams (as applicable).
+Phase 4: Documentation and Next Steps
+Objective: Compile documentation of findings, resolutions, and recommended workflows, and outline next steps for implementation.
+Tasks:
+• - Prepare a comprehensive report of the engagement.
+• - Include findings, resolutions, workflow recommendations, and any next steps.
+• - Present the report to stakeholders.
+Deliverables:
+• - Comprehensive project report.
+• - Suggested next steps and action plan.
+
+=============================
+[Expected approach]
+
+### Phase 1: Discovery and Planning (2-3 weeks)
+
+**Week 1: Initial Discovery**
+```markdown
+Days 1-2: Stakeholder Interviews
+- Meeting with Bryan Camaglia (2-3 hours)
+- HR team interviews (2-3 hours per session)
+- Payroll team interviews (2-3 hours per session)
+
+Days 3-4: System Review
+- MyTime system configuration review
+- ADP system setup analysis
+- Integration points documentation
+- Current data flow mapping
+
+Day 5: Initial Documentation
+- Compile interview findings
+- Document current state
+- Identify preliminary issues
+```
+
+**Week 2: Deep Dive**
+```markdown
+Days 1-2: Technical Analysis
+- Review MyTime/ADP integration setup
+- Analyze payroll processing workflows
+- Review error logs and support tickets
+- Document technical dependencies
+
+Days 3-4: Process Analysis
+- Map end-to-end payroll process
+- Document manual interventions
+- Identify bottlenecks
+- Review exception handling
+
+Day 5: Stakeholder Review
+- Present initial findings
+- Validate understanding
+- Gather additional feedback
+```
+
+### Phase 2: Issue Resolution (3-4 weeks)
+
+**Week 3-4: Issue Analysis & Prioritization**
+```markdown
+1. Issue Categorization
+   - Integration issues
+   - Configuration problems
+   - Process inefficiencies
+   - Data synchronization issues
+
+2. Priority Matrix
+   | Issue Type          | Impact | Effort | Priority |
+   |--------------------|---------|---------|-----------|
+   | Integration Errors | High    | Medium  | P1        |
+   | Data Sync         | High    | High    | P1        |
+   | Manual Processes  | Medium  | Low     | P2        |
+   | Reporting Issues  | Low     | Medium  | P3        |
+
+3. Resolution Planning
+   - Develop fix approach for each issue
+   - Create testing scenarios
+   - Define success criteria
+```
+
+**Week 5-6: Implementation**
+```markdown
+1. Technical Fixes
+   - Integration point repairs
+   - Configuration adjustments
+   - Data sync optimization
+   - Error handling improvements
+
+2. Process Improvements
+   - Streamline workflows
+   - Reduce manual steps
+   - Enhance error detection
+   - Improve reporting
+```
+
+### Phase 3: Workflow Optimization (2-3 weeks)
+
+**Week 7-8: Optimization Planning**
+```markdown
+1. Current State Analysis
+   - Process efficiency metrics
+   - Manual vs. automated steps
+   - Error rates and patterns
+   - Processing times
+
+2. Improvement Areas
+   - Automation opportunities
+   - Integration enhancements
+   - Process streamlining
+   - Reporting optimization
+
+3. Proposed Workflows
+   - Updated process flows
+   - New automation points
+   - Enhanced error handling
+   - Improved reporting
+```
+
+### Phase 4: Documentation & Next Steps (1-2 weeks)
+
+**Week 9-10: Final Documentation**
+```markdown
+1. Technical Documentation
+   - System configurations
+   - Integration setup
+   - Troubleshooting guides
+   - Maintenance procedures
+
+2. Process Documentation
+   - Updated workflows
+   - Standard operating procedures
+   - Training materials
+   - Best practices
+
+3. Implementation Plan
+   - Phased rollout approach
+   - Training requirements
+   - Communication plan
+   - Success metrics
+```
+
+### Resource Requirements
+
+```markdown
+1. Core Team
+   - Project Manager (100%)
+   - Technical Lead (100%)
+   - Business Analyst (100%)
+   - Integration Specialist (50%)
+
+2. Subject Matter Experts
+   - HR Representative (25%)
+   - Payroll Specialist (25%)
+   - ADP Technical Support (as needed)
+   - MyTime Support (as needed)
+
+3. Stakeholder Time
+   - Bryan Camaglia: 2-3 hours/week
+   - Department Heads: 1-2 hours/week
+   - End Users: As needed for testing
+```
+
+### Success Metrics
+
+```markdown
+1. System Performance
+   - Reduced integration errors (target: 90%)
+   - Faster processing times (target: 30% improvement)
+   - Reduced manual interventions (target: 50% reduction)
+
+2. Process Efficiency
+   - Shorter payroll processing cycle
+   - Fewer error corrections
+   - Improved data accuracy
+   - Better reporting capabilities
+
+3. User Satisfaction
+   - Reduced support tickets
+   - Positive user feedback
+   - Increased system adoption
+```
+
+### Risk Management
+
+```markdown
+1. High-Risk Areas
+   - Data integrity during fixes
+   - System downtime
+   - User adoption
+   - Integration stability
+
+2. Mitigation Strategies
+   - Comprehensive testing
+   - Backup procedures
+   - Clear communication
+   - Training programs
+```
+=============================
+[Approach for 60 hours]
+
+### Realistic 60-Hour Breakdown
+
+**Phase 1: Discovery (15 hours)**
+```markdown
+1. Key Stakeholder Meetings (6 hours)
+- Initial meeting with Bryan Camaglia (2 hours)
+- HR team core process review (2 hours)
+- Payroll team core process review (2 hours)
+
+2. System Review (6 hours)
+- MyTime configuration review (3 hours)
+- ADP setup analysis (3 hours)
+
+3. Documentation (3 hours)
+- Initial findings compilation
+- Critical issues list
+```
+
+**Phase 2: Critical Issue Resolution (20 hours)**
+```markdown
+1. Priority Issues Only (12 hours)
+- Focus on top 3-4 critical issues
+- Basic integration fixes
+- Essential configuration adjustments
+
+2. Testing (5 hours)
+- Critical path testing
+- Basic validation
+
+3. Documentation (3 hours)
+- Fix documentation
+- Updated configurations
+```
+
+**Phase 3: Essential Workflow Optimization (15 hours)**
+```markdown
+1. Core Process Analysis (6 hours)
+- Identify major bottlenecks
+- Quick-win opportunities
+
+2. Implementation (6 hours)
+- Essential workflow improvements
+- Critical automation points
+
+3. Documentation (3 hours)
+- Updated process flows
+- Key recommendations
+```
+
+**Phase 4: Final Documentation (10 hours)**
+```markdown
+1. Report Compilation (7 hours)
+- Key findings
+- Critical fixes implemented
+- Essential recommendations
+
+2. Handover (3 hours)
+- Final presentation
+- Next steps outline
+```
+
+### Important Considerations
+
+```markdown
+What Can Be Done:
+✓ Basic system review
+✓ Critical issue identification
+✓ Essential fixes
+✓ Core workflow improvements
+✓ Basic documentation
+
+What Cannot Be Done:
+✗ Comprehensive system analysis
+✗ All issue resolutions
+✗ Detailed process optimization
+✗ Extended testing
+✗ Detailed training materials
+```
+
+### Recommendations
+
+```markdown
+1. Focus Areas
+- Prioritize business-critical issues
+- Address top pain points only
+- Document essential processes
+
+2. Future Phases
+- Create list of items for future phases
+- Identify long-term improvements needed
+- Plan for comprehensive optimization
+
+3. Risk Management
+- Clear scope communication
+- Expectation management
+- Focus on stability over optimization
+```
+
+**Conclusion:** While 60 hours is possible, it would be a very focused engagement addressing only the most critical issues. I recommend:
+1. Being very selective about which issues to address
+2. Setting clear expectations with stakeholders
+3. Creating a clear roadmap for future improvements
+4. Focusing on documentation for future phases
+
+teams login
+Username: josh.courson@elevateservicesgroup.com
+Password: P&193012655140u
+Otp: 5m22lcyrh2lfzjd7
+
+azure login
+Username: jcourson@floydsbarbershop.com
+Password: 77Cd842AnZogSzq@Jkae
+
+https://elevate-services-group.itglue.com/4854975/passwords/folder/617597
+josh.courson@elevateservicesgroup.com
+
+https://floyds.mytime.com/users/sign_in
+i emailed josh's F99 AD/M365 pw
+floyds\jcourson
+jcourson@floydsbarbershop.com
+ticket@B^cqwXi9aKre%72!Bp3
+77Cd842AnZogSzq@Jkae
+
+az01-db01: Power BI, sql server, security table, silver database
+f199mgmt01: where power BI development happens. The way things organized is on the E Drive.
+
+Power BI license 
+
+
+
+John wants a deep dive into MyTime: is Floyd's using it to its maximum potential?  Do they have it configured correctly?  How do MyTime's marketing capabilities stack up to what the Floyd's marketing team needs/ wants?  Is the audit functionality in the UI worth a damn?  Are there ways they can use the MyTime security and access controls to a more granular level or are there MyTime restrictions preventing Floyd's from setting staff up they way they want?  What are the features MyTime has that Floyd's could be using but aren't.  That kind of discovery.
+
+Get a power to be able to start a franchise.
+Get the Power BI access to franchise kind of an important one.
+We can ask Aston, who is director of IT and manager and senior analyst.
+
+I guess that's quite will come either at a club with the office level and there's like three levels as you look at it.
+Google Cale
+I look at is do you get access to every shop do you get access to only the franchise shops and or do you get access to off home office corporate shops right.
+So this sheer drive is a franchise and they created a generic email and they want access. So that's what we're going to do. We're going to give access to this person right and so the first thing we can do is I'm going to move this to the side and then bring up power Bl.
+Right. So if we go into the power BI into.
+from the list before franchise is only going to get franchise location stuff workspace stuff
+
+And so I think Hong's gone and they and these other guys are are the franchise folks. So I would say, you know, most of we rely on their active directory being cut. And once that's cut, they're not. They're not getting in here.
+
+f199mgmt01\Data01 (E:)\PowerBI Reports\AZ01 PBI Prod\FacilityFees\vAadUserShops-v2: We're basically mapping each person to the shops they can have. They can have access to. that's ultimately what we're driving at for the low level security.
+ShortcutsShield: This is the legacy shop ID. That's particular file. that's how some of the low security.
+
+So then obviously we've opened shop since we've moved off of shortcuts. So then this pattern will go away. Also, and you'll see 151 and then out it'll be a four digit number, because we're like, well, I guess we'll just use great planes and then it'll be a gem is in a year too. They'll get rid of great plains, and then we'll have a great planes, and we'll have a new accounting number, and we'll have the old one, and then we just kinda so in the data warehouse, I tried to stop that, and that's where I try to create the data warehouse, I think. But, you know, you can't win. So anyways, this is the file that needs to be updated. This view.
+
+and that's what we're gonna do, because the reports that have security all look at this active directory, user shop view for permission. So that's kind of the long path to get there.
+
+az01-db01\daovAadUserShops: I know it was named named differently in there, but that was the power BI name. But this is the actual table name. It would map to.
+
+So what I have here is there's one power bi silver security, right? So this is what we got to update. So this, this one I've kind of refined.
+I'm going to take you through it before we do it. So first thing you have to do is we got to put the user into a table that needs it, right? Because this, because that view really brings together two different tables. So 1 is the user table, and 1 is the actual.
+you know, you got the locations. So first thing we do is just kind of step 1 add user to the list. Okay, then I got to get rid of the active directory, user shop mapping here. So then we'll, we'll get rid of that. And then I just really make sure it's empty. And then now we need to put the location in. But so this will probably be even easier, I guess, if I do it as I talk about it. So let me, let me just do that too.
+So the reason I do the other one first is because that proves to me that they have actually been added in active directory, right? Because they may have messed it up. So I go that way to make sure that they actually did set the person up. So I set that way up
+This is a person. So now I'm going to add this person in here.
+boom. And then I select that table just to get the number. So then they're number 108. on on the list. So now I need to put 108 into what locations they have access to. So do they have all locations? No. So they wouldn't be added here, right? 107 was the last one I did. Do they have just all corporate shops? And I would put them here. The answer is no, they don't. OK, now I get into each franchise. Are they MW scissors? No, they are.
+They a sheer drive? Yes. Right. So now I'm going to put 108. in there. And then we have Palmer Pag 3 sleeves and Circino. And I think we end with Tampa Bay. And so we end about right here. So that what I do is once I pick the right location, it's in. So again, what I do is then now I kill. I got to just basically rebuild that table. Right. So I kill it. I make sure it's empty and then.
+I just take from all locations down to the end of Tampa. And then I just reload it. And then I write John back or whoever asked me and said it's done. Let it go through an overnight refresh before you come back and say you don't have access. And then sometimes cause some of the reports have to be refreshed because it's not. I didn't do the direct live. I did an import number one on some of them. Number two I.
+The other thing that I try to if you need to you could always refresh your reports and give it to him now if it's like emergency or something like that. But the other thing is is that sometimes people forget to refresh their browsers. So I was like as a reminder refresh your browser and so that's all been added real quickly.
+As I like to do is just a quick yep we got stuff in there you can go into here make sure ready I got data so I'm good I and then you can I just save it just whatever would have you so sorry wrong way so I'm going to just write back to John just so he knows that this is done so don't forget.
+
+
+So something else I want to show you is I'm here. We have another report that comes every Monday and I didn't look at it today and and I'm going to show you a little complexity on this one too
+Where is it? OK, so this franchise report is needed every Monday for it was developed so that they could do their and came through. Nice so that they could do their payroll and what they do is they'll come in here and this is low level security.
+They'll see it and then they'll just export it and then it's kind of teed up for them to go ahead and and do payroll and this happens every Monday and so it it works mostly clockwise except for one real 22 reasons why there could be an issue. One is that the reports that I talked about earlier from my time weren't available for when this process triggered.
+So yeah we could be smarter. We could build on the front end of that trigger to say are all the files there and then wait for it to happen just yes opportunity right the 2nd reason that things can fail are there's A there's a mapping and and I'm going to show you this in in my time there's there's the internal employee ID and this is for this is for franchises owning sorry not corporate this is not a well check that let's just stay focused on the franchise. So the main thing that can happen to AA franchise is and I'm just going to pull up it doesn't even really matter what.
+I pull up.
+I was going to pull up sheer because they were on there. So I'm going to pull up sheers usually the I think is that these guys are the biggest culprit of it or someone else. So anyway so in my time like if I look at anyone of these peoples I'm going to look at Jacqueline and I'm going to look at Jacqueline's profile so again may have gone really fast there's an internal employee ID and then there's what we call external ID and when we look at the database and I'm going to show you on here again I'm going to go into the bronze I'm going to look under my time and here's employees so I'm just going to select and we're going to go where and this is there's external ID so again the bronze I represents a pretty much mirror image of the source system. They may not have all the fields but none of it's been transformed.
+So when I'm looking at employees here I could easily just turn around and go look at employees in the my time replica replica and the data should be the same obviously up until last night the refresh if you will if you will on that. So what what I want to go look at is I'm going to look up this 6371 and there's Jacqueline K. 
+ay this and here's our external ID which we've pretty much only put in that we can put anything we want. It was a field and you'll see external IDS on various my times tables a few of them are more the master data you know that allowed said client to put any cross reference data in there. So as an employee we put ADP data or payroll data because they may not use ADP.
+here's where the fun comes.
+if if let's if they all of a sudden hire Bob next and at this company right so this is the company ID304 which represents sheer. If then all of a sudden they use that number 6371 again for somebody else we're going to have a problem because of just the way we built the power.
+We've asked and that's on the long proverbial list of yeah that would be great to change the the problem becomes a
+isn't so much when they use it and if if Bob and both of them stayed active but what happens is is hire Jacqueline to start on Monday she wasn't cut out for it. She quit on Wednesday and then Bobby came in the next day or earlier that week. And so they looked online and once they canceled somebody or delete them, they're not visible anymore and they forgot they use 6371 and they meant to use 6372. So now behind the scenes, Jacqueline, which they can't see and can't bring back, has this I. D. And now Bobby has that same I. D. And that's when it blows up.
+And so yes, there are multiple solutions. We could go through to to fix that problem. One is to get my time to fix it at the source.
+Number 2 is we could build a better mousetrap on our reporting.
+Three, we could build some kind of cleanup for that situation type. type of a thing. So typically.
+what I have to do is I ask Todd or John or someone to go back to Floyd's and say, what do you want to do? Because in order to fix this issue, once you delete them, you got to go to my time and they charge just like 100 bucks to, you know, maybe change Jacqueline, who quit and make it a dash one in there. So it doesn't blow up. 11 mean, I could do it on this side of the database. You know, I could build a script every time and then just keep adding to it and it'll take care of itself, right? That's a band aid. We could try to build a better, you know.
+payroll report. That's another band-aid rate. And so, you know, all kinds of options. But until someone gives me direction on how they want to invest and change it, that's the potential gotcha that that can happen. And that seems to come up once 1/4
+once every three to four months. We're like, not someone, someone did that. So I just figured since I was here, I would highlight that that issue
+that you'll get okay. So we hit, we hit one item. I think I said what
+three calendars next
+So now calendars
+tried to skinny down the most of this as possible
+So I'm trying to think where it would be the first best place to look at this. Why don't we and unfortunately what we tried to do when we came into version 3 here really tried to consolidate the calendar into one location when we were in Azure SQL, we couldn't because the databases you know couldn't use other databases. They you'd have to move them and keep them in sync.
+I don't love like we we took a step forward in this but we didn't Leave solve it. I didn't love I don't love our calendaring it and another guy was taking it on to try to do it. I don't think he had a full appreciation or this and it's just again I'm not trying to throw him under the bus it you know calendars are I don't know in in my opinion there are pain in the ass but a necessary evil right from that standpoint so the reason.
+is cause everyone seems to need a different representation of a day right we have fiscal periods we have payroll periods we have promotional periods we have you know
+what like those are the common ones and then and and then So I'm not I'm gonna I'm gonna show you
+is this the one and then oh and then some people need it broken down by hours. So then Steven breaks down the calendar by hour let's
+let's go through that's the backup date time II can't remember if he created so I'm just gonna go so this isn't again the silver layer MD being master data and then he named it in daytime you had three chefs in the kitchen and you kind of had to compromise so it it happens right so here if I just look at this one SO.
+this one started in January right so we have so again II are you familiar with financial and weak calendars if not you're gonna become OK right so you know we try to write queries to automatically build this stuff and it just gets a little wonky if you will right so is this.
+the one yeah I think this one goes down by hour. So we have you know a hundred and thirty-one 1000 in here so this.
+is on January 5th from midnight to you know midnight and we do chain. Ohh this one's actually by week. I'm sorry this isn't by day one so this is the yeah this looks like 5th to the 12th so this looks weekly. This is what I'm saying. This is I I'm actually been dreading this a lot So partially probably me but also knowing that you were coming on board. So if we look at this one so.
+this one's not as bad. This is a let's see the this one I like better. So first 2nd and of course we need it in different formats depending on what was written. So we have it written probably and this is probably a date field and the next one is probably character field So we have the.
+So we have the day of the month it's the first these are probably put in here obviously for reporting to make it look nicer day of the week month week. So this is always where I find it challenging is what week is it of the year
+and it and if you go by certain standards it depends what the first of the falls in what you do so you know do you go
+
+
+
+Now they use postman in order to get a specific person's adp data. How about creating a tool that get multiple people's adp data and compare it to the data in the database?
+

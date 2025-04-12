@@ -1,0 +1,49 @@
+Project Plan: SQL Server Performance and Configuration Remediation
+1. Project Objectives
+The primary goal of this project is to improve SQL Server performance, reliability, and recoverability through optimized configurations, maintenance practices, and security enhancements.
+2. Scope of Work
+| Task | Description | Estimated Time | Downtime Required |
+|------|-------------|----------------|-------------------|
+| Server Sizing | Add memory and adjust MAXDOP settings. | 30 minutes | Yes, restart required |
+| DBCC CHECKDB | Schedule and perform weekly integrity checks. | 5-6 hours total | No |
+| TempDB Optimization | Move TempDB to a dedicated drive. | 1 hour | Yes |
+| Instant File Initialization (IFI) | Enable IFI to reduce overhead and downtime for file extensions. | 30 minutes | Yes, restart required |
+| Maintenance Plans | Set up agent jobs for index reorganization, rebuilds, and statistics updates. | 5-10 hours | No |
+| Security Enhancements | Patch SQL Server, audit SA accounts, and adjust job ownership to service accounts. | 4 weeks, 1 hour/week | Minimal |
+| Performance Tuning | Analyze unused/missing indexes, optimize queries, and address parameterization issues. | 10-30 hours | No |
+| Disk Configuration | Migrate data, log, and TempDB files to separate drives with 64K cluster size. | 2-8 hours | Yes, full outage |
+| VLF Count Reduction | Resize transaction logs to optimize virtual log file count. | 2-4 hours | Yes |
+| Query Store Configuration | Enable Query Store for query plan monitoring and optimization. | 3-8 hours | No |
+| Backup Strategy | Implement a robust backup schedule (daily FULL, hourly transaction logs). | 3-8 hours + 3 hours audit | No |
+
+3. Timeline
+
+The project will be executed starting Jan 4th, 2025
+   - Server Sizing
+   - TempDB Optimization
+   - Instant File Initialization
+   - Disk Configuration
+   - DBCC CHECKDB setup
+   - Maintenance Plan implementation
+   - Security enhancements (audit and ownership updates)
+   - Performance tuning analysis and initial actions
+   - VLF Count Reduction
+   - Query Store Configuration
+   - Backup Strategy implementation and validation
+
+4. Assumptions
+- Downtime will be scheduled during off-peak hours.
+- SQL Server access will be provided with necessary permissions.
+- Storage requirements (additional drives) will be fulfilled prior to scheduled tasks.
+5. Deliverables
+- Updated SQL Server configurations and best-practice documentation.
+- Performance improvement metrics.
+- Maintenance plans and job schedules.
+- Validated backup and recovery strategy.
+- Summary report of completed optimizations.
+6. Dependencies
+- Procurement of additional memory and storage.
+- Scheduled maintenance windows for tasks requiring downtime.
+7. Project Risks
+- Extended downtime if unforeseen issues arise during migrations.
+- Temporary performance impact during reindexing or maintenance tasks.

@@ -1,0 +1,251 @@
+# Detailed Mytime & ADP Integration Documentation
+
+## 1. System Architecture
+
+### 1.1 Core Systems
+#### 1.1.1 Mytime System
+- Primary scheduling platform
+- Used by corporate shops (franchises handle own scheduling)
+- Web-based interface for managers
+- Commission calculation engine
+- Schedule management system
+
+#### 1.1.2 ADP System
+- Primary payroll processing system
+- Time clock functionality
+- Employee data management
+- PTO and leave management
+- Wage processing
+
+### 1.2 Server Infrastructure
+#### 1.2.1 DataintO2
+- Role: Orchestrator server
+- Key Functions:
+  - ADP communication gateway
+  - Schedule processing
+  - One of three machines with ADP access
+  - Handles initial data orchestration
+
+#### 1.2.2 az01-db01
+- Role: Core data warehouse
+- Key Functions:
+  - Heavy data processing
+  - Schedule generation
+  - Data storage
+  - Commission calculations
+
+## 2. Data Flow Processes
+
+### 2.1 Schedule Creation Process
+#### 2.1.1 Initial Schedule Creation
+- Managers create schedules in Mytime
+- Typical timeline: 4 weeks in advance
+- Schedule components:
+  ```
+  - Regular shifts
+  - Break periods
+  - Administrative blocks
+  - Special assignments
+  ```
+
+#### 2.1.2 Schedule Transfer Flow
+```
+    A[Mytime Schedule Creation] -->|Daily Sync| B[Schedule Export]
+    B -->|XML Format| C[ADP Import]
+    C -->|Employee Activity| D[Time Clock Data]
+    D -->|Sync Back| E[Mytime Update]
+    E -->|Processing| F[Commission Calculation]
+    F -->|Manual Review| G[ADP Payroll]
+```
+
+### 2.2 Daily Processing Schedule
+#### 2.2.1 Schedule Processing (11:15 PM)
+1. Clear existing tables
+2. Pull Mytime schedules (4-5 weeks)
+3. Process employee data
+4. Generate XML formats
+5. Upload to ADP
+
+#### 2.2.2 Data Synchronization Steps
+1. Initial data collection
+2. Override verification
+3. Schedule generation
+4. XML formatting
+5. ADP upload
+6. History recording
+
+## 3. Detailed Process Workflows
+
+### 3.1 Schedule Management
+#### 3.1.1 Manager Schedule Creation
+```
+Location: Mytime Portal
+Process:
+1. Select shop location
+2. Access weekly schedule view
+3. Assign employee shifts
+4. Set break periods
+5. Define special assignments
+6. Save schedule
+```
+
+#### 3.1.2 Schedule Components
+- Regular work hours
+- Break periods
+- Administrative blocks
+- Transfer codes
+- Special assignments
+
+### 3.2 Data Processing
+#### 3.2.1 Employee Data Collection
+```sql
+-- Example Process Flow
+1. Clear staging tables
+2. Pull active employees
+3. Retrieve schedule data
+4. Process labor rates
+5. Handle transfers
+```
+
+#### 3.2.2 Override Management
+- PTO preservation
+- Vacation time tracking
+- Bereavement leave
+- Manager premium hours
+
+## 4. Business Rules & Logic
+
+### 4.1 Schedule Processing Rules
+#### 4.1.1 Basic Rules
+- Two-week rolling schedule
+- Daily processing cycle
+- Override preservation
+- Transfer code handling
+
+#### 4.1.2 Special Conditions
+```
+Priority Rules:
+1. ADP time-off records take precedence
+2. Mytime schedule is base truth
+3. Manual payroll review required
+4. Commission calculations verified
+```
+
+### 4.2 Data Integrity Rules
+- Mytime = Schedule source truth
+- ADP = Time-off source truth
+- Dual wage information maintenance
+- History tracking required
+
+## 5. System Integration Points
+
+### 5.1 API Integration
+#### 5.1.1 ADP Communication
+```xml
+<!-- Example Schedule XML Format -->
+<Schedule>
+    <Employee>
+        <ID>12345</ID>
+        <Date>2024-01-15</Date>
+        <StartTime>09:00</StartTime>
+        <EndTime>17:00</EndTime>
+        <TransferCodes>
+            <!-- Transfer code details -->
+        </TransferCodes>
+    </Employee>
+</Schedule>
+```
+
+#### 5.1.2 Mytime Integration
+- Direct database access
+- Real-time schedule updates
+- Commission calculation triggers
+
+## 6. Error Handling & Recovery
+
+### 6.1 Common Scenarios
+#### 6.1.1 Schedule Transfer Failures
+```
+Recovery Steps:
+1. Identify failure point
+2. Check data integrity
+3. Verify override status
+4. Reprocess if needed
+5. Manual verification
+```
+
+#### 6.1.2 Data Sync Issues
+- Missing schedule handling
+- Override conflict resolution
+- Transfer code mismatches
+- Commission calculation errors
+
+## 7. Monitoring & Maintenance
+
+### 7.1 Daily Operations
+#### 7.1.1 Monitoring Points
+- Schedule transfer status
+- Employee data sync
+- Override processing
+- Commission calculations
+
+#### 7.1.2 Key Metrics
+```
+Monitor:
+- File counts
+- Processing times
+- Error rates
+- Override success rates
+```
+
+## 8. Future Enhancements
+
+### 8.1 Planned Improvements
+#### 8.1.1 Technical Enhancements
+- Server consolidation to az01-db01
+- Direct ADP communication
+- Improved monitoring system
+- Automated notifications
+
+#### 8.1.2 Process Improvements
+- Streamlined data flow
+- Enhanced error handling
+- Automated recovery procedures
+- Better reporting tools
+
+## 9. Access Control & Security
+
+### 9.1 System Access
+#### 9.1.1 Portal Access
+- Mytime access through Floyd's
+- ADP portal restricted access
+- Database access controls
+
+#### 9.1.2 Security Protocols
+```
+Access Levels:
+1. View only
+2. Schedule management
+3. Override authority
+4. System administration
+```
+
+## 10. Support & Troubleshooting
+
+### 10.1 Support Procedures
+#### 10.1.1 First-Level Support
+- Schedule verification
+- Data sync checks
+- Override validation
+- Basic error resolution
+
+#### 10.1.2 Escalation Path
+```
+Escalation Flow:
+1. Local support
+2. System administration
+3. Vendor support (Mytime/ADP)
+4. Emergency procedures
+```
+
+Note: This documentation should be reviewed and updated regularly as systems and processes evolve.

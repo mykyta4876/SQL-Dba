@@ -1,0 +1,88 @@
+# Mytime/ADP Data Structure - Additional Documentation
+
+## Schedule Processing Details
+
+### Schedule Job Timing
+1. **Daily Schedule Processing**
+   - Schedules process once per night at 11:15 PM
+   - Pulls schedules for next two weeks
+   - Not considered critical emergency unless during payroll close
+
+2. **Time Card Processing**
+   - Runs twice daily:
+     - First run: ~10:00 PM
+     - Second run: ~5:00 AM
+   - Critical during payroll close periods
+
+### Critical Periods
+1. **Payroll Close (Every Two Weeks)**
+   - Monday night after payroll period closes
+   - Period closes on Sunday
+   - Final updates made Monday
+   - Critical run at 10:00 PM Monday
+   - Payroll reports generate from this data
+
+## Server Infrastructure
+
+### Server Distribution
+1. **dataintO2**
+   - Acts as gateway server
+   - Handles ADP communication
+   - Limited processing capacity
+   - Runs schedule jobs (takes ~2 hours)
+
+2. **az01-db01**
+   - Main processing server
+   - Handles heavy processing tasks
+   - Currently cannot directly communicate with ADP
+
+### Data Processing Flow
+```
+    A[Mytime Schedule Data] --> B[dataintO2]
+    B --> C[Initial Processing]
+    C --> D[Heavy Processing on az01-db01]
+    D --> E[Final Processing on dataintO2]
+    E --> F[Send to ADP]
+```
+
+## Recovery Procedures
+
+### Failed Job Recovery
+1. **T-1 Recovery Process**
+   - Special jobs created for recovery
+   - Adjusts date parameters automatically
+   - Example:
+     - Regular job: Today + 2 weeks
+     - T-1 job: Yesterday + 2 weeks
+
+2. **Manual Recovery Steps**
+   ```sql
+   -- Date adjustment for recovery
+   SET @StartDate = DATEADD(day, -1, GETDATE())
+   SET @EndDate = DATEADD(day, 13, @StartDate)
+   ```
+
+### Priority Levels
+1. **Normal Schedule Failures**
+   - Can be resolved next morning
+   - No immediate business impact
+   - Stores can continue operations
+
+2. **Critical Failures**
+   - Payroll close period failures
+   - Finance department impacts
+   - Requires immediate attention
+   - May need Mytime involvement for report regeneration
+
+## Future Improvements
+
+1. **Server Consolidation**
+   - Goal: Move all processing to az01-db01
+   - Requires ADP communication capability on az01-db01
+   - Would simplify processing flow
+   - Reduce server dependencies
+
+2. **Process Optimization**
+   - Reduce processing time from current 2-hour window
+   - Better resource utilization
+   - Improved monitoring capabilities

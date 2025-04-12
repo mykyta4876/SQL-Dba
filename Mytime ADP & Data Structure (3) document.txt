@@ -1,0 +1,203 @@
+
+
+# Detailed Meeting Documentation: Mytime & ADP Data Structure
+
+## 1. Current System Overview
+
+### 1.1 Data Factory Jobs
+- Location: Azure Data Factory
+- Multiple jobs running on different schedules:
+  - Daily jobs
+  - Weekly jobs
+  - Periodic jobs (Monday/Thursday)
+- Typical job count: 5-8 jobs running regularly
+
+### 1.2 Key Processing Areas
+1. **Survey Results (360)**
+   - Periodic processing
+   - Data collection and aggregation
+
+2. **Tips Processing**
+   - Daily operations
+   - Multiple components:
+     - Corporate tips
+     - Franchise tips (Sleeth specific)
+
+3. **Payroll Processing**
+   - Bi-weekly operation
+   - Two distinct report formats required
+
+## 2. Infrastructure Components
+
+### 2.1 Storage Systems
+#### 2.1.1 Primary Storage Accounts
+1. **Mytime Data Import**
+   - Contains BLOB and file storage
+   - Primary containers:
+     - ADP Import
+     - ADP (for output)
+     - NPS (Net Promoter Score)
+     - Legacy containers (MailChimp - discontinued)
+
+2. **Franchise Data**
+   - Primarily for Sleeth franchise
+   - Limited to tips file processing
+
+### 2.2 File Processing Locations
+```plaintext
+Storage Structure:
+/mytime-data-import
+    /BLOB
+        /ADP
+            /payroll
+            /payroll-reports
+    /file (being phased out)
+```
+
+## 3. Critical Business Processes
+
+### 3.1 Payroll Commission & Tips Reports
+#### 3.1.1 Process Flow
+1. File Collection
+   - Approximately 68 corporate files
+   - Consolidation into single output
+   - Minimal transformation required
+
+#### 3.1.2 Output Generation
+- Two distinct formats required:
+  1. ADP upload format
+  2. Payroll report format
+- Storage in Azure BLOB storage
+- Payroll team access to BLOB storage
+
+### 3.2 Tips Processing
+#### 3.2.1 Current Challenges
+- S3 bucket credential issues
+- Dependency on Data Factory for credentials
+- Need for new credential setup
+
+#### 3.2.2 Process Requirements
+```
+    A[Tips Data Collection] -->|Daily Process| B[File Processing]
+    B -->|Waiting Period| C[File Completion Check]
+    C -->|Move Operation| D[Mytime Transfer]
+```
+
+## 4. System Access & Credentials
+
+### 4.1 Current Credential Issues
+- Missing S3 bucket credentials
+- Legacy setup predating current team
+- Need for new credential establishment
+- Impact on tips processing
+
+### 4.2 Required Actions
+1. Configure new setup
+2. Establish new credentials
+3. Move processing from Data Factory to SSIS
+4. Transfer to on-premises operation
+
+## 5. Operational Considerations
+
+### 5.1 Job Monitoring
+#### 5.1.1 Current Status
+- Manual monitoring of job completion
+- Green status verification
+- Long-running job handling
+
+#### 5.1.2 Proposed Improvements
+```
+Alert System Requirements:
+- Runtime monitoring
+- Threshold alerts (10-15 minutes)
+- Pipeline failure notifications
+- File count verification
+```
+
+### 5.2 File Processing Details
+- Nightly processing schedule
+- Wait periods for file completion
+- File movement operations
+- Storage location management
+
+## 6. Future Improvements
+
+### 6.1 Immediate Needs
+1. Credential reestablishment
+2. Process migration planning
+3. Alert system implementation
+4. Documentation updates
+
+### 6.2 Long-term Goals
+1. Process consolidation
+2. Infrastructure optimization
+3. Monitoring enhancement
+4. Automated recovery procedures
+
+## 7. System Dependencies
+
+### 7.1 External Systems
+1. **ADP Workforce Now**
+   - Payroll processing
+   - Report generation
+   - Data validation
+
+2. **Amazon S3**
+   - File storage
+   - Tips processing
+   - Credential management
+
+### 7.2 Internal Systems
+1. **Azure Data Factory**
+   - Job orchestration
+   - File processing
+   - Data movement
+
+2. **BLOB Storage**
+   - File storage
+   - Data staging
+   - Report storage
+
+## 8. Monitoring & Alerts
+
+### 8.1 Current Alert Setup
+- Two pipeline monitoring alerts
+- Pipeline failure notifications
+- Runtime monitoring needs
+
+### 8.2 Proposed Enhancements
+```
+Alert Requirements:
+1. Pipeline-specific monitoring
+2. Duration thresholds
+3. File count validation
+4. Error notification system
+```
+
+## 9. Documentation & Process Flow
+
+### 9.1 Required Documentation
+1. Process workflows
+2. System interactions
+3. Credential management
+4. Recovery procedures
+
+### 9.2 Maintenance Procedures
+1. Regular credential review
+2. Process validation
+3. System access audit
+4. Performance monitoring
+
+## 10. Action Items
+
+### 10.1 Immediate Actions
+1. Review and archive unused pipelines
+2. Establish new S3 credentials
+3. Plan process migration
+4. Implement monitoring improvements
+
+### 10.2 Follow-up Items
+1. Document Power BI refresh process
+2. Review alert system requirements
+3. Plan credential management
+4. Update system documentation
